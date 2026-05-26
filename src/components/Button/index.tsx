@@ -1,17 +1,18 @@
 import clsx from "clsx";
-import { useMemo, type HTMLAttributes, type JSX } from "react";
+import { useMemo, type ButtonHTMLAttributes, type JSX } from "react";
 import {
   baseClass,
   ghostClass,
+  iconClass,
   outlineClass,
   primaryClass,
   secondaryClass,
 } from "./styles.css";
 import { ButtonAppearance } from "./types";
 
-export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
-  label: string;
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   appearance: keyof typeof ButtonAppearance;
+  label?: string;
   icon?: JSX.Element;
 };
 
@@ -22,7 +23,7 @@ export const Button = ({
   className,
   ...rest
 }: ButtonProps) => {
-  const innerClass: string = useMemo(() => {
+  const buttonClass: string = useMemo(() => {
     switch (appearance) {
       case "Primary":
         return primaryClass;
@@ -37,8 +38,13 @@ export const Button = ({
     }
   }, [appearance]);
 
+  const iconButtonClass: string | undefined = useMemo(
+    () => (label ? undefined : iconClass),
+    [label],
+  );
+
   return (
-    <button {...rest} className={clsx(innerClass, className)}>
+    <button {...rest} className={clsx(buttonClass, iconButtonClass, className)}>
       {icon}
       {label}
     </button>

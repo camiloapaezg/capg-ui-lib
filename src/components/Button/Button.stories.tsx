@@ -1,13 +1,19 @@
+import { Icon } from "@iconify-icon/react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from ".";
 import { ButtonAppearance } from "./types";
-import { Icon } from "@iconify-icon/react";
+import "../../styles/stories.css";
 
 const meta = {
   title: "Components/Button",
   component: Button,
   tags: ["autodocs"],
   argTypes: {
+    icon: {
+      control: {
+        disable: true,
+      },
+    },
     appearance: {
       control: {
         type: "select",
@@ -25,7 +31,8 @@ export const ButtonStory: Story = {
     label: "Save changes",
     appearance: ButtonAppearance.Primary,
     icon: (
-      <Icon style={{ fontSize: "18px" }} icon="fluent:save-16-filled"></Icon>
+      <Icon style={{ fontSize: "20px" }} icon="fluent:save-16-filled"></Icon>
     ),
+    disabled: false,
   },
 };

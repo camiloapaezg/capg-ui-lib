@@ -1,19 +1,17 @@
 import { style } from "@vanilla-extract/css";
-import { themeColors } from "../../styles/themeColors";
+import { themeColors } from "../../styles/theme";
+import { outlineOnFocusClass } from "../../styles/styles.css";
 
 export const baseClass = style({
-  fontFamily: "Arial, Helvetica, sans-serif",
-  fontSize: "14px",
   fontWeight: 500,
-
-  padding: "0.75em 1.25em",
-  minWidth: "8em",
+  minWidth: "2em",
+  padding: "0.5em 1em",
   width: "fit-content",
   borderRadius: "4px",
   cursor: "pointer",
-  display: "flex",
+  display: "inline-flex",
   flexFlow: "row nowrap",
-  justifyContent: "stretch",
+  justifyContent: "center",
   alignItems: "center",
   columnGap: "0.5em",
 });
@@ -21,19 +19,24 @@ export const baseClass = style({
 export const primaryClass = style([
   baseClass,
   {
+    color: themeColors.brand.lighter,
+    border: "1px solid",
     ":enabled": {
-      color: themeColors.brand.lighter,
       backgroundColor: themeColors.brand.primary,
-      border: "none",
+      borderColor: themeColors.brand.primary,
     },
     ":hover": {
       backgroundColor: themeColors.input.primary.hover,
+      borderColor: themeColors.input.primary.hover,
     },
     ":active": {
       backgroundColor: themeColors.input.primary.active,
+      borderColor: themeColors.input.primary.active,
     },
     ":disabled": {
-      backgroundColor: themeColors.input.disabled,
+      backgroundColor: themeColors.gray.g400,
+      borderColor: themeColors.gray.g400,
+      pointerEvents: "none",
     },
   },
 ]);
@@ -41,19 +44,24 @@ export const primaryClass = style([
 export const secondaryClass = style([
   baseClass,
   {
+    color: themeColors.brand.lighter,
+    border: "1px solid",
     ":enabled": {
-      color: themeColors.brand.lighter,
       backgroundColor: themeColors.brand.light,
-      border: "none",
+      borderColor: themeColors.brand.light,
     },
     ":hover": {
       backgroundColor: themeColors.input.secondary.hover,
+      borderColor: themeColors.input.secondary.hover,
     },
     ":active": {
       backgroundColor: themeColors.input.secondary.active,
+      borderColor: themeColors.input.secondary.active,
     },
     ":disabled": {
-      backgroundColor: themeColors.input.disabled,
+      backgroundColor: themeColors.gray.g400,
+      borderColor: themeColors.gray.g400,
+      pointerEvents: "none",
     },
   },
 ]);
@@ -61,10 +69,11 @@ export const secondaryClass = style([
 export const outlineClass = style([
   baseClass,
   {
+    border: "1px solid",
     ":enabled": {
       color: themeColors.brand.primary,
       background: "transparent",
-      border: `${themeColors.brand.primary} solid 1px`,
+      borderColor: themeColors.brand.primary,
     },
     ":hover": {
       backgroundColor: themeColors.input.outline.hover,
@@ -73,27 +82,41 @@ export const outlineClass = style([
       backgroundColor: themeColors.input.outline.active,
     },
     ":disabled": {
-      color: themeColors.input.disabled,
+      color: themeColors.gray.g400,
+      background: "transparent",
+      borderColor: themeColors.input.outline.disabled,
+      pointerEvents: "none",
     },
   },
 ]);
 
 export const ghostClass = style([
   baseClass,
+  outlineOnFocusClass,
   {
+    border: "none",
     ":enabled": {
-      color: themeColors.brand.darker,
+      color: themeColors.gray.g700,
       background: "transparent",
-      border: "none",
     },
     ":hover": {
+      color: themeColors.brand.darker,
       backgroundColor: themeColors.input.ghost.hover,
     },
     ":active": {
+      color: themeColors.brand.darker,
       backgroundColor: themeColors.input.ghost.active,
     },
     ":disabled": {
-      color: themeColors.input.disabled,
+      color: themeColors.gray.g400,
+      pointerEvents: "none",
+      background: "transparent",
     },
   },
 ]);
+
+export const iconClass = style({
+  padding: 0,
+  width: "2em",
+  height: "2em",
+});
