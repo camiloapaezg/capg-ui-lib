@@ -1,19 +1,12 @@
 import { style } from "@vanilla-extract/css";
 import { fadeIn, fadeOut } from "../../styles/animations.css";
 import { themeColors, themeShadows } from "../../styles/theme";
-import { outlineOnFocusClass } from "../../styles/styles.css";
+import {
+  disabledElementClass,
+  outlineOnFocusClass,
+} from "../../styles/common.css";
 
 const borderRadius = "4px";
-
-const disabledClass = style({
-  selectors: {
-    "&[data-disabled],&:disabled": {
-      opacity: 0.5,
-      filter: "grayscale(100%)",
-      pointerEvents: "none",
-    },
-  },
-});
 
 const viewTriggerClass = style({
   cursor: "pointer",
@@ -44,7 +37,7 @@ const chevronClass = style([
 ]);
 
 const buttonClass = style([
-  disabledClass,
+  disabledElementClass,
   {
     borderRadius: "4px",
     border: "none",
@@ -91,29 +84,6 @@ export const controlClass = style({
   height: "fit-content",
   width: "100%",
 });
-
-export const inputClass = style([
-  outlineOnFocusClass,
-  disabledClass,
-  {
-    alignSelf: "stretch",
-    background: "transparent",
-    flex: 1,
-    minWidth: "8em",
-    padding: "0 0.75em",
-    border: `1px solid ${themeColors.brand.darker}`,
-    borderRadius: "4px",
-    transition: "border-color 0.15s ease, box-shadow 0.15s ease",
-    selectors: {
-      "&::placeholder": {
-        color: themeColors.gray.g400,
-      },
-      "&[data-invalid]": {
-        borderColor: themeColors.semantic.error,
-      },
-    },
-  },
-]);
 
 export const multipleInputClass = style({
   alignSelf: "stretch",
@@ -248,7 +218,7 @@ export const tableCellClass = style({
 export const tableCellTriggerClass = style([
   buttonClass,
   outlineOnFocusClass,
-  disabledClass,
+  disabledElementClass,
   {
     height: "2.5em",
     width: "3em",
@@ -324,7 +294,7 @@ export const selectedDateClass = style({
 });
 
 export const removeButtonClass = style([
-  disabledClass,
+  disabledElementClass,
   {
     borderRadius: "4px",
     display: "inline-flex",

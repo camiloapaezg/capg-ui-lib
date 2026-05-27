@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
+import { outlineOnFocusClass } from "../../styles/common.css";
 import { themeColors } from "../../styles/theme";
-import { outlineOnFocusClass } from "../../styles/styles.css";
 
 export const baseClass = style({
   fontWeight: 500,

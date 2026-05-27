@@ -7,4 +7,5 @@ globalStyle("*", {
   fontSize: "14px",
   border: "none",
   outline: "none",
+  fontWeight: 400,
 });

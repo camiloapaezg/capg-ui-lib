@@ -15,7 +15,6 @@ import {
   contentClass,
   controlClass,
   iconClass,
-  inputClass,
   labelClass,
   multipleInputClass,
   placeholderClass,
@@ -33,6 +32,7 @@ import {
   viewClass,
   viewControlClass,
 } from "./styles.css";
+import { textInputClass } from "../TextInput/styles.css";
 
 type ViewControlProps = DatePicker.ViewControlProps &
   React.RefAttributes<HTMLDivElement>;
@@ -194,13 +194,13 @@ const ViewInput = ({ selectionMode }: ViewInputProps) => {
 
   switch (selectionMode) {
     case "single":
-      result = <DatePicker.Input className={inputClass} />;
+      result = <DatePicker.Input className={textInputClass} />;
       break;
     case "range":
       result = (
         <React.Fragment>
-          <DatePicker.Input className={inputClass} index={0} />
-          <DatePicker.Input className={inputClass} index={1} />
+          <DatePicker.Input className={textInputClass} index={0} />
+          <DatePicker.Input className={textInputClass} index={1} />
         </React.Fragment>
       );
       break;

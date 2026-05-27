@@ -10,6 +10,28 @@ const meta = {
   title: "Components/Basic Dialog",
   component: BasicDialog,
   tags: ["autodocs"],
+  argTypes: {
+    trigger: {
+      control: {
+        disable: true,
+      },
+    },
+    children: {
+      control: {
+        disable: true,
+      },
+    },
+    titleProps: {
+      control: {
+        disable: true,
+      },
+    },
+    contentProps: {
+      control: {
+        disable: true,
+      },
+    },
+  },
 } satisfies Meta<typeof BasicDialog>;
 
 export default meta;
