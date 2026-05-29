@@ -54,6 +54,7 @@ export const DropdownStory: Story = {
   args: {
     label: "Label",
     options: { items },
+    disabled: false,
     group: false,
     multiple: false,
     valueTextProps: {
