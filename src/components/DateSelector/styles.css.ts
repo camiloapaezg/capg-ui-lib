@@ -1,17 +1,14 @@
 import { style } from "@vanilla-extract/css";
 import { fadeIn, fadeOut } from "../../styles/animations.css";
 import { themeColors, themeShadows } from "../../styles/theme";
-import {
-  disabledElementClass,
-  outlineOnFocusClass,
-} from "../../styles/common.css";
+import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
 
 const borderRadius = "4px";
 
 const viewTriggerClass = style({
   cursor: "pointer",
   color: themeColors.brand.lighter,
-  fontWeight: "600",
+  fontWeight: 600,
   outline: "none",
   border: "none",
   ":enabled": {
@@ -37,7 +34,7 @@ const chevronClass = style([
 ]);
 
 const buttonClass = style([
-  disabledElementClass,
+  disabledClass,
   {
     borderRadius: "4px",
     border: "none",
@@ -179,12 +176,16 @@ export const chevronRightClass = style([
   },
 ]);
 
-export const rangeTextClass = style([
+export const rangeTextTriggerClass = style([
   viewTriggerClass,
   {
     flexGrow: 1,
   },
 ]);
+
+export const rangeTextClass = style({
+  color: "inherit",
+});
 
 export const iconClass = style({
   fontSize: "18px",
@@ -218,7 +219,7 @@ export const tableCellClass = style({
 export const tableCellTriggerClass = style([
   buttonClass,
   outlineOnFocusClass,
-  disabledElementClass,
+  disabledClass,
   {
     height: "2.5em",
     width: "3em",
@@ -294,7 +295,7 @@ export const selectedDateClass = style({
 });
 
 export const removeButtonClass = style([
-  disabledElementClass,
+  disabledClass,
   {
     borderRadius: "4px",
     display: "inline-flex",

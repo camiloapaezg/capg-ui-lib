@@ -1,19 +1,15 @@
 import { style } from "@vanilla-extract/css";
-import { disabledElementClass } from "../../styles/common.css";
+import { disabledClass } from "../../styles/common.css";
 import { themeColors } from "../../styles/theme";
 
-export const lineHeightClass = style({
-  lineHeight: "1.25em",
-});
-
 export const rootClass = style([
-  disabledElementClass,
+  disabledClass,
   {
     display: "flex",
     flexFlow: "column nowrap",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    gap: "0.5em",
+    gap: "0.25em",
     width: "100%",
     maxWidth: "24em",
     selectors: {
@@ -24,16 +20,11 @@ export const rootClass = style([
   },
 ]);
 
-export const labelClass = style([
-  lineHeightClass,
-  {
-    fontWeight: 600,
-  },
-]);
+export const labelClass = style({
+  fontWeight: 600,
+  marginBottom: "0.25em",
+});
 
-export const errorTextClass = style([
-  lineHeightClass,
-  {
-    color: themeColors.semantic.error,
-  },
-]);
+export const errorTextClass = style({
+  color: themeColors.semantic.error,
+});

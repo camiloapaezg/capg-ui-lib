@@ -11,7 +11,7 @@ export const outlineOnFocusClass = style({
   },
 });
 
-export const disabledElementClass = style({
+export const disabledClass = style({
   selectors: {
     "&[data-disabled],&:disabled": {
       opacity: 0.5,

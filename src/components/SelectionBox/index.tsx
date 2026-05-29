@@ -2,11 +2,11 @@ import { Checkbox } from "@ark-ui/react/checkbox";
 import { Icon } from "@iconify-icon/react";
 import {
   controlClass,
+  iconClass,
   indicatorClass,
   labelClass,
   rootClass,
 } from "./styles.css";
-import "../../styles/stories.css";
 import clsx from "clsx";
 
 export type SelectionBoxProps = Checkbox.RootProps &
@@ -34,6 +34,7 @@ export const SelectionBox = ({
                 ? "fluent:checkmark-16-filled"
                 : "fluent:line-horizontal-1-16-filled"
             }
+            className={iconClass}
           />
         </Checkbox.Indicator>
       </Checkbox.Control>

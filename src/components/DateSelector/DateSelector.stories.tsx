@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { DateSelector } from ".";
-import "../../styles/stories.css";
 
 const meta = {
   title: "Components/Date Selector",

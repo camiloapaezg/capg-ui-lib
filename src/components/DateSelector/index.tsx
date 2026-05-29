@@ -19,6 +19,7 @@ import {
   multipleInputClass,
   placeholderClass,
   rangeTextClass,
+  rangeTextTriggerClass,
   removeButtonClass,
   removeIconClass,
   rootClass,
@@ -70,8 +71,8 @@ const ViewControl = ({ ...rest }: ViewControlProps) => {
       <DatePicker.PrevTrigger className={chevronLeftClass}>
         <Icon icon="fluent:chevron-left-16-regular" className={iconClass} />
       </DatePicker.PrevTrigger>
-      <DatePicker.ViewTrigger className={rangeTextClass}>
-        <DatePicker.RangeText />
+      <DatePicker.ViewTrigger className={rangeTextTriggerClass}>
+        <DatePicker.RangeText className={rangeTextClass} />
       </DatePicker.ViewTrigger>
       <DatePicker.NextTrigger className={chevronRightClass}>
         <Icon icon="fluent:chevron-right-16-regular" className={iconClass} />

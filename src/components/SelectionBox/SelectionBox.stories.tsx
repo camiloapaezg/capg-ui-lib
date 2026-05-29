@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import "../../styles/stories.css";
 import { SelectionBox } from ".";
 
 const meta = {
@@ -15,6 +14,6 @@ export const SelectionBoxStory: Story = {
   args: {
     label: "Is checked",
     disabled: false,
-    // checked: "indeterminate",
+    checked: true,
   },
 };

@@ -13,6 +13,7 @@ export const TextAreaStory: Story = {
   args: {
     disabled: false,
     placeholder: "Input some text...",
+    autoresize: false,
     fieldProps: {
       label: "Label",
       invalid: false,

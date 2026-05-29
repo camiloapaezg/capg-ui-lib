@@ -2,7 +2,6 @@ import { Icon } from "@iconify-icon/react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from ".";
 import { ButtonAppearance } from "./types";
-import "../../styles/stories.css";
 
 const meta = {
   title: "Components/Button",
@@ -31,7 +30,10 @@ export const ButtonStory: Story = {
     label: "Save changes",
     appearance: ButtonAppearance.Primary,
     icon: (
-      <Icon style={{ fontSize: "20px" }} icon="fluent:save-16-filled"></Icon>
+      <Icon
+        style={{ fontSize: "20px", color: "inherit" }}
+        icon="fluent:save-16-filled"
+      ></Icon>
     ),
     disabled: false,
   },
