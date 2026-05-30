@@ -10,7 +10,7 @@ export type InputFieldProps = Field.RootProps &
     errorText?: string;
   };
 
-export const InputField = ({
+export const FormField = ({
   label,
   helperText,
   errorText,

@@ -2,7 +2,7 @@ export * from "./BasicDialog";
 export * from "./Button";
 export * from "./DateSelector";
 export * from "./Dropdown";
-export * from "./InputField";
+export * from "./FormField";
 export * from "./RangeSlider";
 export * from "./SelectionBox";
 export * from "./TextArea";

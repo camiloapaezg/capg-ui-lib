@@ -96,15 +96,12 @@ export const ghostClass = style([
   {
     border: "none",
     ":enabled": {
-      color: themeColors.gray.g700,
       background: "transparent",
     },
     ":hover": {
-      color: themeColors.brand.darker,
       backgroundColor: themeColors.input.ghost.hover,
     },
     ":active": {
-      color: themeColors.brand.darker,
       backgroundColor: themeColors.input.ghost.active,
     },
     ":disabled": {
