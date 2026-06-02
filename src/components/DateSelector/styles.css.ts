@@ -70,6 +70,7 @@ export const rootClass = style({
 
 export const labelClass = style({
   userSelect: "none",
+  fontWeight: 600,
 });
 
 export const controlClass = style({

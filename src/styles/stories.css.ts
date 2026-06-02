@@ -10,4 +10,5 @@ globalStyle("*", {
   fontWeight: 400,
   lineHeight: 1.5,
   color: themeColors.brand.darker,
+  background: "transparent",
 });

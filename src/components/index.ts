@@ -7,3 +7,4 @@ export * from "./RangeSlider";
 export * from "./SelectionBox";
 export * from "./TextArea";
 export * from "./TextInput";
+export * from "./UploadFile";

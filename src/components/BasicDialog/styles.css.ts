@@ -34,6 +34,7 @@ export const positionerClass = style({
   alignItems: "center",
   inset: 0,
   zIndex: "calc(50 + var(--layer-index, 0))",
+  background: "transparent",
   /* Prevent overscroll bounce on iOS */
   overscrollBehaviorY: "none",
   /* Reserve space for scrollbar to prevent layout shift */
@@ -93,5 +94,4 @@ export const titleClass = style({
 export const iconClass = style({
   fontSize: "14px",
   fontWeight: "500",
-  background: "transparent",
 });
