@@ -21,7 +21,9 @@ export const UploadFileStory: Story = {
   args: {
     disabled: false,
     label: "File Upload",
-    compact: true,
+    compact: false,
+    title: "Drag and drop files here",
+    description: "or click to browse",
     // trigger: (
     //   <Button
     //     appearance={"Secondary"}

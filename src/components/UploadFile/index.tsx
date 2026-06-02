@@ -26,6 +26,8 @@ import {
 
 type TriggerProps = {
   trigger?: JSX.Element;
+  title?: string;
+  description?: string;
 };
 
 type SelectedFilesProps = FileUpload.ItemProps &
@@ -37,14 +39,14 @@ type FilePreviewProps = {
   file?: File;
 };
 
-export type UploadFileProps = FileUpload.RootProps &
+export type UploadFileProps = TriggerProps &
+  FileUpload.RootProps &
   React.RefAttributes<HTMLDivElement> & {
-    trigger?: JSX.Element;
     label?: string;
     compact?: boolean;
   };
 
-const Trigger = ({ trigger }: TriggerProps) => {
+const Trigger = ({ trigger, title, description }: TriggerProps) => {
   if (trigger) {
     return <FileUpload.Trigger asChild>{trigger}</FileUpload.Trigger>;
   }
@@ -56,8 +58,12 @@ const Trigger = ({ trigger }: TriggerProps) => {
         className={dropZoneIconClass}
       />
       <div className={dropZoneContentClass}>
-        <span className={dropZoneTitleClass}>Drag and drop files here</span>
-        <span className={dropZoneDescriptionClass}>or click to browse</span>
+        <span className={dropZoneTitleClass}>
+          {title ?? "Drag and drop files here"}
+        </span>
+        <span className={dropZoneDescriptionClass}>
+          {description ?? "or click to browse"}
+        </span>
       </div>
     </FileUpload.Dropzone>
   );
@@ -126,6 +132,8 @@ const SelectedFiles = ({ file, compact, ...rest }: SelectedFilesProps) => {
 
 export const UploadFile = ({
   trigger,
+  title,
+  description,
   label,
   compact,
   className,
@@ -135,7 +143,7 @@ export const UploadFile = ({
     {label && (
       <FileUpload.Label className={labelClass}>{label}</FileUpload.Label>
     )}
-    <Trigger trigger={trigger} />
+    <Trigger trigger={trigger} title={title} description={description} />
     <FileUpload.ItemGroup className={itemGroupClass}>
       <FileUpload.Context>
         {({ acceptedFiles }) =>
