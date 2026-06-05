@@ -30,6 +30,9 @@ const chevronClass = style([
   viewTriggerClass,
   {
     width: "2em",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 ]);
 
@@ -41,16 +44,11 @@ const buttonClass = style([
     outline: "none",
     cursor: "pointer",
     background: "transparent",
-    ":enabled": {
-      color: themeColors.gray.g700,
-    },
     ":hover": {
-      color: themeColors.brand.darker,
       borderColor: themeColors.brand.darker,
       backgroundColor: themeColors.input.ghost.hover,
     },
     ":active": {
-      color: themeColors.brand.darker,
       borderColor: themeColors.brand.darker,
       backgroundColor: themeColors.input.ghost.active,
     },
@@ -129,7 +127,7 @@ export const contentClass = style({
   background: themeColors.brand.primary,
   borderRadius: borderRadius,
   outline: "none",
-  border: `1px solid ${themeColors.gray.g400}`,
+  border: `1px solid ${themeColors.brand.primary}`,
   zIndex: "calc(50 + var(--layer-index, 0))",
   boxShadow: themeShadows.md,
   selectors: {
@@ -264,17 +262,12 @@ export const tableCellTriggerClass = style([
       "&[data-outside-range]": {
         opacity: 0.5,
       },
-      //   &[data-disabled] {
-      //     color: var(--demo-neutral-emphasized);
-      //     opacity: 0.4;
-      //     cursor: not-allowed;
-      //   }
-      //   &[data-unavailable] {
-      //     color: var(--demo-neutral-emphasized);
-      //     text-decoration: line-through;
-      //     opacity: 0.4;
-      //     cursor: not-allowed;
-      //   }
+      "&[data-unavailable]": {
+        color: themeColors.gray.g400,
+        textDecoration: "line-through",
+        opacity: 0.4,
+        cursor: "not-allowed",
+      },
     },
   },
 ]);

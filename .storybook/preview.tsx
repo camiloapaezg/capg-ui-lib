@@ -2,6 +2,16 @@ import type { Preview } from "@storybook/react-vite";
 import "../src/styles/stories.css";
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <div
+        id="storybook-global-decorator"
+        style={{ minHeight: "30vh", width: "100%" }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     controls: {
       matchers: {
@@ -9,7 +19,6 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-
     a11y: {
       // 'todo' - show a11y violations in the test UI only
       // 'error' - fail CI on a11y violations
