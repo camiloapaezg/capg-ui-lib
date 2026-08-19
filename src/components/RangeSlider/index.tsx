@@ -15,22 +15,27 @@ import {
   trackClass,
   valueTextClass,
 } from "./styles.css";
+import { useMemo } from "react";
 
 export type RangeSliderProps = Slider.RootProps &
   React.RefAttributes<HTMLDivElement> & {
     label?: string;
-    range?: boolean;
     marks?: number[];
   };
 
 export const RangeSlider = ({
   label,
-  range,
   marks,
   orientation,
   className,
+  defaultValue,
   ...rest
 }: RangeSliderProps) => {
+  const isRange: boolean = useMemo(
+    () => (defaultValue && defaultValue.length == 2 ? true : false),
+    [defaultValue],
+  );
+
   const headerClass =
     orientation === "vertical" ? headerVerticalClass : headerHorizontalClass;
 
@@ -41,6 +46,7 @@ export const RangeSlider = ({
       {...rest}
       orientation={orientation}
       className={clsx(rootClass, className)}
+      defaultValue={defaultValue}
     >
       <div className={headerClass}>
         {label && <Slider.Label className={labelClass}>{label}</Slider.Label>}
@@ -54,7 +60,7 @@ export const RangeSlider = ({
           <Slider.Thumb index={0} className={thumbClass}>
             <Slider.HiddenInput />
           </Slider.Thumb>
-          {range === true && (
+          {isRange === true && (
             <Slider.Thumb index={1} className={thumbClass}>
               <Slider.HiddenInput />
             </Slider.Thumb>

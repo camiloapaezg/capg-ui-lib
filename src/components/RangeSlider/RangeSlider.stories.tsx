@@ -22,9 +22,8 @@ export const RangeSliderStory: Story = {
   args: {
     label: "Label",
     disabled: false,
-    range: false,
     orientation: "horizontal",
-    defaultValue: [30, 60],
+    defaultValue: [30],
     marks: [0, 20, 40, 60, 80, 100],
     thumbCollisionBehavior: "push",
   },

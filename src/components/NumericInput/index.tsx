@@ -1,0 +1,41 @@
+import { NumberInput } from "@ark-ui/react/number-input";
+import { Icon } from "@iconify-icon/react";
+import clsx from "clsx";
+import {
+  controlClass,
+  iconClass,
+  triggerUpClass,
+  inputClass,
+  labelClass,
+  rootClass,
+  triggerClass,
+  triggerGroupClass,
+} from "./styles.css";
+
+export type NumericInputProps = NumberInput.RootProps &
+  React.RefAttributes<HTMLDivElement> & {
+    label?: string;
+  };
+
+export const NumericInput = ({
+  label,
+  className,
+  ...rest
+}: NumericInputProps) => (
+  <NumberInput.Root {...rest} className={clsx(rootClass, className)}>
+    {label && (
+      <NumberInput.Label className={labelClass}>{label}</NumberInput.Label>
+    )}
+    <NumberInput.Control className={controlClass}>
+      <NumberInput.Input className={inputClass} />
+      <div className={triggerGroupClass}>
+        <NumberInput.IncrementTrigger className={triggerUpClass}>
+          <Icon icon="fluent:chevron-up-16-regular" className={iconClass} />
+        </NumberInput.IncrementTrigger>
+        <NumberInput.DecrementTrigger className={triggerClass}>
+          <Icon icon="fluent:chevron-down-16-regular" className={iconClass} />
+        </NumberInput.DecrementTrigger>
+      </div>
+    </NumberInput.Control>
+  </NumberInput.Root>
+);

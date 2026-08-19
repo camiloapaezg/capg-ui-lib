@@ -14,6 +14,5 @@ export const SelectionBoxStory: Story = {
   args: {
     label: "Is checked",
     disabled: false,
-    checked: true,
   },
 };
