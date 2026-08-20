@@ -3,7 +3,7 @@ import { useMemo, type ButtonHTMLAttributes, type JSX } from "react";
 import {
   baseClass,
   ghostClass,
-  iconClass,
+  iconButtonBaseClass,
   outlineClass,
   primaryClass,
   secondaryClass,
@@ -39,7 +39,7 @@ export const Button = ({
   }, [appearance]);
 
   const iconButtonClass: string | undefined = useMemo(
-    () => (label ? undefined : iconClass),
+    () => (label ? undefined : iconButtonBaseClass),
     [label],
   );
 

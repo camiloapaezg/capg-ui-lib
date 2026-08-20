@@ -16,7 +16,6 @@ import {
   controlIndicatorClass,
   controlIndicatorsClass,
   controlTriggerClass,
-  iconClass,
   itemClass,
   itemGroupClass,
   itemGroupLabelClass,
@@ -27,6 +26,7 @@ import {
   valueTextClass,
 } from "./styles.css";
 import type { DropdownOption } from "./types";
+import { iconBaseClass } from "../../styles/common.css";
 
 type SelectControlProps = Select.ValueTextProps &
   React.RefAttributes<HTMLSpanElement>;
@@ -68,7 +68,10 @@ const SelectControl = ({ className, ...rest }: SelectControlProps) => {
             <Button
               appearance={ButtonAppearance.Ghost}
               icon={
-                <Icon icon="fluent:dismiss-16-regular" className={iconClass} />
+                <Icon
+                  icon="fluent:dismiss-16-regular"
+                  className={iconBaseClass}
+                />
               }
             />
           </Select.ClearTrigger>
@@ -76,7 +79,7 @@ const SelectControl = ({ className, ...rest }: SelectControlProps) => {
         <Select.Indicator className={controlIndicatorClass}>
           <Icon
             icon="fluent:chevron-up-down-16-regular"
-            className={iconClass}
+            className={iconBaseClass}
           />
         </Select.Indicator>
       </div>

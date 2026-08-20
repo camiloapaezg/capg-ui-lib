@@ -1,25 +1,27 @@
 import { style } from "@vanilla-extract/css";
-import { outlineOnFocusClass, disabledClass } from "../../styles/common.css";
+import {
+  outlineOnFocusClass,
+  disabledClass,
+  dataInvalidClass,
+} from "../../styles/common.css";
 import { themeColors } from "../../styles/theme";
 
 export const textInputClass = style([
   outlineOnFocusClass,
+  dataInvalidClass,
   disabledClass,
   {
     alignSelf: "stretch",
     background: "transparent",
-    minWidth: "0em",
+    minWidth: "0rem",
     width: "100%",
-    padding: "0.5em 0.75em",
+    padding: "0.5rem 0.75rem",
     border: `1px solid ${themeColors.brand.darker}`,
     borderRadius: "0.375rem",
     transition: "border-color 0.15s ease, box-shadow 0.15s ease",
     selectors: {
       "&::placeholder, &[data-placeholder-shown]": {
         color: themeColors.gray.g400,
-      },
-      "&[data-invalid]": {
-        borderColor: themeColors.semantic.error,
       },
     },
   },

@@ -5,7 +5,7 @@ import {
   backdropClass,
   contentClass,
   headerClass,
-  iconClass,
+  closeIconClass,
   positionerClass,
   titleClass,
 } from "./styles.css";
@@ -57,7 +57,7 @@ export const BasicDialog = ({
                   icon={
                     <Icon
                       icon="fluent:dismiss-16-regular"
-                      className={iconClass}
+                      className={closeIconClass}
                     />
                   }
                 />

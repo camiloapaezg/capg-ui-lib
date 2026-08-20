@@ -6,6 +6,7 @@ export * from "./Dropdown";
 export * from "./FormField";
 export * from "./NumericInput";
 export * from "./PaginationControl";
+export * from "./ProtectedInput";
 export * from "./RangeSlider";
 export * from "./SelectionBox";
 export * from "./TextArea";

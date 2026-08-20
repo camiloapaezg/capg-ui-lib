@@ -4,12 +4,12 @@ import clsx from "clsx";
 import {
   controlsClass,
   ellipsisClass,
-  iconClass,
   itemClass,
   itemsClass,
   rootClass,
 } from "./styles.css";
 import type { JSX } from "react";
+import { iconBaseClass } from "../../styles/common.css";
 
 export type PaginationControlProps = Pagination.RootProps &
   React.RefAttributes<HTMLElement> & {
@@ -45,7 +45,7 @@ export const PaginationControl = ({
               <Pagination.PrevTrigger className={itemClass}>
                 <Icon
                   icon="fluent:chevron-left-16-regular"
-                  className={iconClass}
+                  className={iconBaseClass}
                 />
               </Pagination.PrevTrigger>
               {pagination.pages.map((page, index) =>
@@ -66,7 +66,7 @@ export const PaginationControl = ({
               <Pagination.NextTrigger className={itemClass}>
                 <Icon
                   icon="fluent:chevron-right-16-regular"
-                  className={iconClass}
+                  className={iconBaseClass}
                 />
               </Pagination.NextTrigger>
             </div>

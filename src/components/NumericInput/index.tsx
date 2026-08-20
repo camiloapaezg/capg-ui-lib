@@ -1,15 +1,15 @@
 import { NumberInput } from "@ark-ui/react/number-input";
 import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
+import { iconBaseClass } from "../../styles/common.css";
 import {
   controlClass,
-  iconClass,
-  triggerUpClass,
   inputClass,
   labelClass,
   rootClass,
   triggerClass,
   triggerGroupClass,
+  triggerUpClass,
 } from "./styles.css";
 
 export type NumericInputProps = NumberInput.RootProps &
@@ -30,10 +30,13 @@ export const NumericInput = ({
       <NumberInput.Input className={inputClass} />
       <div className={triggerGroupClass}>
         <NumberInput.IncrementTrigger className={triggerUpClass}>
-          <Icon icon="fluent:chevron-up-16-regular" className={iconClass} />
+          <Icon icon="fluent:chevron-up-16-regular" className={iconBaseClass} />
         </NumberInput.IncrementTrigger>
         <NumberInput.DecrementTrigger className={triggerClass}>
-          <Icon icon="fluent:chevron-down-16-regular" className={iconClass} />
+          <Icon
+            icon="fluent:chevron-down-16-regular"
+            className={iconBaseClass}
+          />
         </NumberInput.DecrementTrigger>
       </div>
     </NumberInput.Control>

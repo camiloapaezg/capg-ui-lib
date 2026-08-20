@@ -19,3 +19,23 @@ export const disabledClass = style({
     },
   },
 });
+
+export const dataInvalidClass = style({
+  selectors: {
+    "&[data-invalid]": {
+      borderColor: themeColors.semantic.error,
+    },
+    "&[data-invalid]:focus": {
+      borderColor: themeColors.semantic.error,
+      boxShadow: `0 0 0 1px ${themeColors.semantic.error}`,
+    },
+  },
+});
+
+export const iconBaseClass = style({
+  fontSize: "1rem",
+  fontWeight: 500,
+  background: "transparent",
+  color: "inherit",
+  flexShrink: 0,
+});

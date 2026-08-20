@@ -61,11 +61,6 @@ export const itemClass = style([
   },
 ]);
 
-export const iconClass = style({
-  fontSize: "16px",
-  fontWeight: "500",
-});
-
 export const ellipsisClass = style({
   display: "inline-flex",
   alignItems: "center",

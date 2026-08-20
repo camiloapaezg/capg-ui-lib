@@ -1,7 +1,11 @@
 import { style } from "@vanilla-extract/css";
 import { fadeIn, fadeOut } from "../../styles/animations.css";
 import { themeColors, themeShadows } from "../../styles/theme";
-import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
+import {
+  disabledClass,
+  iconBaseClass,
+  outlineOnFocusClass,
+} from "../../styles/common.css";
 
 const borderRadius = "4px";
 
@@ -186,11 +190,12 @@ export const rangeTextClass = style({
   color: "inherit",
 });
 
-export const iconClass = style({
-  fontSize: "18px",
-  color: "inherit",
-  fontWeight: "inherit",
-});
+export const iconClass = style([
+  iconBaseClass,
+  {
+    fontSize: "1.25rem",
+  },
+]);
 
 export const tableClass = style({
   background: "white",

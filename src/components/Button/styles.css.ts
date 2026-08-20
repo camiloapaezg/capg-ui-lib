@@ -112,8 +112,8 @@ export const ghostClass = style([
   },
 ]);
 
-export const iconClass = style({
+export const iconButtonBaseClass = style({
   padding: 0,
-  width: "2em",
-  height: "2em",
+  width: "2rem",
+  height: "2rem",
 });

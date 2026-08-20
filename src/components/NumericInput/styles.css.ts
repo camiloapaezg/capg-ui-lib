@@ -82,10 +82,6 @@ export const triggerClass = style([
     ":active": {
       backgroundColor: themeColors.input.primary.active,
     },
-    ":disabled": {
-      backgroundColor: themeColors.gray.g400,
-      pointerEvents: "none",
-    },
   },
 ]);
 
@@ -95,9 +91,3 @@ export const triggerUpClass = style([
     borderBottom: `1px solid ${themeColors.brand.lighter}`,
   },
 ]);
-
-export const iconClass = style({
-  fontSize: "16px",
-  color: "inherit",
-  flexShrink: 0,
-});

@@ -61,13 +61,6 @@ export const controlIndicatorsClass = style({
   gap: "0.5em",
 });
 
-export const iconClass = style({
-  fontSize: "14px",
-  fontWeight: 500,
-  background: "transparent",
-  color: "inherit",
-});
-
 export const controlIndicatorClass = style({
   display: "flex",
   flexFlow: "column nowrap",

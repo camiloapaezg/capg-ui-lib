@@ -1,5 +1,9 @@
 import { style } from "@vanilla-extract/css";
-import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
+import {
+  dataInvalidClass,
+  disabledClass,
+  outlineOnFocusClass,
+} from "../../styles/common.css";
 import { themeColors } from "../../styles/theme";
 
 export const rootClass = style({
@@ -100,6 +104,7 @@ export const imagePreviewClass = style({
 
 export const dropZoneClass = style([
   disabledClass,
+  dataInvalidClass,
   outlineOnFocusClass,
   {
     alignSelf: "stretch",
@@ -124,9 +129,6 @@ export const dropZoneClass = style([
         background: themeColors.input.outline.active,
         borderColor: themeColors.brand.primary,
         borderStyle: "solid",
-      },
-      "&[data-invalid]": {
-        borderColor: themeColors.semantic.error,
       },
     },
   },

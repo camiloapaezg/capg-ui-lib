@@ -91,7 +91,7 @@ export const titleClass = style({
   flexGrow: 1,
 });
 
-export const iconClass = style({
+export const closeIconClass = style({
   fontSize: "14px",
   fontWeight: "500",
 });
