@@ -46,7 +46,7 @@ export const itemCompactClass = style({
   gap: "0.5em",
   padding: "0.5em 0.75em",
   background: themeColors.gray.g100,
-  borderRadius: "4px",
+  borderRadius: "0.375rem",
 });
 
 export const itemClass = style({
@@ -58,7 +58,7 @@ export const itemClass = style({
   padding: "0.75em",
   background: "transparent",
   border: `1px solid ${themeColors.gray.g700}`,
-  borderRadius: "4px",
+  borderRadius: "0.375rem",
   selectors: {
     "&[data-rejected]": {
       borderColor: themeColors.semantic.error,
@@ -95,7 +95,7 @@ export const imagePreviewClass = style({
   width: "2.5em",
   height: "2.5em",
   objectFit: "cover",
-  borderRadius: "4px",
+  borderRadius: "0.375rem",
 });
 
 export const dropZoneClass = style([
@@ -111,7 +111,7 @@ export const dropZoneClass = style([
     minHeight: "12em",
     padding: "1.5em",
     border: `2px dashed ${themeColors.gray.g700}`,
-    borderRadius: "4px",
+    borderRadius: "0.375rem",
     cursor: "pointer",
     textAlign: "center",
     transition: "background 150ms, border-color 150ms",

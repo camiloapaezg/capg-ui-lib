@@ -45,7 +45,7 @@ export const contentClass = style({
   position: "relative",
   outline: 0,
   padding: "0em 1em 1.5em 1.5em",
-  borderRadius: "4px",
+  borderRadius: "0.375rem",
   display: "flex",
   flexFlow: "column nowrap",
   justifyContent: "flex-start",

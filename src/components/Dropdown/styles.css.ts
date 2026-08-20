@@ -84,7 +84,7 @@ export const contentClass = style({
   flexFlow: "column nowrap",
   gap: "0.5em",
   backgroundColor: "white",
-  borderRadius: "4px",
+  borderRadius: "0.375rem",
   boxShadow: themeShadows.md,
   zIndex: `calc(50 + var(--layer-index, 0))`,
   overflowY: "auto",
@@ -94,10 +94,10 @@ export const contentClass = style({
     "&::-webkit-scrollbar": {
       width: "0.5em",
       background: themeColors.gray.g700,
-      borderRadius: "4px",
+      borderRadius: "0.375rem",
     },
     "&::-webkit-scrollbar-thumb": {
-      borderRadius: "4px",
+      borderRadius: "0.375rem",
     },
     "&[data-state='open']": {
       animation: `${scaleFadeIn} 0.15s ease-out`,
@@ -134,7 +134,7 @@ export const itemClass = style([
     justifyContent: "space-between",
     alignItems: "center",
     gap: "0.5em",
-    borderRadius: "4px",
+    borderRadius: "0.375rem",
     padding: "0.5em",
     userSelect: "none",
     cursor: "pointer",

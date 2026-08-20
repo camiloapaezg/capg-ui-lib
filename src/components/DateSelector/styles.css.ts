@@ -39,7 +39,7 @@ const chevronClass = style([
 const buttonClass = style([
   disabledClass,
   {
-    borderRadius: "4px",
+    borderRadius: "0.375rem",
     border: "none",
     outline: "none",
     cursor: "pointer",
@@ -86,7 +86,7 @@ export const multipleInputClass = style({
   minWidth: "8em",
   padding: "0.25em 0.5em",
   border: `1px solid ${themeColors.brand.darker}`,
-  borderRadius: "4px",
+  borderRadius: "0.375rem",
   transition: "border-color 0.15s ease, box-shadow 0.15s ease",
   display: "flex",
   flexFlow: "row wrap",
@@ -231,7 +231,7 @@ export const tableCellTriggerClass = style([
     outline: "none",
     userSelect: "none",
     ":enabled": {
-      borderRadius: "4px",
+      borderRadius: "0.375rem",
       background: "transparent",
       color: themeColors.brand.darker,
       cursor: "pointer",
@@ -281,7 +281,7 @@ export const selectedDateClass = style({
   flexFlow: "row nowrap",
   alignItems: "center",
   padding: "0.25em 0.5em",
-  borderRadius: "4px",
+  borderRadius: "0.375rem",
   fontSize: "12px",
   backgroundColor: themeColors.brand.primary,
   color: themeColors.brand.lighter,
@@ -291,7 +291,7 @@ export const selectedDateClass = style({
 export const removeButtonClass = style([
   disabledClass,
   {
-    borderRadius: "4px",
+    borderRadius: "0.375rem",
     display: "inline-flex",
     flexFlow: "row nowrap",
     justifyContent: "center",

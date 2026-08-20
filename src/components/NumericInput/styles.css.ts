@@ -50,13 +50,13 @@ export const inputClass = style([
 
 export const triggerGroupClass = style({
   position: "absolute",
-  top: "2px",
-  bottom: "2px",
-  right: "2px",
+  top: "1px",
+  bottom: "1px",
+  right: "1px",
   display: "flex",
   flexDirection: "column",
   width: "var(--stepper-width)",
-  borderLeft: `1px solid ${themeColors.brand.darker}`,
+  borderLeft: `1px solid ${themeColors.brand.lighter}`,
   borderRadius: "0 calc(0.375rem - 1px) calc(0.375rem - 1px) 0",
   overflow: "hidden",
   zIndex: 1,
@@ -71,13 +71,20 @@ export const triggerClass = style([
     justifyContent: "center",
     flex: 1,
     zIndex: 0,
-    color: themeColors.brand.primary,
-    backgroundColor: "transparent",
+    color: themeColors.brand.lighter,
+    backgroundColor: themeColors.brand.primary,
     border: "none",
     userSelect: "none",
     cursor: "pointer",
     ":hover": {
-      backgroundColor: themeColors.input.outline.hover,
+      backgroundColor: themeColors.input.primary.hover,
+    },
+    ":active": {
+      backgroundColor: themeColors.input.primary.active,
+    },
+    ":disabled": {
+      backgroundColor: themeColors.gray.g400,
+      pointerEvents: "none",
     },
   },
 ]);
@@ -85,7 +92,7 @@ export const triggerClass = style([
 export const triggerUpClass = style([
   triggerClass,
   {
-    borderBottom: `1px solid ${themeColors.brand.darker}`,
+    borderBottom: `1px solid ${themeColors.brand.lighter}`,
   },
 ]);
 

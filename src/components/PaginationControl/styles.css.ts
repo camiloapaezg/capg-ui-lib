@@ -9,12 +9,23 @@ export const rootClass = style({
   gap: "1rem",
   alignItems: "flex-start",
   maxWidth: "40rem",
+  width: "100%",
 });
 
 export const controlsClass = style({
   display: "flex",
   alignItems: "center",
   gap: "0.25rem",
+});
+
+export const itemsClass = style({
+  display: "flex",
+  flexFlow: "column nowrap",
+  justifyContent: "flex-start",
+  alignItems: "stretch",
+  gap: "0.25rem",
+  width: "100%",
+  overflowY: "auto",
 });
 
 export const itemClass = style([
@@ -36,6 +47,9 @@ export const itemClass = style([
     transition: "background 150ms, border-color 150ms, color 150ms",
     ":hover": {
       backgroundColor: themeColors.input.outline.hover,
+    },
+    ":active": {
+      backgroundColor: themeColors.input.outline.active,
     },
     selectors: {
       "&[data-selected]": {

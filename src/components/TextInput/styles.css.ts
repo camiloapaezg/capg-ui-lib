@@ -12,7 +12,7 @@ export const textInputClass = style([
     width: "100%",
     padding: "0.5em 0.75em",
     border: `1px solid ${themeColors.brand.darker}`,
-    borderRadius: "4px",
+    borderRadius: "0.375rem",
     transition: "border-color 0.15s ease, box-shadow 0.15s ease",
     selectors: {
       "&::placeholder, &[data-placeholder-shown]": {

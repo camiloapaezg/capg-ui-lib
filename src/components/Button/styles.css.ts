@@ -7,7 +7,7 @@ export const baseClass = style({
   minWidth: "2em",
   padding: "0.5em 1em",
   width: "fit-content",
-  borderRadius: "4px",
+  borderRadius: "0.375rem",
   cursor: "pointer",
   display: "inline-flex",
   flexFlow: "row nowrap",
