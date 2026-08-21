@@ -39,3 +39,9 @@ export const iconBaseClass = style({
   color: "inherit",
   flexShrink: 0,
 });
+
+export const labelBaseClass = style({
+  fontSize: "0.875rem",
+  lineHeight: "1.25rem",
+  fontWeight: 600,
+});

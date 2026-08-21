@@ -8,6 +8,8 @@ import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
 import type { JSX, PropsWithChildren } from "react";
 import React from "react";
+import { labelBaseClass } from "../../styles/common.css";
+import { textInputClass } from "../TextInput/styles.css";
 import {
   chevronLeftClass,
   chevronRightClass,
@@ -15,7 +17,6 @@ import {
   contentClass,
   controlClass,
   iconClass,
-  labelClass,
   multipleInputClass,
   placeholderClass,
   rangeTextClass,
@@ -33,7 +34,6 @@ import {
   viewClass,
   viewControlClass,
 } from "./styles.css";
-import { textInputClass } from "../TextInput/styles.css";
 
 type ViewControlProps = DatePicker.ViewControlProps &
   React.RefAttributes<HTMLDivElement>;
@@ -257,7 +257,7 @@ export const DateSelector = ({
       disabled={disabled}
       className={clsx(rootClass, className)}
     >
-      <DatePicker.Label className={labelClass}>{label}</DatePicker.Label>
+      <DatePicker.Label className={labelBaseClass}>{label}</DatePicker.Label>
       <DatePicker.Control className={controlClass}>
         <ViewInput selectionMode={selectionMode} />
         <DatePicker.Trigger className={triggerClass}>

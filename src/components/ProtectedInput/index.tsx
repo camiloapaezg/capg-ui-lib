@@ -1,12 +1,12 @@
 import { PasswordInput } from "@ark-ui/react";
 import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
+import { labelBaseClass } from "../../styles/common.css";
 import {
   controlClass,
   iconClass,
   indicatorClass,
   inputClass,
-  labelClass,
   rootClass,
   visibilityTriggerClass,
 } from "./styles.css";
@@ -24,7 +24,7 @@ export const ProtectedInput = ({
   return (
     <PasswordInput.Root {...rest} className={clsx(rootClass, className)}>
       {label && (
-        <PasswordInput.Label className={labelClass}>
+        <PasswordInput.Label className={labelBaseClass}>
           {label}
         </PasswordInput.Label>
       )}

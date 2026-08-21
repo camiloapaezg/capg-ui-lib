@@ -42,6 +42,7 @@ const ContextMenuStateful = ({ ...rest }: ContextMenuStatefulProps) => {
       value: "custom-item",
       onRenderItem: () => (
         <Button
+          role="menuitem"
           appearance={"Primary"}
           label="I am a button"
           style={{ width: "100%" }}
@@ -90,7 +91,7 @@ export const DateSelectorStory: Story = {
       <div
         style={{
           width: "100%",
-          height: "25em",
+          height: "25rem",
           background: "#f0f0f0",
           display: "flex",
           justifyContent: "center",

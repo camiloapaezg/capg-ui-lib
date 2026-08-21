@@ -2,6 +2,7 @@ import { style } from "@vanilla-extract/css";
 import {
   dataInvalidClass,
   disabledClass,
+  labelBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
 import { themeColors } from "../../styles/theme";
@@ -11,27 +12,19 @@ export const rootClass = style({
   flexFlow: "column nowrap",
   justifyContent: "flex-start",
   alignItems: "flex-start",
-  gap: "1em",
+  gap: "1rem",
   width: "100%",
-  maxWidth: "24em",
+  maxWidth: "24rem",
 });
 
-export const labelClass = style({
-  fontWeight: 600,
-  display: "flex",
-  selectors: {
-    "&[data-disabled]": {
-      opacity: 0.5,
-    },
-  },
-});
+export const labelClass = style([disabledClass, labelBaseClass]);
 
 export const closeIconClass = style({
-  fontSize: "16px",
+  fontSize: "1rem",
 });
 
 export const previewIconClass = style({
-  fontSize: "24px",
+  fontSize: "1.75rem",
   color: themeColors.gray.g600,
 });
 
@@ -39,7 +32,7 @@ export const itemGroupClass = style({
   display: "flex",
   flexFlow: "column nowrap",
   alignSelf: "stretch",
-  gap: "0.75em",
+  gap: "0.75rem",
   listStyle: "none",
 });
 
@@ -47,8 +40,8 @@ export const itemCompactClass = style({
   display: "flex",
   flexFlow: "row nowrap",
   alignItems: "center",
-  gap: "0.5em",
-  padding: "0.5em 0.75em",
+  gap: "0.5rem",
+  padding: "0.5rem 0.75rem",
   background: themeColors.gray.g100,
   borderRadius: "0.375rem",
 });
@@ -58,8 +51,8 @@ export const itemClass = style({
   gridTemplateColumns: "auto 1fr auto",
   gridTemplateAreas: "'preview name delete' 'preview size delete'",
   alignItems: "center",
-  columnGap: "0.75em",
-  padding: "0.75em",
+  columnGap: "0.75rem",
+  padding: "0.75rem",
   background: "transparent",
   border: `1px solid ${themeColors.gray.g700}`,
   borderRadius: "0.375rem",
@@ -96,8 +89,8 @@ export const filePreviewClass = style({
 });
 
 export const imagePreviewClass = style({
-  width: "2.5em",
-  height: "2.5em",
+  width: "2.5rem",
+  height: "2.5rem",
   objectFit: "cover",
   borderRadius: "0.375rem",
 });
@@ -112,9 +105,9 @@ export const dropZoneClass = style([
     flexFlow: "column nowrap",
     justifyContent: "center",
     alignItems: "center",
-    gap: "0.75em",
-    minHeight: "12em",
-    padding: "1.5em",
+    gap: "0.75rem",
+    minHeight: "12rem",
+    padding: "1.5rem",
     border: `2px dashed ${themeColors.gray.g700}`,
     borderRadius: "0.375rem",
     cursor: "pointer",
@@ -136,7 +129,7 @@ export const dropZoneClass = style([
 
 export const dropZoneIconClass = style({
   color: themeColors.gray.g700,
-  fontSize: "3em",
+  fontSize: "3rem",
 });
 
 export const dropZoneContentClass = style({
@@ -144,7 +137,7 @@ export const dropZoneContentClass = style({
   flexFlow: "column nowrap",
   justifyContent: "flex-start",
   alignItems: "center",
-  gap: "0.25em",
+  gap: "0.25rem",
 });
 
 export const dropZoneTitleClass = style({

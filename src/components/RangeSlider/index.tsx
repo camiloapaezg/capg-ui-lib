@@ -1,12 +1,13 @@
 import { Slider } from "@ark-ui/react/slider";
 import clsx from "clsx";
+import { useMemo } from "react";
+import { labelBaseClass } from "../../styles/common.css";
 import {
   contentHorizontalClass,
   contentVerticalClass,
   controlClass,
   headerHorizontalClass,
   headerVerticalClass,
-  labelClass,
   markerClass,
   markerGroupClass,
   rangeClass,
@@ -15,7 +16,6 @@ import {
   trackClass,
   valueTextClass,
 } from "./styles.css";
-import { useMemo } from "react";
 
 export type RangeSliderProps = Slider.RootProps &
   React.RefAttributes<HTMLDivElement> & {
@@ -49,7 +49,9 @@ export const RangeSlider = ({
       defaultValue={defaultValue}
     >
       <div className={headerClass}>
-        {label && <Slider.Label className={labelClass}>{label}</Slider.Label>}
+        {label && (
+          <Slider.Label className={labelBaseClass}>{label}</Slider.Label>
+        )}
         <Slider.ValueText className={valueTextClass} />
       </div>
       <div className={contentClass}>

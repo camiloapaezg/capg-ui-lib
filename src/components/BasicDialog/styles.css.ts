@@ -44,15 +44,15 @@ export const positionerClass = style({
 export const contentClass = style({
   position: "relative",
   outline: 0,
-  padding: "0em 1em 1.5em 1.5em",
+  padding: "0em 1em 1.5rem 1.5rem",
   borderRadius: "0.375rem",
   display: "flex",
   flexFlow: "column nowrap",
   justifyContent: "flex-start",
   alignItems: "flex-start",
-  width: "26em",
-  maxWidth: "calc(100vw - 10em)",
-  maxHeight: "calc(100vh - 10em)",
+  width: "35rem",
+  maxWidth: "calc(100vw - 10rem)",
+  maxHeight: "calc(100vh - 10rem)",
   backgroundColor: "white",
   boxShadow: themeShadows.xl,
   zIndex: "calc(50 + var(--layer-index, 0))",
@@ -81,17 +81,17 @@ export const headerClass = style({
   flexFlow: "row nowrap",
   justifyContent: "space-between",
   alignItems: "flex-start",
-  padding: "1.5em 0em 0.5em 0em",
+  padding: "1.5rem 0rem 0.5rem 0rem",
 });
 
 export const titleClass = style({
-  fontSize: "20px",
-  fontWeight: "600",
-  lineHeight: "1.75em",
+  fontSize: "1.25rem",
+  fontWeight: 600,
+  lineHeight: "1.75rem",
   flexGrow: 1,
 });
 
 export const closeIconClass = style({
-  fontSize: "14px",
-  fontWeight: "500",
+  fontSize: "0.875rem",
+  fontWeight: 500,
 });

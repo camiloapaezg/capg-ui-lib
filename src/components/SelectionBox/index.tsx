@@ -1,5 +1,6 @@
 import { Checkbox } from "@ark-ui/react/checkbox";
 import { Icon } from "@iconify-icon/react";
+import clsx from "clsx";
 import {
   controlClass,
   iconClass,
@@ -7,7 +8,6 @@ import {
   labelClass,
   rootClass,
 } from "./styles.css";
-import clsx from "clsx";
 
 export type SelectionBoxProps = Checkbox.RootProps &
   React.RefAttributes<HTMLLabelElement> & {

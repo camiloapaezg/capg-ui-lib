@@ -21,11 +21,6 @@ export const rootClass = style([
   },
 ]);
 
-export const labelClass = style({
-  lineHeight: "1.25rem",
-  fontWeight: 600,
-});
-
 export const controlClass = style({
   position: "relative",
   display: "flex",

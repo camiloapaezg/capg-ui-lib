@@ -12,12 +12,6 @@ export const rootClass = style({
   maxWidth: "24em",
 });
 
-export const labelClass = style({
-  fontWeight: 600,
-  userSelect: "none",
-  marginBottom: "0.25em",
-});
-
 export const controlClass = style({
   position: "relative",
   width: "100%",

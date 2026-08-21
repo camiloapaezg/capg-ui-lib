@@ -9,16 +9,12 @@ export const rootClass = style([
     flexFlow: "column nowrap",
     gap: "0.375em",
     width: "100%",
-    maxWidth: "12rem",
+    maxWidth: "20rem",
     vars: {
       "--stepper-width": "2rem",
     },
   },
 ]);
-
-export const labelClass = style({
-  fontWeight: 600,
-});
 
 export const controlClass = style({
   display: "flex",

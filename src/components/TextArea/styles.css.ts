@@ -4,8 +4,8 @@ import { textInputClass } from "../TextInput/styles.css";
 export const textAreaClass = style([
   textInputClass,
   {
-    minHeight: "5em",
+    minHeight: "5rem",
     resize: "vertical",
-    scrollPaddingBottom: "0.75em",
+    scrollPaddingBottom: "0.75rem",
   },
 ]);

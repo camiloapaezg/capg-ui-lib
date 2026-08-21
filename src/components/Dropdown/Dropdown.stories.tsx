@@ -52,7 +52,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 export const DropdownStory: Story = {
   args: {
-    label: "Label",
+    label: "Dropdown",
     options: { items },
     disabled: false,
     group: false,

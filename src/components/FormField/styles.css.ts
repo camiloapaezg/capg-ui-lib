@@ -9,9 +9,9 @@ export const rootClass = style([
     flexFlow: "column nowrap",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    gap: "0.25em",
+    gap: "0.25rem",
     width: "100%",
-    maxWidth: "24em",
+    maxWidth: "24rem",
     selectors: {
       "&[data-inline]": {
         width: "auto",
@@ -19,11 +19,6 @@ export const rootClass = style([
     },
   },
 ]);
-
-export const labelClass = style({
-  fontWeight: 600,
-  marginBottom: "0.25em",
-});
 
 export const errorTextClass = style({
   color: themeColors.semantic.error,

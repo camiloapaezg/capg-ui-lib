@@ -8,6 +8,7 @@ import {
 } from "@ark-ui/react/select";
 import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
+import { iconBaseClass, labelBaseClass } from "../../styles/common.css";
 import { Button } from "../Button";
 import { ButtonAppearance } from "../Button/types";
 import {
@@ -21,12 +22,10 @@ import {
   itemGroupLabelClass,
   itemIndicatorClass,
   itemTextClass,
-  labelClass,
   rootClass,
   valueTextClass,
 } from "./styles.css";
 import type { DropdownOption } from "./types";
-import { iconBaseClass } from "../../styles/common.css";
 
 type SelectControlProps = Select.ValueTextProps &
   React.RefAttributes<HTMLSpanElement>;
@@ -155,7 +154,7 @@ export const Dropdown = ({
       collection={collection}
       className={clsx(rootClass, className)}
     >
-      <Select.Label className={labelClass}>{label}</Select.Label>
+      <Select.Label className={labelBaseClass}>{label}</Select.Label>
       <SelectControl {...valueTextProps} />
       <Portal>
         <Select.Positioner>

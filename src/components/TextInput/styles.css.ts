@@ -1,8 +1,8 @@
 import { style } from "@vanilla-extract/css";
 import {
-  outlineOnFocusClass,
-  disabledClass,
   dataInvalidClass,
+  disabledClass,
+  outlineOnFocusClass,
 } from "../../styles/common.css";
 import { themeColors } from "../../styles/theme";
 
@@ -21,7 +21,7 @@ export const textInputClass = style([
     transition: "border-color 0.15s ease, box-shadow 0.15s ease",
     selectors: {
       "&::placeholder, &[data-placeholder-shown]": {
-        color: themeColors.gray.g400,
+        color: themeColors.gray.g600,
       },
     },
   },

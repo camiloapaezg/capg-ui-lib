@@ -7,8 +7,8 @@ export const contentClass = style({
   position: "relative",
   display: "flex",
   flexFlow: "column nowrap",
-  padding: "0.25em",
-  minWidth: "max(var(--reference-width), 10em)",
+  padding: "0.25rem",
+  minWidth: "max(var(--reference-width), 10rem)",
   background: "white",
   borderRadius: "0.375rem",
   border: `1px solid ${themeColors.brand.primary}`,
@@ -30,17 +30,17 @@ export const itemGroupClass = style({
   flexFlow: "column nowrap",
   selectors: {
     "& + &": {
-      marginTop: "0.5em",
+      marginTop: "0.5rem",
     },
   },
 });
 
 export const itemGroupLabelClass = style({
-  padding: "0.375em 0.5em",
+  padding: "0.375rem 0.5rem",
   fontWeight: 600,
   color: themeColors.gray.g700,
   textTransform: "uppercase",
-  letterSpacing: "0.025em",
+  letterSpacing: "0.025rem",
 });
 
 const itemClass = style([
@@ -50,13 +50,13 @@ const itemClass = style([
     flexFlow: "row nowrap",
     justifyContent: "flex-start",
     alignItems: "center",
-    gap: "0.5em",
+    gap: "0.5rem",
     borderRadius: "0.375rem",
     userSelect: "none",
     textDecoration: "none",
     cursor: "pointer",
-    minHeight: "2em",
-    paddingInline: "0.725em",
+    minHeight: "2rem",
+    paddingInline: "0.725rem",
     selectors: {
       "&[data-highlighted]": {
         backgroundColor: themeColors.input.ghost.hover,

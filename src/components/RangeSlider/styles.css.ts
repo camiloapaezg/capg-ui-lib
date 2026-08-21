@@ -5,12 +5,12 @@ import { themeColors, themeShadows } from "../../styles/theme";
 export const rootClass = style({
   display: "flex",
   flexFlow: "column nowrap",
-  gap: "0.5em",
+  gap: "0.5rem",
   width: "100%",
-  maxWidth: "24em",
+  maxWidth: "24rem",
   selectors: {
     "&[data-orientation='vertical']": {
-      height: "24em",
+      height: "24rem",
       maxWidth: "max-content",
     },
   },
@@ -29,25 +29,20 @@ export const headerHorizontalClass = style({
 export const headerVerticalClass = style({
   display: "flex",
   flexFlow: "column nowrap",
-  marginBottom: "0.25em",
+  marginBottom: "0.25rem",
 });
-
-export const labelClass = style([
-  valueTextClass,
-  { userSelect: "none", fontWeight: 600 },
-]);
 
 export const contentHorizontalClass = style({
   display: "flex",
   flexFlow: "column nowrap",
-  gap: "0.5em",
+  gap: "0.5rem",
   flex: 1,
 });
 
 export const contentVerticalClass = style({
   display: "flex",
   flexFlow: "row nowrap",
-  gap: "0.5em",
+  gap: "0.5rem",
   flex: 1,
 });
 
@@ -55,7 +50,7 @@ export const controlClass = style([
   disabledClass,
   {
     position: "relative",
-    height: "1.75em",
+    height: "1.75rem",
     display: "flex",
     flexFlow: "row nowrap",
     alignItems: "center",
@@ -63,7 +58,7 @@ export const controlClass = style([
       "&[data-orientation='vertical']": {
         flexFlow: "column nowrap",
         height: "100%",
-        width: "1.75em",
+        width: "1.75rem",
       },
     },
   },
@@ -71,7 +66,7 @@ export const controlClass = style([
 
 export const trackClass = style({
   flex: 1,
-  height: "0.325em",
+  height: "0.325rem",
   background: themeColors.gray.g400,
   borderRadius: "9999px",
   overflow: "hidden",
@@ -97,8 +92,8 @@ export const rangeClass = style({
 export const thumbClass = style([
   outlineOnFocusClass,
   {
-    width: "1.5em",
-    height: "1.5em",
+    width: "1.5rem",
+    height: "1.5rem",
     background: "white",
     border: `2px solid ${themeColors.brand.primary}`,
     borderRadius: "9999px",
@@ -114,13 +109,13 @@ export const thumbClass = style([
 export const markerGroupClass = style({
   display: "flex",
   flexFlow: "row nowrap",
-  marginTop: "0.5em",
+  marginTop: "0.5rem",
   selectors: {
     "&[data-orientation='vertical']": {
       flexFlow: "column nowrap",
       height: "100%",
       marginTop: 0,
-      marginInlineStart: "0.5em",
+      marginInlineStart: "0.5rem",
     },
   },
 });
@@ -134,18 +129,18 @@ export const markerClass = style({
       content: "''",
       display: "block",
       position: "absolute",
-      width: "0.25em",
-      height: "0.25em",
+      width: "0.25rem",
+      height: "0.25rem",
       background: themeColors.gray.g400,
       borderRadius: "9999px",
       transform: "translateX(-50%)",
     },
     "&[data-orientation='horizontal']::before": {
-      top: "-0.625em",
+      top: "-0.625rem",
       left: "50%",
     },
     "&[data-orientation='vertical']::before": {
-      left: "-0.625em",
+      left: "-0.625rem",
       top: "50%",
     },
     "&:is([data-state='under-value'], [data-state='at-value'])::before ": {

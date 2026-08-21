@@ -1,13 +1,13 @@
 import { style } from "@vanilla-extract/css";
 import { fadeIn, fadeOut } from "../../styles/animations.css";
-import { themeColors, themeShadows } from "../../styles/theme";
 import {
   disabledClass,
   iconBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
+import { themeColors, themeShadows } from "../../styles/theme";
 
-const borderRadius = "4px";
+const borderRadius = "0.375rem";
 
 const viewTriggerClass = style({
   cursor: "pointer",
@@ -33,7 +33,7 @@ const viewTriggerClass = style({
 const chevronClass = style([
   viewTriggerClass,
   {
-    width: "2em",
+    width: "2rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -43,7 +43,7 @@ const chevronClass = style([
 const buttonClass = style([
   disabledClass,
   {
-    borderRadius: "0.375rem",
+    borderRadius,
     border: "none",
     outline: "none",
     cursor: "pointer",
@@ -63,24 +63,19 @@ export const rootClass = style({
   display: "flex",
   flexFlow: "column nowrap",
   width: "100%",
-  maxWidth: "26em",
+  maxWidth: "26rem",
   position: "relative",
   boxSizing: "border-box",
-  rowGap: "0.5em",
+  rowGap: "0.5rem",
   color: "inherit",
-});
-
-export const labelClass = style({
-  userSelect: "none",
-  fontWeight: 600,
 });
 
 export const controlClass = style({
   display: "flex",
   flexFlow: "row nowrap",
   alignItems: "center",
-  columnGap: "0.5em",
-  minHeight: "2.5em",
+  columnGap: "0.5rem",
+  minHeight: "2.5rem",
   height: "fit-content",
   width: "100%",
 });
@@ -88,14 +83,14 @@ export const controlClass = style({
 export const multipleInputClass = style({
   alignSelf: "stretch",
   minWidth: "8em",
-  padding: "0.25em 0.5em",
+  padding: "0.25rem 0.5rem",
   border: `1px solid ${themeColors.brand.darker}`,
-  borderRadius: "0.375rem",
+  borderRadius,
   transition: "border-color 0.15s ease, box-shadow 0.15s ease",
   display: "flex",
   flexFlow: "row wrap",
   alignItems: "center",
-  gap: "0.25em",
+  gap: "0.25rem",
   flexGrow: 1,
 });
 
@@ -105,8 +100,8 @@ export const triggerClass = style([
     display: "inline-flex",
     justifyContent: "center",
     alignItems: "center",
-    width: "2.5em",
-    height: "2.5em",
+    width: "2.5rem",
+    height: "2.5rem",
     flexShrink: 0,
     transition: "background 0.15s ease, border-color 0.15s ease",
   },
@@ -116,8 +111,8 @@ export const triggerClass = style([
 export const clearTriggerClass = style([
   {
     border: `1px solid ${themeColors.gray.g700}`,
-    padding: "0.5em 1em",
-    height: "2.5em",
+    padding: "0.5rem 1rem",
+    height: "2.5rem",
   },
   buttonClass,
 ]);
@@ -126,8 +121,8 @@ export const contentClass = style({
   display: "flex",
   flexFlow: "column nowrap",
   alignItems: "stretch",
-  rowGap: "0.5em",
-  minWidth: "18em",
+  rowGap: "0.5rem",
+  minWidth: "18rem",
   background: themeColors.brand.primary,
   borderRadius: borderRadius,
   outline: "none",
@@ -161,7 +156,7 @@ export const viewControlClass = style({
   flexFlow: "row nowrap",
   justifyContent: "stretch",
   alignItems: "stretch",
-  height: "3em",
+  height: "3rem",
   background: "inherit",
 });
 
@@ -213,7 +208,7 @@ export const tableHeaderClass = style({
 });
 
 export const tableRowClass = style({
-  height: "2.5em",
+  height: "2.5rem",
 });
 
 export const tableCellClass = style({
@@ -225,9 +220,9 @@ export const tableCellTriggerClass = style([
   outlineOnFocusClass,
   disabledClass,
   {
-    height: "2.5em",
-    width: "3em",
-    marginBottom: "0.25em",
+    height: "2.5rem",
+    width: "3rem",
+    marginBottom: "0.25rem",
     display: "inline-flex",
     flexFlow: "row nowrap",
     justifyContent: "center",
@@ -236,7 +231,7 @@ export const tableCellTriggerClass = style([
     outline: "none",
     userSelect: "none",
     ":enabled": {
-      borderRadius: "0.375rem",
+      borderRadius,
       background: "transparent",
       color: themeColors.brand.darker,
       cursor: "pointer",
@@ -257,18 +252,18 @@ export const tableCellTriggerClass = style([
         fontWeight: 500,
       },
       "&[data-range-start]": {
-        borderTopLeftRadius: "4px",
-        borderBottomLeftRadius: "4px",
+        borderTopLeftRadius: borderRadius,
+        borderBottomLeftRadius: borderRadius,
       },
       "&[data-range-end]": {
-        borderTopRightRadius: "4px",
-        borderBottomRightRadius: "4px",
+        borderTopRightRadius: borderRadius,
+        borderBottomRightRadius: borderRadius,
       },
       "&[data-outside-range]": {
         opacity: 0.5,
       },
       "&[data-unavailable]": {
-        color: themeColors.gray.g400,
+        color: themeColors.gray.g600,
         textDecoration: "line-through",
         opacity: 0.4,
         cursor: "not-allowed",
@@ -278,30 +273,30 @@ export const tableCellTriggerClass = style([
 ]);
 
 export const placeholderClass = style({
-  color: themeColors.gray.g400,
+  color: themeColors.gray.g600,
 });
 
 export const selectedDateClass = style({
   display: "inline-flex",
   flexFlow: "row nowrap",
   alignItems: "center",
-  padding: "0.25em 0.5em",
-  borderRadius: "0.375rem",
+  padding: "0.25rem 0.5rem",
+  borderRadius,
   fontSize: "12px",
   backgroundColor: themeColors.brand.primary,
   color: themeColors.brand.lighter,
-  columnGap: "0.5em",
+  columnGap: "0.5rem",
 });
 
 export const removeButtonClass = style([
   disabledClass,
   {
-    borderRadius: "0.375rem",
+    borderRadius,
     display: "inline-flex",
     flexFlow: "row nowrap",
     justifyContent: "center",
     alignItems: "center",
-    padding: "0.25em",
+    padding: "0.25rem",
     cursor: "pointer",
     ":enabled": {
       background: "transparent",
@@ -317,6 +312,6 @@ export const removeButtonClass = style([
 
 export const removeIconClass = style({
   color: themeColors.brand.lighter,
-  fontSize: "10px",
+  fontSize: "0.75rem",
   background: "transparent",
 });

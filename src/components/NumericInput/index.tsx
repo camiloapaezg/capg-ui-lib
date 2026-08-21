@@ -1,11 +1,10 @@
 import { NumberInput } from "@ark-ui/react/number-input";
 import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
-import { iconBaseClass } from "../../styles/common.css";
+import { iconBaseClass, labelBaseClass } from "../../styles/common.css";
 import {
   controlClass,
   inputClass,
-  labelClass,
   rootClass,
   triggerClass,
   triggerGroupClass,
@@ -24,7 +23,7 @@ export const NumericInput = ({
 }: NumericInputProps) => (
   <NumberInput.Root {...rest} className={clsx(rootClass, className)}>
     {label && (
-      <NumberInput.Label className={labelClass}>{label}</NumberInput.Label>
+      <NumberInput.Label className={labelBaseClass}>{label}</NumberInput.Label>
     )}
     <NumberInput.Control className={controlClass}>
       <NumberInput.Input className={inputClass} />
