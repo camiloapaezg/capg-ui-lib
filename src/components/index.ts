@@ -1,5 +1,6 @@
 export * from "./BasicDialog";
 export * from "./Button";
+export * from "./CollapsibleSection";
 export * from "./ContextMenu";
 export * from "./DateSelector";
 export * from "./Dropdown";
