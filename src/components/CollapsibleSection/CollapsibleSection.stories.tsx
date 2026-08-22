@@ -12,6 +12,7 @@ const items: CollapsibleItem[] = [
     value: "getting-started",
     title: "How to get started?",
     content: "Install the package and import the components you need.",
+    disabled: true,
   },
   {
     value: "maintainers",

@@ -38,12 +38,14 @@ export const CollapsibleSection = ({
       className={clsx(rootClass, className)}
       orientation={orientation}
     >
-      {items.map(({ value, title, content, disabled }) => (
-        <Accordion.Item className={itemClass} key={value} value={value}>
-          <Accordion.ItemTrigger
-            className={itemTriggerClass}
-            disabled={disabled}
-          >
+      {items.map(({ value, title, content, ...rest }) => (
+        <Accordion.Item
+          {...rest}
+          className={itemClass}
+          key={value}
+          value={value}
+        >
+          <Accordion.ItemTrigger className={itemTriggerClass}>
             {title}
             <Accordion.ItemIndicator className={itemIndicatorClass}>
               <Icon icon={"fluent:chevron-down-16-regular"} />
