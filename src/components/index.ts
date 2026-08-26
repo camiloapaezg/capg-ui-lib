@@ -12,6 +12,7 @@ export * from "./ProgressIndicator";
 export * from "./ProtectedInput";
 export * from "./QRCode";
 export * from "./RangeSlider";
+export * from "./ScrollableArea";
 export * from "./SelectionBox";
 export * from "./TextArea";
 export * from "./TextInput";

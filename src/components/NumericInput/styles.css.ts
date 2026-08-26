@@ -11,7 +11,7 @@ export const rootClass = style([
     width: "100%",
     maxWidth: "20rem",
     vars: {
-      "--stepper-width": "2rem",
+      "--num-input-stepper-width": "2rem",
     },
   },
 ]);
@@ -29,7 +29,7 @@ export const inputClass = style([
   {
     width: "100%",
     height: "2.5rem",
-    paddingInline: "0.75rem calc(var(--stepper-width) + 0.5rem)",
+    paddingInline: "0.75rem calc(var(--num-input-stepper-width) + 0.5rem)",
     fontWeight: 500,
     fontVariantNumeric: "tabular-nums",
     backgroundColor: "transparent",
@@ -51,7 +51,7 @@ export const triggerGroupClass = style({
   right: "1px",
   display: "flex",
   flexDirection: "column",
-  width: "var(--stepper-width)",
+  width: "var(--num-input-stepper-width)",
   borderLeft: `1px solid ${themeColors.brand.lighter}`,
   borderRadius: "0 calc(0.375rem - 1px) calc(0.375rem - 1px) 0",
   overflow: "hidden",
