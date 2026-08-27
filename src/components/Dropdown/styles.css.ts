@@ -70,7 +70,7 @@ export const contentClass = style({
   display: "flex",
   flexFlow: "column nowrap",
   gap: "0.5em",
-  backgroundColor: "white",
+  backgroundColor: themeColors.gray.g100,
   borderRadius: "0.375rem",
   boxShadow: themeShadows.md,
   zIndex: `calc(50 + var(--layer-index, 0))`,
@@ -108,7 +108,7 @@ export const itemGroupClass = style({
 export const itemGroupLabelClass = style({
   padding: "0.25em 0.5em",
   fontWeight: 600,
-  color: themeColors.gray.g400,
+  color: themeColors.gray.g600,
   textTransform: "uppercase",
   letterSpacing: "0.025em",
 });

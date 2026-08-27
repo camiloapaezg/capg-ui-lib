@@ -57,6 +57,6 @@ export const labelClass = style({
 export const iconClass = style([
   iconBaseClass,
   {
-    color: themeColors.brand.lighter,
+    color: themeColors.gray.g100,
   },
 ]);

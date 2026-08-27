@@ -9,26 +9,25 @@ import { themeColors, themeShadows } from "../../styles/theme";
 
 const borderRadius = "0.375rem";
 
-const viewTriggerClass = style({
-  cursor: "pointer",
-  color: themeColors.brand.lighter,
-  fontWeight: 600,
-  outline: "none",
-  border: "none",
-  ":enabled": {
-    background: "transparent",
+const viewTriggerClass = style([
+  disabledClass,
+  {
+    cursor: "pointer",
+    color: themeColors.gray.g100,
+    fontWeight: 600,
+    outline: "none",
+    border: "none",
+    ":enabled": {
+      background: "transparent",
+    },
+    ":hover": {
+      backgroundColor: themeColors.input.primary.hover,
+    },
+    ":active": {
+      backgroundColor: themeColors.input.primary.active,
+    },
   },
-  ":hover": {
-    backgroundColor: themeColors.input.primary.hover,
-  },
-  ":active": {
-    backgroundColor: themeColors.input.primary.active,
-  },
-  ":disabled": {
-    backgroundColor: themeColors.gray.g400,
-    pointerEvents: "none",
-  },
-});
+]);
 
 const chevronClass = style([
   viewTriggerClass,
@@ -284,7 +283,7 @@ export const selectedDateClass = style({
   borderRadius,
   fontSize: "12px",
   backgroundColor: themeColors.brand.primary,
-  color: themeColors.brand.lighter,
+  color: themeColors.gray.g100,
   columnGap: "0.5rem",
 });
 
@@ -311,7 +310,7 @@ export const removeButtonClass = style([
 ]);
 
 export const removeIconClass = style({
-  color: themeColors.brand.lighter,
+  color: themeColors.gray.g100,
   fontSize: "0.75rem",
   background: "transparent",
 });

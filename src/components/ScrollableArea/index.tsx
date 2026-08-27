@@ -14,7 +14,7 @@ import {
 
 export type ScrollableAreaProps = ScrollArea.RootProps &
   React.RefAttributes<HTMLDivElement> & {
-    orientation: Orientation;
+    orientation?: Orientation;
   };
 
 export const ScrollableArea = ({

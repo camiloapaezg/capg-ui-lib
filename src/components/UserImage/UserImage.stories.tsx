@@ -24,9 +24,5 @@ export const UserImageStory: Story = {
       src: "https://i.pravatar.cc/3000?u=ass",
       alt: "avatar",
     },
-    style: {
-      width: "5rem",
-      height: "5rem",
-    },
   },
 };

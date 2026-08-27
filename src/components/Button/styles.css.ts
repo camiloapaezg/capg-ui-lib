@@ -19,7 +19,7 @@ export const baseClass = style({
 export const primaryClass = style([
   baseClass,
   {
-    color: themeColors.brand.lighter,
+    color: themeColors.gray.g100,
     border: "1px solid",
     ":enabled": {
       backgroundColor: themeColors.brand.primary,
@@ -44,7 +44,7 @@ export const primaryClass = style([
 export const secondaryClass = style([
   baseClass,
   {
-    color: themeColors.brand.lighter,
+    color: themeColors.gray.g100,
     border: "1px solid",
     ":enabled": {
       backgroundColor: themeColors.brand.light,
@@ -82,7 +82,7 @@ export const outlineClass = style([
       backgroundColor: themeColors.input.outline.active,
     },
     ":disabled": {
-      color: themeColors.gray.g400,
+      color: themeColors.gray.g600,
       background: "transparent",
       borderColor: themeColors.input.outline.disabled,
       pointerEvents: "none",

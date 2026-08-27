@@ -217,6 +217,7 @@ const ViewInput = ({ selectionMode }: ViewInputProps) => {
                   <span key={index} className={selectedDateClass}>
                     {formatWithDay(date)}
                     <button
+                      aria-label={date.toString()}
                       className={removeButtonClass}
                       onClick={() =>
                         context.setValue(
@@ -273,8 +274,11 @@ export const DateSelector = ({
       <Portal>
         <DatePicker.Positioner>
           <DatePicker.Content className={contentClass}>
-            {["day", "month", "year"].map((view) => (
-              <View view={view as DatePicker.DateView} />
+            {["day", "month", "year"].map((view, index) => (
+              <View
+                key={`${view}-${index}`}
+                view={view as DatePicker.DateView}
+              />
             ))}
           </DatePicker.Content>
         </DatePicker.Positioner>

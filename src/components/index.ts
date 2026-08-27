@@ -14,6 +14,7 @@ export * from "./QRCode";
 export * from "./RangeSlider";
 export * from "./ScrollableArea";
 export * from "./SelectionBox";
+export * from "./Stepper";
 export * from "./TextArea";
 export * from "./TextInput";
 export * from "./UploadFile";

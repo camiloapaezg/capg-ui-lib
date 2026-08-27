@@ -23,7 +23,7 @@ export const imageClass = style({
 });
 
 export const fallbackClass = style({
-  color: themeColors.brand.lighter,
+  color: themeColors.gray.g100,
   borderRadius: "inherit",
   lineHeight: 1,
   textTransform: "uppercase",

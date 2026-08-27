@@ -5,7 +5,7 @@ import {
   scaleFadeIn,
   scaleFadeOut,
 } from "../../styles/animations.css";
-import { themeShadows } from "../../styles/theme";
+import { themeColors, themeShadows } from "../../styles/theme";
 
 export const rootClass = style({
   position: "relative",
@@ -53,7 +53,7 @@ export const contentClass = style({
   width: "35rem",
   maxWidth: "calc(100vw - 10rem)",
   maxHeight: "calc(100vh - 10rem)",
-  backgroundColor: "white",
+  backgroundColor: themeColors.gray.g100,
   boxShadow: themeShadows.xl,
   zIndex: "calc(50 + var(--layer-index, 0))",
   transition: "transform 0.1s ease-in-out",
@@ -72,7 +72,7 @@ export const contentClass = style({
 
 export const headerClass = style({
   position: "sticky",
-  backgroundColor: "white",
+  backgroundColor: themeColors.gray.g100,
   top: 0,
   left: 0,
   right: 0,

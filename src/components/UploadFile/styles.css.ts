@@ -76,7 +76,6 @@ export const itemNameClass = style({
 
 export const itemSizeTextClass = style({
   gridArea: "size",
-  color: themeColors.gray.g700,
 });
 
 export const filePreviewClass = style({
@@ -128,7 +127,6 @@ export const dropZoneClass = style([
 ]);
 
 export const dropZoneIconClass = style({
-  color: themeColors.gray.g700,
   fontSize: "3rem",
 });
 
@@ -146,5 +144,4 @@ export const dropZoneTitleClass = style({
 
 export const dropZoneDescriptionClass = style({
   fontWeight: 400,
-  color: themeColors.gray.g700,
 });

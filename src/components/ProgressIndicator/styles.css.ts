@@ -82,7 +82,6 @@ export const circleTextClass = style({
   position: "absolute",
   fontSize: "calc(var(--size) * 0.25)",
   fontWeight: 500,
-  color: themeColors.brand.darker,
 });
 
 export const linearRootClass = style({

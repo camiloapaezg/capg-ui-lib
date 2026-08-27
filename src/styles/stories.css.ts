@@ -7,7 +7,7 @@ globalStyle("*", {
   outline: "none",
   fontWeight: 400,
   lineHeight: 1.5,
-  color: themeColors.brand.darker,
+  color: themeColors.gray.g700,
   background: "transparent",
   fontFamily: "Arial, Helvetica, sans-serif",
   fontSize: "14px",

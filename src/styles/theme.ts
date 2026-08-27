@@ -4,7 +4,7 @@ export const themeColors = {
     dark: "#16304d",
     darker: "#0a0a0a",
     light: "#5b8c2f",
-    lighter: "#f1f5f9",
+    lighter: "#e6f2ff",
   },
   input: {
     primary: {
@@ -16,7 +16,7 @@ export const themeColors = {
       active: "#3b5b1e",
     },
     outline: {
-      hover: "#e5f2ff",
+      hover: "#e6f2ff",
       active: "#cce4ff",
       disabled: "#e2e8f0",
     },

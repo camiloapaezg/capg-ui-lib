@@ -53,7 +53,7 @@ export const itemClass = style([
     },
     selectors: {
       "&[data-selected]": {
-        color: themeColors.brand.lighter,
+        color: themeColors.gray.g100,
         backgroundColor: themeColors.brand.primary,
         borderColor: themeColors.brand.primary,
       },

@@ -52,7 +52,7 @@ export const triggerGroupClass = style({
   display: "flex",
   flexDirection: "column",
   width: "var(--num-input-stepper-width)",
-  borderLeft: `1px solid ${themeColors.brand.lighter}`,
+  borderLeft: `1px solid ${themeColors.gray.g100}`,
   borderRadius: "0 calc(0.375rem - 1px) calc(0.375rem - 1px) 0",
   overflow: "hidden",
   zIndex: 1,
@@ -67,7 +67,7 @@ export const triggerClass = style([
     justifyContent: "center",
     flex: 1,
     zIndex: 0,
-    color: themeColors.brand.lighter,
+    color: themeColors.gray.g100,
     backgroundColor: themeColors.brand.primary,
     border: "none",
     userSelect: "none",
@@ -84,6 +84,6 @@ export const triggerClass = style([
 export const triggerUpClass = style([
   triggerClass,
   {
-    borderBottom: `1px solid ${themeColors.brand.lighter}`,
+    borderBottom: `1px solid ${themeColors.gray.g100}`,
   },
 ]);
