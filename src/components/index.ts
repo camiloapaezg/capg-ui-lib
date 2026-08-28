@@ -17,5 +17,6 @@ export * from "./SelectionBox";
 export * from "./Stepper";
 export * from "./TextArea";
 export * from "./TextInput";
+export * from "./Toggle";
 export * from "./UploadFile";
 export * from "./UserImage";
