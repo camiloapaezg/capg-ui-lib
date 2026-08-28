@@ -1,5 +1,6 @@
 import { globalStyle } from "@vanilla-extract/css";
 import { themeColors } from "./theme";
+
 globalStyle("*", {
   margin: 0,
   padding: 0,

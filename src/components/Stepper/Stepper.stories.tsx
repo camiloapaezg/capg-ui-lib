@@ -12,7 +12,7 @@ const Container = ({
     <article
       {...rest}
       style={{
-        height: "15rem",
+        height: "100%",
         width: "100%",
         padding: "1rem",
         fontSize: "0.875rem",
@@ -53,6 +53,15 @@ const items: StepperItem[] = [
     content: (
       <Container>
         <span>{"This is the third step."}</span>
+      </Container>
+    ),
+  },
+  {
+    value: "fourth",
+    title: "Fourth",
+    content: (
+      <Container>
+        <span>{"This is the fourth step."}</span>
       </Container>
     ),
   },

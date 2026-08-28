@@ -15,6 +15,7 @@ export * from "./RangeSlider";
 export * from "./ScrollableArea";
 export * from "./SelectionBox";
 export * from "./Stepper";
+export * from "./TabsGroup";
 export * from "./TextArea";
 export * from "./TextInput";
 export * from "./Toggle";
