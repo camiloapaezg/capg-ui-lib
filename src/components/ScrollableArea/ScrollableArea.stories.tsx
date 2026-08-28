@@ -46,6 +46,12 @@ const meta = {
   component: Content,
   tags: ["autodocs"],
   argTypes: {
+    orientation: {
+      options: ["horizontal", "vertical", undefined],
+      control: {
+        type: "select",
+      },
+    },
     style: {
       control: {
         disable: true,
@@ -59,6 +65,7 @@ type Story = StoryObj<typeof meta>;
 
 export const ScrollableAreaStory: Story = {
   args: {
+    orientation: undefined,
     style: {
       width: "20vw",
       height: "20vw",
