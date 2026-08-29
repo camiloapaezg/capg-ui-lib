@@ -10,6 +10,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import { playwright } from "@vitest/browser-playwright";
+
 const dirname =
   import.meta.dirname ?? path.dirname(fileURLToPath(import.meta.url));
 
@@ -20,12 +21,14 @@ export default defineConfig({
     vanillaExtractPlugin(),
     dts({
       tsconfigPath: "tsconfig.app.json",
+      exclude: ["**/*.stories.tsx"],
     }),
   ],
   build: {
     lib: {
       entry: resolve(dirname, "src/main.ts"),
-      formats: ["es"],
+      name: "main",
+      fileName: "main",
     },
     rollupOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
