@@ -1,7 +1,7 @@
 import { keyframes, style } from "@vanilla-extract/css";
 import { fadeIn, fadeOut } from "../../styles/animations.css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 const expandHeight = keyframes({
   from: {
@@ -42,8 +42,8 @@ const collapseHeight = keyframes({
 export const rootClass = style({
   display: "flex",
   vars: {
-    "--px": "0.625rem",
-    "--py": "0.625rem",
+    "--padding-x": "0.625rem",
+    "--padding-y": "0.625rem",
   },
   selectors: {
     "&[data-orientation='horizontal']": {
@@ -64,11 +64,11 @@ export const itemClass = style({
   selectors: {
     "&[data-orientation='vertical']": {
       display: "block",
-      borderBottom: `1px solid ${themeColors.gray.g400}`,
+      borderBottom: `1px solid ${colors.border.default}`,
     },
     "&[data-orientation='horizontal'] ": {
       display: "flex",
-      borderInlineEnd: `1px solid ${themeColors.gray.g600}`,
+      borderInlineEnd: `1px solid ${colors.border.default}`,
     },
   },
 });
@@ -81,7 +81,7 @@ export const itemTriggerClass = style([
     justifyContent: "space-between",
     alignItems: "center",
     gap: "0.75rem",
-    paddingInline: "var(--px)",
+    paddingInline: "var(--padding-x)",
     fontWeight: 600,
     textAlign: "start",
     borderRadius: "0.375rem",
@@ -152,8 +152,8 @@ export const itemContentClass = style({
 });
 
 export const itemBodyClass = style({
-  paddingInline: "var(--px)",
-  paddingBottom: "var(--py)",
+  paddingInline: "var(--padding-x)",
+  paddingBottom: "var(--padding-y)",
 });
 
 export const bodyCenteredClass = style({

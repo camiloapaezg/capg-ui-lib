@@ -5,7 +5,7 @@ import {
   labelBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 export const rootClass = style({
   display: "flex",
@@ -21,11 +21,17 @@ export const labelClass = style([disabledClass, labelBaseClass]);
 
 export const closeIconClass = style({
   fontSize: "1rem",
+  ":hover": {
+    color: colors.primary.default,
+  },
+  ":active": {
+    background: colors.surface.light,
+  },
 });
 
 export const previewIconClass = style({
   fontSize: "1.75rem",
-  color: themeColors.gray.g600,
+  color: colors.text.secondary,
 });
 
 export const itemGroupClass = style({
@@ -42,7 +48,7 @@ export const itemCompactClass = style({
   alignItems: "center",
   gap: "0.5rem",
   padding: "0.5rem 0.75rem",
-  background: themeColors.gray.g100,
+  background: colors.surface.default,
   borderRadius: "0.375rem",
 });
 
@@ -54,12 +60,12 @@ export const itemClass = style({
   columnGap: "0.75rem",
   padding: "0.75rem",
   background: "transparent",
-  border: `1px solid ${themeColors.gray.g700}`,
+  border: `1px solid ${colors.border.default}`,
   borderRadius: "0.375rem",
   selectors: {
     "&[data-rejected]": {
-      borderColor: themeColors.semantic.error,
-      color: themeColors.semantic.error,
+      borderColor: colors.semantic.error,
+      color: colors.semantic.error,
     },
   },
 });
@@ -107,19 +113,19 @@ export const dropZoneClass = style([
     gap: "0.75rem",
     minHeight: "12rem",
     padding: "1.5rem",
-    border: `2px dashed ${themeColors.gray.g700}`,
+    border: `2px dashed ${colors.text.secondary}`,
     borderRadius: "0.375rem",
     cursor: "pointer",
     textAlign: "center",
     transition: "background 150ms, border-color 150ms",
-    color: themeColors.brand.primary,
+    color: colors.primary.default,
     ":hover": {
-      backgroundColor: themeColors.input.outline.hover,
+      backgroundColor: colors.surface.light,
     },
     selectors: {
       "&[data-dragging]": {
-        background: themeColors.input.outline.active,
-        borderColor: themeColors.brand.primary,
+        background: colors.surface.light,
+        borderColor: colors.primary.default,
         borderStyle: "solid",
       },
     },

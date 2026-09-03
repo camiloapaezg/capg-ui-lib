@@ -1,20 +1,34 @@
 import { style } from "@vanilla-extract/css";
-import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
-import { themeColors, themeShadows } from "../../styles/theme";
+import {
+  disabledClass,
+  labelBaseClass,
+  outlineOnFocusClass,
+} from "../../styles/common.css";
+import { colors, shadows } from "../../styles/theme.css";
 
-export const rootClass = style({
-  display: "flex",
-  flexFlow: "column nowrap",
-  gap: "0.5rem",
-  width: "100%",
-  maxWidth: "24rem",
-  selectors: {
-    "&[data-orientation='vertical']": {
-      height: "24rem",
-      maxWidth: "max-content",
+export const rootClass = style([
+  disabledClass,
+  {
+    display: "flex",
+    flexFlow: "column nowrap",
+    gap: "0.5rem",
+    width: "100%",
+    maxWidth: "24rem",
+    selectors: {
+      "&[data-orientation='vertical']": {
+        height: "24rem",
+        maxWidth: "max-content",
+      },
     },
   },
-});
+]);
+
+export const labelClass = style([
+  labelBaseClass,
+  {
+    margin: "0rem",
+  },
+]);
 
 export const valueTextClass = style({
   fontWeight: 500,
@@ -67,7 +81,7 @@ export const controlClass = style([
 export const trackClass = style({
   flex: 1,
   height: "0.325rem",
-  background: themeColors.gray.g400,
+  background: colors.surface.light,
   borderRadius: "9999px",
   overflow: "hidden",
   selectors: {
@@ -80,7 +94,7 @@ export const trackClass = style({
 
 export const rangeClass = style({
   height: "100%",
-  background: themeColors.brand.primary,
+  background: colors.primary.default,
   borderRadius: "9999px",
   selectors: {
     "&[data-orientation='vertical']": {
@@ -95,9 +109,9 @@ export const thumbClass = style([
     width: "1.5rem",
     height: "1.5rem",
     background: "white",
-    border: `2px solid ${themeColors.brand.primary}`,
+    border: `2px solid ${colors.border.default}`,
     borderRadius: "9999px",
-    boxShadow: themeShadows.xs,
+    boxShadow: shadows.xs,
     transition: "box-shadow 0.15s ease, transform 0.1s ease",
     cursor: "grab",
     ":active": {
@@ -123,7 +137,7 @@ export const markerGroupClass = style({
 export const markerClass = style({
   position: "relative",
   lineHeight: "1rem",
-  color: themeColors.brand.primary,
+  color: colors.primary.default,
   selectors: {
     "&::before": {
       content: "''",
@@ -131,7 +145,7 @@ export const markerClass = style({
       position: "absolute",
       width: "0.25rem",
       height: "0.25rem",
-      background: themeColors.gray.g400,
+      background: colors.surface.light,
       borderRadius: "9999px",
       transform: "translateX(-50%)",
     },
@@ -144,7 +158,7 @@ export const markerClass = style({
       top: "50%",
     },
     "&:is([data-state='under-value'], [data-state='at-value'])::before ": {
-      background: themeColors.brand.primary,
+      background: colors.primary.default,
     },
   },
 });

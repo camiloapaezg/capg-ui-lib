@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { HTMLAttributes, PropsWithChildren } from "react";
 import { Stepper } from ".";
-import { themeColors } from "../../styles/theme";
 import type { StepperItem } from "./types";
+import { colors } from "../../styles/theme.css";
 
 const Container = ({
   children,
@@ -17,10 +17,11 @@ const Container = ({
         padding: "1rem",
         fontSize: "0.875rem",
         borderRadius: "0.5rem",
-        background: themeColors.brand.lighter,
+        background: colors.surface.light,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        minHeight: "10rem",
       }}
     >
       {children}
@@ -65,6 +66,15 @@ const items: StepperItem[] = [
       </Container>
     ),
   },
+  {
+    value: "fifth",
+    title: "fifth",
+    content: (
+      <Container>
+        <span>{"This is the fifth step."}</span>
+      </Container>
+    ),
+  },
 ];
 
 const meta = {
@@ -96,7 +106,7 @@ type Story = StoryObj<typeof meta>;
 export const StepperStory: Story = {
   args: {
     items,
-    orientation: "vertical",
+    orientation: "horizontal",
     completedContent: (
       <Container>
         <span>{"Steps completed - Thank you!"}</span>

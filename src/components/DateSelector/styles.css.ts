@@ -5,7 +5,7 @@ import {
   iconBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { themeColors, themeShadows } from "../../styles/theme";
+import { colors, shadows } from "../../styles/theme.css";
 
 const borderRadius = "0.375rem";
 
@@ -13,18 +13,16 @@ const viewTriggerClass = style([
   disabledClass,
   {
     cursor: "pointer",
-    color: themeColors.gray.g100,
+    color: colors.primary.lighter,
     fontWeight: 600,
-    outline: "none",
-    border: "none",
     ":enabled": {
       background: "transparent",
     },
     ":hover": {
-      backgroundColor: themeColors.input.primary.hover,
+      backgroundColor: colors.primary.darker,
     },
     ":active": {
-      backgroundColor: themeColors.input.primary.active,
+      backgroundColor: colors.primary.dark,
     },
   },
 ]);
@@ -43,31 +41,29 @@ const buttonClass = style([
   disabledClass,
   {
     borderRadius,
-    border: "none",
-    outline: "none",
     cursor: "pointer",
     background: "transparent",
     ":hover": {
-      borderColor: themeColors.brand.darker,
-      backgroundColor: themeColors.input.ghost.hover,
+      color: colors.primary.default,
     },
     ":active": {
-      borderColor: themeColors.brand.darker,
-      backgroundColor: themeColors.input.ghost.active,
+      backgroundColor: colors.surface.light,
     },
   },
 ]);
 
-export const rootClass = style({
-  display: "flex",
-  flexFlow: "column nowrap",
-  width: "100%",
-  maxWidth: "26rem",
-  position: "relative",
-  boxSizing: "border-box",
-  rowGap: "0.5rem",
-  color: "inherit",
-});
+export const rootClass = style([
+  disabledClass,
+  {
+    display: "flex",
+    flexFlow: "column nowrap",
+    width: "100%",
+    maxWidth: "26rem",
+    position: "relative",
+    rowGap: "0.5rem",
+    color: "inherit",
+  },
+]);
 
 export const controlClass = style({
   display: "flex",
@@ -81,9 +77,9 @@ export const controlClass = style({
 
 export const multipleInputClass = style({
   alignSelf: "stretch",
-  minWidth: "8em",
+  minWidth: "8rem",
   padding: "0.25rem 0.5rem",
-  border: `1px solid ${themeColors.brand.darker}`,
+  border: `1px solid ${colors.border.strong}`,
   borderRadius,
   transition: "border-color 0.15s ease, box-shadow 0.15s ease",
   display: "flex",
@@ -95,7 +91,7 @@ export const multipleInputClass = style({
 
 export const triggerClass = style([
   {
-    border: `1px solid ${themeColors.gray.g700}`,
+    border: `1px solid ${colors.border.strong}`,
     display: "inline-flex",
     justifyContent: "center",
     alignItems: "center",
@@ -109,7 +105,7 @@ export const triggerClass = style([
 
 export const clearTriggerClass = style([
   {
-    border: `1px solid ${themeColors.gray.g700}`,
+    border: `1px solid ${colors.border.strong}`,
     padding: "0.5rem 1rem",
     height: "2.5rem",
   },
@@ -122,12 +118,12 @@ export const contentClass = style({
   alignItems: "stretch",
   rowGap: "0.5rem",
   minWidth: "18rem",
-  background: themeColors.brand.primary,
+  background: colors.primary.default,
   borderRadius: borderRadius,
   outline: "none",
-  border: `1px solid ${themeColors.brand.primary}`,
+  border: `1px solid ${colors.primary.default}`,
   zIndex: "calc(50 + var(--layer-index, 0))",
-  boxShadow: themeShadows.md,
+  boxShadow: shadows.md,
   selectors: {
     "&[data-state='open']": {
       animation: `${fadeIn} 0.2s ease-out`,
@@ -192,7 +188,7 @@ export const iconClass = style([
 ]);
 
 export const tableClass = style({
-  background: "white",
+  background: colors.surface.default,
   padding: "0.5em",
   borderRadius: `0px 0px ${borderRadius} ${borderRadius} `,
   borderCollapse: "separate",
@@ -200,7 +196,7 @@ export const tableClass = style({
 });
 
 export const tableHeaderClass = style({
-  color: themeColors.gray.g600,
+  color: colors.border.default,
   fontWeight: 500,
   textAlign: "center",
   textTransform: "uppercase",
@@ -232,22 +228,21 @@ export const tableCellTriggerClass = style([
     ":enabled": {
       borderRadius,
       background: "transparent",
-      color: themeColors.brand.darker,
       cursor: "pointer",
     },
     selectors: {
       "&[data-today]": {
         fontWeight: 600,
-        color: themeColors.brand.primary,
+        color: colors.primary.default,
       },
       "&[data-in-range]": {
-        backgroundColor: themeColors.input.outline.hover,
-        color: themeColors.brand.primary,
+        backgroundColor: colors.surface.light,
+        color: colors.primary.default,
         borderRadius: 0,
       },
       "&[data-selected],&[data-range-start],&[data-range-end]": {
-        backgroundColor: themeColors.brand.primary,
-        color: themeColors.brand.lighter,
+        backgroundColor: colors.primary.default,
+        color: colors.primary.lighter,
         fontWeight: 500,
       },
       "&[data-range-start]": {
@@ -262,7 +257,7 @@ export const tableCellTriggerClass = style([
         opacity: 0.5,
       },
       "&[data-unavailable]": {
-        color: themeColors.gray.g600,
+        color: colors.text.secondary,
         textDecoration: "line-through",
         opacity: 0.4,
         cursor: "not-allowed",
@@ -272,7 +267,7 @@ export const tableCellTriggerClass = style([
 ]);
 
 export const placeholderClass = style({
-  color: themeColors.gray.g600,
+  color: colors.text.secondary,
 });
 
 export const selectedDateClass = style({
@@ -282,8 +277,8 @@ export const selectedDateClass = style({
   padding: "0.25rem 0.5rem",
   borderRadius,
   fontSize: "12px",
-  backgroundColor: themeColors.brand.primary,
-  color: themeColors.gray.g100,
+  backgroundColor: colors.primary.default,
+  color: colors.primary.lighter,
   columnGap: "0.5rem",
 });
 
@@ -301,16 +296,16 @@ export const removeButtonClass = style([
       background: "transparent",
     },
     ":hover": {
-      backgroundColor: themeColors.input.primary.hover,
+      backgroundColor: colors.primary.darker,
     },
     ":active": {
-      backgroundColor: themeColors.input.primary.active,
+      backgroundColor: colors.primary.dark,
     },
   },
 ]);
 
 export const removeIconClass = style({
-  color: themeColors.gray.g100,
+  color: colors.primary.lighter,
   fontSize: "0.75rem",
   background: "transparent",
 });

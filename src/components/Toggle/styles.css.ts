@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
-import { themeColors, themeShadows } from "../../styles/theme";
+import { colors, shadows } from "../../styles/theme.css";
 
 export const rootClass = style([
   disabledClass,
@@ -18,7 +18,7 @@ export const controlClass = style([
     width: "2.5rem",
     height: "1.5rem",
     padding: "0.125rem",
-    background: themeColors.gray.g400,
+    background: colors.border.default,
     borderRadius: "9999px",
     cursor: "pointer",
     display: "inline-flex",
@@ -27,7 +27,7 @@ export const controlClass = style([
     transition: "background-color 0.15s ease, box-shadow 0.15s ease",
     selectors: {
       "&[data-state='checked']": {
-        backgroundColor: themeColors.brand.primary,
+        backgroundColor: colors.primary.default,
       },
     },
   },
@@ -36,9 +36,9 @@ export const controlClass = style([
 export const thumbClass = style({
   width: "1.25rem",
   height: "1.25rem",
-  background: themeColors.gray.g100,
+  background: colors.surface.default,
   borderRadius: "9999px",
-  boxShadow: themeShadows.sm,
+  boxShadow: shadows.sm,
   transition: "transform 0.15s ease",
   selectors: {
     "&[data-state='checked']": {

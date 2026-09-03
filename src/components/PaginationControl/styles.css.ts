@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 export const rootClass = style({
   background: "transparent",
@@ -43,19 +43,20 @@ export const itemClass = style([
     userSelect: "none",
     cursor: "pointer",
     background: "transparent",
-    border: `1px solid ${themeColors.brand.darker}`,
+    border: `1px solid ${colors.border.strong}`,
     transition: "background 150ms, border-color 150ms, color 150ms",
     ":hover": {
-      backgroundColor: themeColors.input.outline.hover,
+      color: colors.primary.default,
+      borderColor: colors.primary.default,
     },
     ":active": {
-      backgroundColor: themeColors.input.outline.active,
+      backgroundColor: colors.surface.light,
     },
     selectors: {
       "&[data-selected]": {
-        color: themeColors.gray.g100,
-        backgroundColor: themeColors.brand.primary,
-        borderColor: themeColors.brand.primary,
+        color: colors.primary.lighter,
+        backgroundColor: colors.primary.default,
+        borderColor: colors.primary.default,
       },
     },
   },

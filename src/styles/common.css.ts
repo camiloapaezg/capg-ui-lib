@@ -1,10 +1,10 @@
 import { style } from "@vanilla-extract/css";
-import { themeColors } from "./theme";
+import { colors } from "./theme.css";
 
 export const outlineOnFocusClass = style({
   selectors: {
     "&:focus,&:focus-visible ": {
-      outline: `2px solid ${themeColors.brand.primary}`,
+      outline: `2px solid ${colors.primary.default}`,
       outlineOffset: "-2px",
     },
   },
@@ -23,11 +23,11 @@ export const disabledClass = style({
 export const dataInvalidClass = style({
   selectors: {
     "&[data-invalid]": {
-      borderColor: themeColors.semantic.error,
+      borderColor: colors.semantic.error,
     },
     "&[data-invalid]:focus": {
-      borderColor: themeColors.semantic.error,
-      boxShadow: `0 0 0 1px ${themeColors.semantic.error}`,
+      borderColor: colors.semantic.error,
+      boxShadow: `0 0 0 1px ${colors.semantic.error}`,
     },
   },
 });
@@ -44,4 +44,5 @@ export const labelBaseClass = style({
   fontSize: "0.875rem",
   lineHeight: "1.25rem",
   fontWeight: 600,
+  marginBottom: "0.25rem",
 });

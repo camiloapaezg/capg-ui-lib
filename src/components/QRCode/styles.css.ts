@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 export const rootClass = style({
   vars: {
@@ -15,7 +15,7 @@ export const rootClass = style({
 export const frameClass = style({
   width: "var(--qr-code-size)",
   height: "var(--qr-code-size)",
-  fill: themeColors.brand.darker,
+  fill: colors.text.primary,
 });
 
 export const patternClass = style({
@@ -29,7 +29,7 @@ export const overlayClass = style({
   width: "var(--qr-code-overlay-size)",
   height: "var(--qr-code-overlay-size)",
   padding: "0.25rem",
-  background: themeColors.brand.lighter,
+  background: colors.surface.default,
   borderRadius: "0.25rem",
 });
 

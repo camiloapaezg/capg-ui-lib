@@ -26,6 +26,12 @@ const meta = {
   component: CollapsibleSection,
   tags: ["autodocs"],
   argTypes: {
+    orientation: {
+      options: ["horizontal", "vertical", undefined],
+      control: {
+        type: "select",
+      },
+    },
     style: {
       control: {
         disable: true,

@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 export const rootClass = style({
   position: "relative",
@@ -12,7 +12,7 @@ export const rootClass = style({
   display: "inline-flex",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: themeColors.brand.primary,
+  backgroundColor: colors.primary.default,
 });
 
 export const imageClass = style({
@@ -23,7 +23,7 @@ export const imageClass = style({
 });
 
 export const fallbackClass = style({
-  color: themeColors.gray.g100,
+  color: colors.primary.lighter,
   borderRadius: "inherit",
   lineHeight: 1,
   textTransform: "uppercase",

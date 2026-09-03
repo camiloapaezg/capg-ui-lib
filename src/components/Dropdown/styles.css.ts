@@ -1,26 +1,31 @@
 import { style } from "@vanilla-extract/css";
 import { scaleFadeIn, scaleFadeOut } from "../../styles/animations.css";
-import { disabledClass } from "../../styles/common.css";
-import { themeColors, themeShadows } from "../../styles/theme";
+import { disabledClass, labelBaseClass } from "../../styles/common.css";
+import { colors, shadows } from "../../styles/theme.css";
 import { textInputClass } from "../TextInput/styles.css";
 
 export const rootClass = style({
-  display: "flex",
+  display: "inline-flex",
   flexFlow: "column nowrap",
-  gap: "0.25em",
+  gap: "0.25rem",
   width: "100%",
-  maxWidth: "24em",
+  maxWidth: "24rem",
 });
 
-export const controlClass = style({
-  position: "relative",
-  width: "100%",
-  display: "flex",
-  flexFlow: "column nowrap",
-  justifyContent: "flex-start",
-  alignItems: "center",
-  gap: "0.75em",
-});
+export const labelClass = style([disabledClass, labelBaseClass]);
+
+export const controlClass = style([
+  disabledClass,
+  {
+    position: "relative",
+    width: "100%",
+    display: "flex",
+    flexFlow: "column nowrap",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    gap: "0.75rem",
+  },
+]);
 
 export const controlTriggerClass = style([
   textInputClass,
@@ -29,8 +34,8 @@ export const controlTriggerClass = style([
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    gap: "0.75em",
-    minHeight: "2.75em",
+    gap: "0.75rem",
+    minHeight: "2.75rem",
     cursor: "pointer",
   },
 ]);
@@ -40,19 +45,19 @@ export const valueTextClass = style({
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
   color: "inherit",
-  paddingRight: "3em",
+  paddingRight: "3rem",
 });
 
 export const controlIndicatorsClass = style({
   position: "absolute",
   top: "50%",
-  right: "1em",
+  right: "1rem",
   transform: "translateY(-50%)",
   display: "flex",
   flexFlow: "row nowrap",
   justifyContent: "flex-start",
   alignItems: "center",
-  gap: "0.5em",
+  gap: "0.5rem",
 });
 
 export const controlIndicatorClass = style({
@@ -64,23 +69,23 @@ export const controlIndicatorClass = style({
 });
 
 export const contentClass = style({
-  padding: "0.5em",
+  padding: "0.5rem",
   minWidth: "var(--reference-width)",
-  maxHeight: "min(var(--available-height, 18.75em), 18.75em)",
+  maxHeight: "min(var(--available-height, 18.75rem), 18.75rem)",
   display: "flex",
   flexFlow: "column nowrap",
-  gap: "0.5em",
-  backgroundColor: themeColors.gray.g100,
+  gap: "0.5rem",
+  backgroundColor: colors.surface.default,
   borderRadius: "0.375rem",
-  boxShadow: themeShadows.md,
+  boxShadow: shadows.md,
   zIndex: `calc(50 + var(--layer-index, 0))`,
   overflowY: "auto",
   scrollbarWidth: "thin",
-  scrollbarColor: `${themeColors.gray.g400} ${themeColors.gray.g700}`,
+  scrollbarColor: `${colors.primary.default} ${colors.surface.light}`,
   selectors: {
     "&::-webkit-scrollbar": {
-      width: "0.5em",
-      background: themeColors.gray.g700,
+      width: "0.5rem",
+      background: colors.surface.light,
       borderRadius: "0.375rem",
     },
     "&::-webkit-scrollbar-thumb": {
@@ -100,15 +105,15 @@ export const itemGroupClass = style({
   flexFlow: "column nowrap",
   selectors: {
     "& + &": {
-      marginTop: "0.5em",
+      marginTop: "0.5rem",
     },
   },
 });
 
 export const itemGroupLabelClass = style({
-  padding: "0.25em 0.5em",
+  padding: "0.25rem 0.5rem",
   fontWeight: 600,
-  color: themeColors.gray.g600,
+  color: colors.text.secondary,
   textTransform: "uppercase",
   letterSpacing: "0.025em",
 });
@@ -120,17 +125,17 @@ export const itemClass = style([
     flexFlow: "row nowrap",
     justifyContent: "space-between",
     alignItems: "center",
-    gap: "0.5em",
+    gap: "0.5rem",
     borderRadius: "0.375rem",
-    padding: "0.5em",
+    padding: "0.5rem",
     userSelect: "none",
     cursor: "pointer",
     selectors: {
       "&[data-highlighted]": {
-        background: themeColors.input.ghost.hover,
+        background: colors.surface.light,
       },
       "&[data-state='checked']": {
-        color: themeColors.brand.primary,
+        color: colors.primary.default,
       },
     },
   },

@@ -1,17 +1,17 @@
 import { style } from "@vanilla-extract/css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 export const rootClass = style([
   disabledClass,
   {
-    display: "flex",
+    display: "inline-flex",
     flexFlow: "column nowrap",
     gap: "0.375em",
     width: "100%",
     maxWidth: "20rem",
     vars: {
-      "--num-input-stepper-width": "2rem",
+      "--num-input-stepper-width": "2.25rem",
     },
   },
 ]);
@@ -33,7 +33,7 @@ export const inputClass = style([
     fontWeight: 500,
     fontVariantNumeric: "tabular-nums",
     backgroundColor: "transparent",
-    border: `1px solid ${themeColors.brand.darker}`,
+    border: `1px solid ${colors.border.strong}`,
     borderRadius: "0.375rem",
     outline: "none",
     selectors: {
@@ -52,7 +52,7 @@ export const triggerGroupClass = style({
   display: "flex",
   flexDirection: "column",
   width: "var(--num-input-stepper-width)",
-  borderLeft: `1px solid ${themeColors.gray.g100}`,
+  gap: "1px",
   borderRadius: "0 calc(0.375rem - 1px) calc(0.375rem - 1px) 0",
   overflow: "hidden",
   zIndex: 1,
@@ -67,23 +67,18 @@ export const triggerClass = style([
     justifyContent: "center",
     flex: 1,
     zIndex: 0,
-    color: themeColors.gray.g100,
-    backgroundColor: themeColors.brand.primary,
+    color: colors.primary.lighter,
+    backgroundColor: colors.primary.default,
     border: "none",
     userSelect: "none",
     cursor: "pointer",
     ":hover": {
-      backgroundColor: themeColors.input.primary.hover,
+      backgroundColor: colors.primary.darker,
     },
     ":active": {
-      backgroundColor: themeColors.input.primary.active,
+      backgroundColor: colors.primary.dark,
     },
   },
 ]);
 
-export const triggerUpClass = style([
-  triggerClass,
-  {
-    borderBottom: `1px solid ${themeColors.gray.g100}`,
-  },
-]);
+export const triggerUpClass = style([triggerClass, {}]);

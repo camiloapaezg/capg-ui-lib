@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { ContextMenu, type ContextMenuProps } from ".";
-import type { ContextMenuItem } from "./types";
 import { Button } from "../Button";
+import type { ContextMenuItem } from "./types";
 
 type ContextMenuStatefulProps = Omit<ContextMenuProps, "items">;
 
@@ -92,7 +92,7 @@ export const DateSelectorStory: Story = {
         style={{
           width: "100%",
           height: "25rem",
-          background: "#f0f0f0",
+          background: "transparent",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

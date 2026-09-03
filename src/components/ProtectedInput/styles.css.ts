@@ -4,19 +4,19 @@ import {
   iconBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 import { textInputClass } from "../TextInput/styles.css";
 
 export const rootClass = style([
   disabledClass,
   {
-    display: "flex",
+    display: "inline-flex",
     flexFlow: "column nowrap",
     gap: "0.375rem",
     width: "100%",
     maxWidth: "20rem",
     vars: {
-      "--visibility-width": "2rem",
+      "--visibility-width": "2.25rem",
     },
   },
 ]);
@@ -52,10 +52,10 @@ export const visibilityTriggerClass = style([
     cursor: "pointer",
     transition: "color 0.15s ease",
     ":hover": {
-      backgroundColor: themeColors.input.outline.hover,
+      color: colors.primary.default,
     },
     ":active": {
-      backgroundColor: themeColors.input.outline.active,
+      backgroundColor: colors.surface.light,
     },
   },
 ]);
@@ -64,11 +64,12 @@ export const indicatorClass = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  color: "inherit",
 });
 
 export const iconClass = style([
   iconBaseClass,
   {
-    color: themeColors.brand.primary,
+    fontSize: "1.225rem",
   },
 ]);

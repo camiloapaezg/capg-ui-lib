@@ -4,7 +4,7 @@ import {
   labelBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 export const rootClass = style([
   disabledClass,
@@ -36,7 +36,7 @@ export const itemControlClass = style([
   {
     width: "var(--options-group-size)",
     height: "var(--options-group-size)",
-    border: `1px solid ${themeColors.brand.primary}`,
+    border: `1px solid ${colors.primary.default}`,
     borderRadius: "9999px",
     display: "inline-flex",
     justifyContent: "center",
@@ -44,8 +44,8 @@ export const itemControlClass = style([
     flexShrink: 0,
     selectors: {
       "&[data-state='checked']": {
-        background: themeColors.brand.primary,
-        boxShadow: `inset 0px 0px 0px 2px ${themeColors.brand.lighter}`,
+        background: colors.primary.default,
+        boxShadow: `inset 0px 0px 0px 2px ${colors.surface.default}`,
       },
     },
   },

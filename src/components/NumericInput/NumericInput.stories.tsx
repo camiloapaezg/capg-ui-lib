@@ -17,5 +17,6 @@ export const NumericInputStory: Story = {
     min: 0,
     max: 50,
     allowMouseWheel: true,
+    disabled: false,
   },
 };

@@ -1,15 +1,22 @@
 import type { Preview } from "@storybook/react-vite";
+import { ThemeProvider } from "../src/components/ThemeProvider/index";
 import "../src/styles/stories.css";
+import { ThemeLayout } from "./ThemeLayout";
 
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <div
-        id="storybook-global-decorator"
-        style={{ minHeight: "30vh", width: "100%" }}
-      >
-        <Story />
-      </div>
+      <ThemeProvider>
+        <ThemeLayout
+          id="storybook-layout"
+          style={{
+            minHeight: "30vh",
+            width: "100%",
+          }}
+        >
+          <Story />
+        </ThemeLayout>
+      </ThemeProvider>
     ),
   ],
   parameters: {

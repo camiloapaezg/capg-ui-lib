@@ -1,5 +1,5 @@
 import { globalStyle } from "@vanilla-extract/css";
-import { themeColors } from "./theme";
+import { colors } from "./theme.css";
 
 globalStyle("*", {
   margin: 0,
@@ -8,9 +8,13 @@ globalStyle("*", {
   outline: "none",
   fontWeight: 400,
   lineHeight: 1.5,
-  color: themeColors.gray.g700,
+  color: colors.text.primary,
   background: "transparent",
   fontFamily: "Arial, Helvetica, sans-serif",
   fontSize: "14px",
   boxSizing: "border-box",
+});
+
+globalStyle(".docs-story", {
+  backgroundColor: colors.surface.default,
 });

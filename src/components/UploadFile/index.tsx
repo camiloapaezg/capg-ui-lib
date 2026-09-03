@@ -114,7 +114,7 @@ const SelectedFiles = ({ file, compact, ...rest }: SelectedFilesProps) => {
   return (
     <FileUpload.Item {...rest} file={file} className={className}>
       {compact !== true && <FilePreview file={file} />}
-      <FileUpload.ItemName className={itemNameClass} />
+      <FileUpload.ItemName className={itemNameClass} title={file.name} />
       {compact !== true && (
         <FileUpload.ItemSizeText className={itemSizeTextClass} />
       )}

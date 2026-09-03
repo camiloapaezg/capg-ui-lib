@@ -1,42 +1,35 @@
 import { style } from "@vanilla-extract/css";
-import { outlineOnFocusClass } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
+import { colors } from "../../styles/theme.css";
 
-export const baseClass = style({
-  fontWeight: 500,
-  minWidth: "2rem",
-  padding: "0.5rem 1rem",
-  width: "fit-content",
-  borderRadius: "0.375rem",
-  cursor: "pointer",
-  display: "inline-flex",
-  flexFlow: "row nowrap",
-  justifyContent: "center",
-  alignItems: "center",
-  columnGap: "0.5rem",
-});
+export const baseClass = style([
+  outlineOnFocusClass,
+  disabledClass,
+  {
+    fontWeight: 500,
+    minWidth: "2rem",
+    padding: "0.5rem 1rem",
+    width: "fit-content",
+    borderRadius: "0.375rem",
+    cursor: "pointer",
+    display: "inline-flex",
+    flexFlow: "row nowrap",
+    justifyContent: "center",
+    alignItems: "center",
+    columnGap: "0.5rem",
+  },
+]);
 
 export const primaryClass = style([
   baseClass,
   {
-    color: themeColors.gray.g100,
-    border: "1px solid",
-    ":enabled": {
-      backgroundColor: themeColors.brand.primary,
-      borderColor: themeColors.brand.primary,
-    },
+    color: colors.primary.lighter,
+    backgroundColor: colors.primary.default,
     ":hover": {
-      backgroundColor: themeColors.input.primary.hover,
-      borderColor: themeColors.input.primary.hover,
+      backgroundColor: colors.primary.darker,
     },
     ":active": {
-      backgroundColor: themeColors.input.primary.active,
-      borderColor: themeColors.input.primary.active,
-    },
-    ":disabled": {
-      backgroundColor: themeColors.gray.g400,
-      borderColor: themeColors.gray.g400,
-      pointerEvents: "none",
+      backgroundColor: colors.primary.dark,
     },
   },
 ]);
@@ -44,24 +37,13 @@ export const primaryClass = style([
 export const secondaryClass = style([
   baseClass,
   {
-    color: themeColors.gray.g100,
-    border: "1px solid",
-    ":enabled": {
-      backgroundColor: themeColors.brand.light,
-      borderColor: themeColors.brand.light,
-    },
+    color: colors.primary.lighter,
+    backgroundColor: colors.secondary.default,
     ":hover": {
-      backgroundColor: themeColors.input.secondary.hover,
-      borderColor: themeColors.input.secondary.hover,
+      backgroundColor: colors.secondary.darker,
     },
     ":active": {
-      backgroundColor: themeColors.input.secondary.active,
-      borderColor: themeColors.input.secondary.active,
-    },
-    ":disabled": {
-      backgroundColor: themeColors.gray.g400,
-      borderColor: themeColors.gray.g400,
-      pointerEvents: "none",
+      backgroundColor: colors.secondary.dark,
     },
   },
 ]);
@@ -69,45 +51,27 @@ export const secondaryClass = style([
 export const outlineClass = style([
   baseClass,
   {
-    border: "1px solid",
-    ":enabled": {
-      color: themeColors.brand.primary,
-      background: "transparent",
-      borderColor: themeColors.brand.primary,
-    },
+    background: "transparent",
+    border: `1px solid ${colors.border.strong}`,
     ":hover": {
-      backgroundColor: themeColors.input.outline.hover,
+      color: colors.primary.default,
+      borderColor: colors.primary.default,
     },
     ":active": {
-      backgroundColor: themeColors.input.outline.active,
-    },
-    ":disabled": {
-      color: themeColors.gray.g600,
-      background: "transparent",
-      borderColor: themeColors.input.outline.disabled,
-      pointerEvents: "none",
+      backgroundColor: colors.surface.light,
     },
   },
 ]);
 
 export const ghostClass = style([
   baseClass,
-  outlineOnFocusClass,
   {
-    border: "none",
-    ":enabled": {
-      background: "transparent",
-    },
+    background: "transparent",
     ":hover": {
-      backgroundColor: themeColors.input.ghost.hover,
+      color: colors.primary.default,
     },
     ":active": {
-      backgroundColor: themeColors.input.ghost.active,
-    },
-    ":disabled": {
-      color: themeColors.gray.g400,
-      pointerEvents: "none",
-      background: "transparent",
+      backgroundColor: colors.surface.light,
     },
   },
 ]);

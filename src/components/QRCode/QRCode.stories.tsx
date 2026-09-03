@@ -18,7 +18,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 export const QRCodeStory: Story = {
   args: {
-    defaultValue: "http://ark-ui.com",
+    defaultValue: "https://www.linkedin.com/in/camiloapaezg/",
     encoding: { ecc: "H" },
     overlayProps: {
       src: "https://ark-ui.com/icon-192.png",

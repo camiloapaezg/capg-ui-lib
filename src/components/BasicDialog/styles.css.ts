@@ -5,7 +5,7 @@ import {
   scaleFadeIn,
   scaleFadeOut,
 } from "../../styles/animations.css";
-import { themeColors, themeShadows } from "../../styles/theme";
+import { colors, shadows } from "../../styles/theme.css";
 
 export const rootClass = style({
   position: "relative",
@@ -53,11 +53,14 @@ export const contentClass = style({
   width: "35rem",
   maxWidth: "calc(100vw - 10rem)",
   maxHeight: "calc(100vh - 10rem)",
-  backgroundColor: themeColors.gray.g100,
-  boxShadow: themeShadows.xl,
+  backgroundColor: colors.surface.default,
+  boxShadow: shadows.xl,
   zIndex: "calc(50 + var(--layer-index, 0))",
   transition: "transform 0.1s ease-in-out",
   selectors: {
+    "&[hidden]": {
+      display: "none",
+    },
     "&[data-state='open']": {
       animation: `${scaleFadeIn} 0.15s ease-out`,
     },
@@ -72,16 +75,15 @@ export const contentClass = style({
 
 export const headerClass = style({
   position: "sticky",
-  backgroundColor: themeColors.gray.g100,
+  backgroundColor: colors.surface.default,
   top: 0,
   left: 0,
   right: 0,
   alignSelf: "stretch",
   display: "flex",
   flexFlow: "row nowrap",
-  justifyContent: "space-between",
-  alignItems: "flex-start",
-  padding: "1.5rem 0rem 0.5rem 0rem",
+  padding: "1.5rem 0rem 0.75rem 0rem",
+  minHeight: "3.5rem",
 });
 
 export const titleClass = style({
@@ -91,7 +93,13 @@ export const titleClass = style({
   flexGrow: 1,
 });
 
+export const closeButtonClass = style({
+  position: "absolute",
+  top: "1rem",
+  right: "0rem",
+});
+
 export const closeIconClass = style({
-  fontSize: "0.875rem",
+  fontSize: "1rem",
   fontWeight: 500,
 });

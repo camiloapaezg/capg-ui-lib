@@ -1,5 +1,5 @@
 import { keyframes, style } from "@vanilla-extract/css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 const indeterminate = keyframes({
   from: {
@@ -65,11 +65,11 @@ export const circleClass = style({
 });
 
 export const circleTrackClass = style({
-  stroke: themeColors.gray.g400,
+  stroke: colors.surface.light,
 });
 
 export const circleRangeClass = style({
-  stroke: themeColors.brand.primary,
+  stroke: colors.primary.default,
   transition: "stroke-dasharray 0.6s ease-out, stroke 0.6s ease-out",
   selectors: {
     "&[data-state='indeterminate']": {
@@ -103,14 +103,14 @@ export const linearTextClass = style({
 export const linearTrackClass = style({
   gridColumn: "1 / -1",
   height: "0.375rem",
-  background: themeColors.gray.g400,
+  background: colors.surface.light,
   borderRadius: "9999px",
   overflow: "hidden",
 });
 
 export const linearRangeClass = style({
   height: "100%",
-  background: themeColors.brand.primary,
+  background: colors.primary.default,
   borderRadius: "9999px",
   transition: "width 0.3s ease-out",
   selectors: {

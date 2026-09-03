@@ -18,6 +18,7 @@ export * from "./Stepper";
 export * from "./TabsGroup";
 export * from "./TextArea";
 export * from "./TextInput";
+export * from "./ThemeProvider";
 export * from "./Toggle";
 export * from "./UploadFile";
 export * from "./UserImage";

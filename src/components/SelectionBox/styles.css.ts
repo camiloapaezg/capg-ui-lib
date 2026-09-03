@@ -4,7 +4,7 @@ import {
   iconBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 export const rootClass = style([
   disabledClass,
@@ -15,6 +15,9 @@ export const rootClass = style([
     columnGap: "0.5rem",
     position: "relative",
     cursor: "pointer",
+    vars: {
+      "--selection-box-size": "1.25rem",
+    },
   },
 ]);
 
@@ -24,16 +27,16 @@ export const controlClass = style([
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    border: `1px solid ${themeColors.brand.darker}`,
+    border: `1px solid ${colors.border.strong}`,
     borderRadius: "0.325rem",
-    width: "1.25rem",
-    height: "1.25rem",
+    width: "var(--selection-box-size)",
+    height: "var(--selection-box-size)",
     background: "transparent",
     flexShrink: 0,
     selectors: {
       "&[data-state='checked'], &[data-state='indeterminate']": {
-        backgroundColor: themeColors.brand.primary,
-        borderColor: themeColors.brand.primary,
+        backgroundColor: colors.primary.default,
+        borderColor: colors.primary.default,
       },
     },
   },
@@ -57,6 +60,6 @@ export const labelClass = style({
 export const iconClass = style([
   iconBaseClass,
   {
-    color: themeColors.gray.g100,
+    color: colors.primary.lighter,
   },
 ]);

@@ -11,6 +11,11 @@ const meta = {
         disable: true,
       },
     },
+    imageProps: {
+      control: {
+        disable: true,
+      },
+    },
   },
 } satisfies Meta<typeof UserImage>;
 

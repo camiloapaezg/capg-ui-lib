@@ -14,5 +14,6 @@ type Story = StoryObj<typeof meta>;
 export const ProtectedInputStory: Story = {
   args: {
     label: "Password",
+    disabled: false,
   },
 };

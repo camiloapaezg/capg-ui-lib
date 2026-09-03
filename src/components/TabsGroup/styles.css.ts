@@ -1,11 +1,10 @@
 import { style } from "@vanilla-extract/css";
 import { disabledClass } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 export const rootClass = style({
   display: "flex",
   maxWidth: "32rem",
-
   selectors: {
     "&[data-orientation='horizontal']": {
       flexDirection: "column",
@@ -40,7 +39,6 @@ export const triggerClass = style([
     height: "2rem",
     whiteSpace: "nowrap",
     userSelect: "none",
-    fontSize: "0.875rem",
     fontWeight: 500,
     borderRadius: "0.375rem",
     paddingInline: "0.75rem",
@@ -62,7 +60,7 @@ export const triggerClass = style([
         paddingBlock: "0.5rem",
       },
       "&[data-selected]": {
-        color: themeColors.brand.primary,
+        color: colors.primary.default,
       },
     },
   },
@@ -70,7 +68,7 @@ export const triggerClass = style([
 
 export const indicatorClass = style({
   position: "absolute",
-  background: themeColors.brand.primary,
+  background: colors.primary.default,
   borderRadius: "0.375rem",
   transitionProperty: "width, height, left, top",
   transitionDuration: "200ms",

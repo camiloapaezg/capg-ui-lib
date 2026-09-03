@@ -52,7 +52,7 @@ type ViewInputProps = {
 
 export type DateSelectorProps = DatePicker.RootProps &
   React.RefAttributes<HTMLDivElement> & {
-    label: string;
+    label?: string;
     clearLabel?: string;
   };
 
@@ -258,7 +258,9 @@ export const DateSelector = ({
       disabled={disabled}
       className={clsx(rootClass, className)}
     >
-      <DatePicker.Label className={labelBaseClass}>{label}</DatePicker.Label>
+      {label && (
+        <DatePicker.Label className={labelBaseClass}>{label}</DatePicker.Label>
+      )}
       <DatePicker.Control className={controlClass}>
         <ViewInput selectionMode={selectionMode} />
         <DatePicker.Trigger className={triggerClass}>

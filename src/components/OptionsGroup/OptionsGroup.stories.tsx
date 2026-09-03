@@ -21,5 +21,6 @@ export const OptionsGroupStory: Story = {
   args: {
     label: "Options Group",
     items,
+    defaultValue: items[1].value,
   },
 };

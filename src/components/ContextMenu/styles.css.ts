@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { scaleFadeIn, scaleFadeOut } from "../../styles/animations.css";
 import { disabledClass } from "../../styles/common.css";
-import { themeColors, themeShadows } from "../../styles/theme";
+import { colors, shadows } from "../../styles/theme.css";
 
 export const contentClass = style({
   position: "relative",
@@ -9,11 +9,11 @@ export const contentClass = style({
   flexFlow: "column nowrap",
   padding: "0.25rem",
   minWidth: "max(var(--reference-width), 10rem)",
-  background: "white",
+  background: colors.surface.default,
   borderRadius: "0.375rem",
-  border: `1px solid ${themeColors.brand.primary}`,
+  border: `1px solid ${colors.primary.default}`,
   zIndex: "calc(50 + var(--layer-index, 0))",
-  boxShadow: themeShadows.md,
+  boxShadow: shadows.md,
   transformOrigin: "var(--transform-origin)",
   selectors: {
     "&[data-state='open']": {
@@ -38,7 +38,6 @@ export const itemGroupClass = style({
 export const itemGroupLabelClass = style({
   padding: "0.375rem 0.5rem",
   fontWeight: 600,
-  color: themeColors.gray.g700,
   textTransform: "uppercase",
   letterSpacing: "0.025rem",
 });
@@ -59,7 +58,7 @@ const itemClass = style([
     paddingInline: "0.725rem",
     selectors: {
       "&[data-highlighted]": {
-        backgroundColor: themeColors.input.ghost.hover,
+        backgroundColor: colors.surface.light,
       },
     },
   },
@@ -72,7 +71,7 @@ export const checkboxItemClass = style([
   {
     selectors: {
       "&[data-state='checked']": {
-        color: themeColors.brand.primary,
+        color: colors.primary.default,
       },
     },
   },

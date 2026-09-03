@@ -1,11 +1,12 @@
-import { Dialog, Portal } from "@ark-ui/react";
+import { Dialog, Portal, type PortalProps } from "@ark-ui/react";
 import { Icon } from "@iconify-icon/react";
 import type { JSX, PropsWithChildren } from "react";
 import {
   backdropClass,
+  closeButtonClass,
+  closeIconClass,
   contentClass,
   headerClass,
-  closeIconClass,
   positionerClass,
   titleClass,
 } from "./styles.css";
@@ -14,12 +15,10 @@ import clsx from "clsx";
 import { Button } from "../Button";
 import { ButtonAppearance } from "../Button/types";
 
-export type BasicDialogProps = Omit<
-  Dialog.RootProps,
-  "lazyMount" | "unmountOnExit"
-> & {
+export type BasicDialogProps = Dialog.RootProps & {
   trigger?: JSX.Element;
   title?: string;
+  portalProps?: PortalProps;
   titleProps?: Dialog.TitleProps & React.RefAttributes<HTMLHeadingElement>;
   contentProps?: Dialog.ContentProps & React.RefAttributes<HTMLDivElement>;
 };
@@ -27,15 +26,16 @@ export type BasicDialogProps = Omit<
 export const BasicDialog = ({
   title,
   trigger,
+  portalProps,
   titleProps,
   contentProps,
   children,
   ...rest
 }: PropsWithChildren<BasicDialogProps>) => {
   return (
-    <Dialog.Root {...rest} lazyMount unmountOnExit>
+    <Dialog.Root {...rest}>
       {trigger && <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>}
-      <Portal>
+      <Portal {...portalProps}>
         <Dialog.Backdrop className={backdropClass} />
         <Dialog.Positioner className={positionerClass}>
           <Dialog.Content
@@ -53,6 +53,7 @@ export const BasicDialog = ({
               )}
               <Dialog.CloseTrigger asChild>
                 <Button
+                  className={closeButtonClass}
                   appearance={ButtonAppearance.Ghost}
                   icon={
                     <Icon

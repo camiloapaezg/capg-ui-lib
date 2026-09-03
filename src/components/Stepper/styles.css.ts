@@ -1,16 +1,15 @@
 import { style } from "@vanilla-extract/css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 export const rootClass = style({
   display: "flex",
   width: "100%",
-  maxWidth: "32rem",
   vars: {
     "--steps-size": "2.5rem",
     "--steps-icon-size": "1rem",
     "--steps-thickness": "2px",
-    "--steps-gutter": "0.75rem",
+    "--steps-gutter": "0.325rem",
   },
   selectors: {
     "&[data-orientation='horizontal']": {
@@ -82,29 +81,29 @@ export const indicatorClass = style({
   borderRadius: "9999px",
   selectors: {
     "&[data-incomplete]": {
-      border: `var(--steps-thickness) solid ${themeColors.gray.g700}`,
+      border: `var(--steps-thickness) solid ${colors.border.strong}`,
     },
     "&[data-current]": {
-      border: `var(--steps-thickness) solid ${themeColors.brand.primary}`,
-      background: themeColors.brand.lighter,
-      color: themeColors.brand.primary,
+      border: `var(--steps-thickness) solid ${colors.primary.default}`,
+      color: colors.primary.default,
     },
     "&[data-complete]": {
-      border: `var(--steps-thickness) solid ${themeColors.brand.primary}`,
-      background: themeColors.brand.primary,
-      color: themeColors.gray.g100,
+      border: `var(--steps-thickness) solid ${colors.primary.default}`,
+      background: colors.primary.default,
+      color: colors.primary.lighter,
     },
   },
 });
 
 export const separatorClass = style({
   height: "var(--steps-thickness)",
-  background: themeColors.gray.g700,
+  width: "100%",
+  background: colors.border.strong,
   marginInline: "var(--steps-gutter)",
   flex: 1,
   selectors: {
     "&[data-state='complete']": {
-      background: themeColors.brand.primary,
+      background: colors.primary.default,
     },
     "&[data-orientation='vertical']": {
       position: "absolute",

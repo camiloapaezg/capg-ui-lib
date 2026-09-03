@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { disabledClass } from "../../styles/common.css";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 
 export const rootClass = style([
   disabledClass,
@@ -21,5 +21,5 @@ export const rootClass = style([
 ]);
 
 export const errorTextClass = style({
-  color: themeColors.semantic.error,
+  color: colors.semantic.error,
 });

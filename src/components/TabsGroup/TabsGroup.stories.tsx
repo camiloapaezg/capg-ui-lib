@@ -1,22 +1,30 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { TabsGroup } from ".";
-import { themeColors } from "../../styles/theme";
+import { colors } from "../../styles/theme.css";
 import type { TabsGroupItem } from "./types";
 
 const items: TabsGroupItem[] = Array.from({ length: 4 }, (_, index) => ({
   value: `tab-${index}`,
   title: `Tab ${index + 1}`,
   content: (
-    <p
+    <article
       style={{
-        minHeight: "20rem",
-        minWidth: "20rem",
-        background: themeColors.gray.g100,
-        textAlign: "center",
+        height: "20rem",
+        display: "flex",
+        flexFlow: "column nowrap",
+        justifyContent: "center",
+        alignItems: "center",
+        background: colors.surface.light,
         padding: "1rem",
         borderRadius: "0.375rem",
       }}
-    >{`This is the content of the tab ${index + 1}`}</p>
+    >
+      <span
+        style={{
+          textAlign: "center",
+        }}
+      >{`This is the content of the tab ${index + 1}`}</span>
+    </article>
   ),
   triggerProps: {
     disabled: index === 2,
