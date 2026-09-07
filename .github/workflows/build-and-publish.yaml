@@ -16,6 +16,14 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: "24"
+
+      - name: Generate package-lock.json
+        run: npm install --package-lock-only
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24"
           cache: "npm"
 
       - run: npm ci
