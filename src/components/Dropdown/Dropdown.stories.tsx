@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Dropdown } from ".";
+import { Dropdown, type DropdownProps } from ".";
+import { useTheme } from "../ThemeProvider/useTheme";
 import type { DropdownOption } from "./types";
 
 const items: DropdownOption[] = Array.from({ length: 18 }, (_, index) => ({
@@ -8,9 +9,14 @@ const items: DropdownOption[] = Array.from({ length: 18 }, (_, index) => ({
   group: `Group ${(index % 3) + 1}`,
 }));
 
+const Content = ({ ...rest }: DropdownProps) => {
+  const { className } = useTheme();
+  return <Dropdown {...rest} positionerProps={{ className }} />;
+};
+
 const meta = {
   title: "Components/Dropdown",
-  component: Dropdown,
+  component: Content,
   tags: ["autodocs"],
   argTypes: {
     options: {
@@ -29,7 +35,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Dropdown>;
+} satisfies Meta<typeof Content>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 export const baseClass = style([
   outlineOnFocusClass,
@@ -23,13 +23,13 @@ export const baseClass = style([
 export const primaryClass = style([
   baseClass,
   {
-    color: colors.primary.lighter,
-    backgroundColor: colors.primary.default,
+    color: tokens.primary.lighter,
+    backgroundColor: tokens.primary.default,
     ":hover": {
-      backgroundColor: colors.primary.darker,
+      backgroundColor: tokens.primary.darker,
     },
     ":active": {
-      backgroundColor: colors.primary.dark,
+      backgroundColor: tokens.primary.dark,
     },
   },
 ]);
@@ -37,13 +37,13 @@ export const primaryClass = style([
 export const secondaryClass = style([
   baseClass,
   {
-    color: colors.primary.lighter,
-    backgroundColor: colors.secondary.default,
+    color: tokens.primary.lighter,
+    backgroundColor: tokens.secondary.default,
     ":hover": {
-      backgroundColor: colors.secondary.darker,
+      backgroundColor: tokens.secondary.darker,
     },
     ":active": {
-      backgroundColor: colors.secondary.dark,
+      backgroundColor: tokens.secondary.dark,
     },
   },
 ]);
@@ -52,13 +52,13 @@ export const outlineClass = style([
   baseClass,
   {
     background: "transparent",
-    border: `1px solid ${colors.border.strong}`,
+    border: `1px solid ${tokens.border.strong}`,
     ":hover": {
-      color: colors.primary.default,
-      borderColor: colors.primary.default,
+      color: tokens.primary.default,
+      borderColor: tokens.primary.default,
     },
     ":active": {
-      backgroundColor: colors.surface.light,
+      backgroundColor: tokens.surface.light,
     },
   },
 ]);
@@ -68,10 +68,10 @@ export const ghostClass = style([
   {
     background: "transparent",
     ":hover": {
-      color: colors.primary.default,
+      color: tokens.primary.default,
     },
     ":active": {
-      backgroundColor: colors.surface.light,
+      backgroundColor: tokens.surface.light,
     },
   },
 ]);

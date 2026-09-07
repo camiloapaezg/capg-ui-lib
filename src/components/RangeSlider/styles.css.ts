@@ -4,7 +4,7 @@ import {
   labelBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { colors, shadows } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 export const rootClass = style([
   disabledClass,
@@ -81,7 +81,7 @@ export const controlClass = style([
 export const trackClass = style({
   flex: 1,
   height: "0.325rem",
-  background: colors.surface.light,
+  background: tokens.surface.light,
   borderRadius: "9999px",
   overflow: "hidden",
   selectors: {
@@ -94,7 +94,7 @@ export const trackClass = style({
 
 export const rangeClass = style({
   height: "100%",
-  background: colors.primary.default,
+  background: tokens.primary.default,
   borderRadius: "9999px",
   selectors: {
     "&[data-orientation='vertical']": {
@@ -108,10 +108,10 @@ export const thumbClass = style([
   {
     width: "1.5rem",
     height: "1.5rem",
-    background: "white",
-    border: `2px solid ${colors.border.default}`,
+    background: tokens.surface.default,
+    border: `2px solid ${tokens.border.strong}`,
     borderRadius: "9999px",
-    boxShadow: shadows.xs,
+    boxShadow: tokens.shadows.xs,
     transition: "box-shadow 0.15s ease, transform 0.1s ease",
     cursor: "grab",
     ":active": {
@@ -137,7 +137,7 @@ export const markerGroupClass = style({
 export const markerClass = style({
   position: "relative",
   lineHeight: "1rem",
-  color: colors.primary.default,
+  color: tokens.primary.default,
   selectors: {
     "&::before": {
       content: "''",
@@ -145,7 +145,7 @@ export const markerClass = style({
       position: "absolute",
       width: "0.25rem",
       height: "0.25rem",
-      background: colors.surface.light,
+      background: tokens.surface.light,
       borderRadius: "9999px",
       transform: "translateX(-50%)",
     },
@@ -158,7 +158,7 @@ export const markerClass = style({
       top: "50%",
     },
     "&:is([data-state='under-value'], [data-state='at-value'])::before ": {
-      background: colors.primary.default,
+      background: tokens.primary.default,
     },
   },
 });

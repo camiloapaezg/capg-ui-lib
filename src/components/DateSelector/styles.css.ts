@@ -5,7 +5,7 @@ import {
   iconBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { colors, shadows } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 const borderRadius = "0.375rem";
 
@@ -13,16 +13,16 @@ const viewTriggerClass = style([
   disabledClass,
   {
     cursor: "pointer",
-    color: colors.primary.lighter,
+    color: tokens.primary.lighter,
     fontWeight: 600,
     ":enabled": {
       background: "transparent",
     },
     ":hover": {
-      backgroundColor: colors.primary.darker,
+      backgroundColor: tokens.primary.darker,
     },
     ":active": {
-      backgroundColor: colors.primary.dark,
+      backgroundColor: tokens.primary.dark,
     },
   },
 ]);
@@ -44,10 +44,10 @@ const buttonClass = style([
     cursor: "pointer",
     background: "transparent",
     ":hover": {
-      color: colors.primary.default,
+      color: tokens.primary.default,
     },
     ":active": {
-      backgroundColor: colors.surface.light,
+      backgroundColor: tokens.surface.light,
     },
   },
 ]);
@@ -79,7 +79,7 @@ export const multipleInputClass = style({
   alignSelf: "stretch",
   minWidth: "8rem",
   padding: "0.25rem 0.5rem",
-  border: `1px solid ${colors.border.strong}`,
+  border: `1px solid ${tokens.border.strong}`,
   borderRadius,
   transition: "border-color 0.15s ease, box-shadow 0.15s ease",
   display: "flex",
@@ -91,7 +91,7 @@ export const multipleInputClass = style({
 
 export const triggerClass = style([
   {
-    border: `1px solid ${colors.border.strong}`,
+    border: `1px solid ${tokens.border.strong}`,
     display: "inline-flex",
     justifyContent: "center",
     alignItems: "center",
@@ -105,7 +105,7 @@ export const triggerClass = style([
 
 export const clearTriggerClass = style([
   {
-    border: `1px solid ${colors.border.strong}`,
+    border: `1px solid ${tokens.border.strong}`,
     padding: "0.5rem 1rem",
     height: "2.5rem",
   },
@@ -118,12 +118,12 @@ export const contentClass = style({
   alignItems: "stretch",
   rowGap: "0.5rem",
   minWidth: "18rem",
-  background: colors.primary.default,
+  background: tokens.primary.default,
   borderRadius: borderRadius,
   outline: "none",
-  border: `1px solid ${colors.primary.default}`,
+  border: `1px solid ${tokens.primary.default}`,
   zIndex: "calc(50 + var(--layer-index, 0))",
-  boxShadow: shadows.md,
+  boxShadow: tokens.shadows.md,
   selectors: {
     "&[data-state='open']": {
       animation: `${fadeIn} 0.2s ease-out`,
@@ -188,7 +188,7 @@ export const iconClass = style([
 ]);
 
 export const tableClass = style({
-  background: colors.surface.default,
+  background: tokens.surface.default,
   padding: "0.5em",
   borderRadius: `0px 0px ${borderRadius} ${borderRadius} `,
   borderCollapse: "separate",
@@ -196,7 +196,7 @@ export const tableClass = style({
 });
 
 export const tableHeaderClass = style({
-  color: colors.border.default,
+  color: tokens.border.default,
   fontWeight: 500,
   textAlign: "center",
   textTransform: "uppercase",
@@ -233,16 +233,16 @@ export const tableCellTriggerClass = style([
     selectors: {
       "&[data-today]": {
         fontWeight: 600,
-        color: colors.primary.default,
+        color: tokens.primary.default,
       },
       "&[data-in-range]": {
-        backgroundColor: colors.surface.light,
-        color: colors.primary.default,
+        backgroundColor: tokens.surface.light,
+        color: tokens.primary.default,
         borderRadius: 0,
       },
       "&[data-selected],&[data-range-start],&[data-range-end]": {
-        backgroundColor: colors.primary.default,
-        color: colors.primary.lighter,
+        backgroundColor: tokens.primary.default,
+        color: tokens.primary.lighter,
         fontWeight: 500,
       },
       "&[data-range-start]": {
@@ -257,7 +257,7 @@ export const tableCellTriggerClass = style([
         opacity: 0.5,
       },
       "&[data-unavailable]": {
-        color: colors.text.secondary,
+        color: tokens.text.secondary,
         textDecoration: "line-through",
         opacity: 0.4,
         cursor: "not-allowed",
@@ -267,7 +267,7 @@ export const tableCellTriggerClass = style([
 ]);
 
 export const placeholderClass = style({
-  color: colors.text.secondary,
+  color: tokens.text.secondary,
 });
 
 export const selectedDateClass = style({
@@ -277,8 +277,8 @@ export const selectedDateClass = style({
   padding: "0.25rem 0.5rem",
   borderRadius,
   fontSize: "12px",
-  backgroundColor: colors.primary.default,
-  color: colors.primary.lighter,
+  backgroundColor: tokens.primary.default,
+  color: tokens.primary.lighter,
   columnGap: "0.5rem",
 });
 
@@ -296,16 +296,16 @@ export const removeButtonClass = style([
       background: "transparent",
     },
     ":hover": {
-      backgroundColor: colors.primary.darker,
+      backgroundColor: tokens.primary.darker,
     },
     ":active": {
-      backgroundColor: colors.primary.dark,
+      backgroundColor: tokens.primary.dark,
     },
   },
 ]);
 
 export const removeIconClass = style({
-  color: colors.primary.lighter,
+  color: tokens.primary.lighter,
   fontSize: "0.75rem",
   background: "transparent",
 });

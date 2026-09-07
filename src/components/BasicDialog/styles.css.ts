@@ -5,16 +5,12 @@ import {
   scaleFadeIn,
   scaleFadeOut,
 } from "../../styles/animations.css";
-import { colors, shadows } from "../../styles/theme.css";
-
-export const rootClass = style({
-  position: "relative",
-});
+import { tokens } from "../../styles/theme.css";
 
 export const backdropClass = style({
   position: "fixed",
   inset: 0,
-  backgroundColor: "rgba(0, 0, 0, 0.4)",
+  backgroundColor: tokens.surface.backdrop,
   zIndex: "calc(50 + var(--layer-index, 0))",
   selectors: {
     "&[data-state='open']": {
@@ -53,8 +49,8 @@ export const contentClass = style({
   width: "35rem",
   maxWidth: "calc(100vw - 10rem)",
   maxHeight: "calc(100vh - 10rem)",
-  backgroundColor: colors.surface.default,
-  boxShadow: shadows.xl,
+  backgroundColor: tokens.surface.default,
+  boxShadow: tokens.shadows.xl,
   zIndex: "calc(50 + var(--layer-index, 0))",
   transition: "transform 0.1s ease-in-out",
   selectors: {
@@ -75,7 +71,7 @@ export const contentClass = style({
 
 export const headerClass = style({
   position: "sticky",
-  backgroundColor: colors.surface.default,
+  backgroundColor: tokens.surface.default,
   top: 0,
   left: 0,
   right: 0,

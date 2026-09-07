@@ -54,6 +54,8 @@ export type DateSelectorProps = DatePicker.RootProps &
   React.RefAttributes<HTMLDivElement> & {
     label?: string;
     clearLabel?: string;
+    positionerProps?: DatePicker.PositionerProps &
+      React.RefAttributes<HTMLDivElement>;
   };
 
 const formatWithDay = (date: DateValue) => {
@@ -249,6 +251,7 @@ export const DateSelector = ({
   selectionMode,
   disabled,
   className,
+  positionerProps,
   ...rest
 }: DateSelectorProps) => {
   return (
@@ -274,7 +277,7 @@ export const DateSelector = ({
         </DatePicker.ClearTrigger>
       </DatePicker.Control>
       <Portal>
-        <DatePicker.Positioner>
+        <DatePicker.Positioner {...positionerProps}>
           <DatePicker.Content className={contentClass}>
             {["day", "month", "year"].map((view, index) => (
               <View

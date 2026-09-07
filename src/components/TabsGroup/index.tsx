@@ -1,6 +1,7 @@
 import { Tabs } from "@ark-ui/react";
 import clsx from "clsx";
 import {
+  contentClass,
   indicatorClass,
   listClass,
   rootClass,
@@ -34,6 +35,7 @@ export const TabsGroup = ({ items, className, ...rest }: TabsGroupProps) => {
           {...contentProps}
           key={`tabs-content-${value}`}
           value={value}
+          className={clsx(contentClass, contentProps?.className)}
         >
           {content}
         </Tabs.Content>

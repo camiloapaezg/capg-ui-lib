@@ -1,11 +1,11 @@
 import { style } from "@vanilla-extract/css";
 import { outlineOnFocusClass } from "../../styles/common.css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 const scrollbarClass = style({
   position: "relative",
   display: "flex",
-  backgroundColor: colors.surface.light,
+  backgroundColor: tokens.surface.light,
   borderRadius: "0.375rem",
   margin: "0.5rem",
   opacity: 0,
@@ -40,7 +40,7 @@ export const viewportClass = style([
   {
     height: "100%",
     borderRadius: "0.5rem",
-    outline: `1px solid ${colors.border.default}`,
+    outline: `1px solid ${tokens.border.default}`,
     outlineOffset: "1px",
     overscrollBehavior: "contain",
     scrollbarWidth: "none",
@@ -101,10 +101,10 @@ export const scrollbarHorizontalClass = style([
 export const thumbClass = style({
   width: "100%",
   borderRadius: "inherit",
-  backgroundColor: colors.primary.default,
+  backgroundColor: tokens.primary.default,
   selectors: {
     "&:hover": {
-      backgroundColor: colors.primary.light,
+      backgroundColor: tokens.primary.light,
     },
     "&[data-orientation='horizontal']": {
       width: "unset",

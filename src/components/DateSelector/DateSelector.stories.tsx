@@ -1,9 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { DateSelector } from ".";
+import { DateSelector, type DateSelectorProps } from ".";
+import { useTheme } from "../ThemeProvider/useTheme";
+
+const Content = ({ ...rest }: DateSelectorProps) => {
+  const { className } = useTheme();
+  return <DateSelector {...rest} positionerProps={{ className }} />;
+};
 
 const meta = {
   title: "Components/Date Selector",
-  component: DateSelector,
+  component: Content,
   tags: ["autodocs"],
   argTypes: {
     selectionMode: {
@@ -13,7 +19,7 @@ const meta = {
       options: ["single", "multiple", "range"],
     },
   },
-} satisfies Meta<typeof DateSelector>;
+} satisfies Meta<typeof Content>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { TabsGroup } from ".";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 import type { TabsGroupItem } from "./types";
 
 const items: TabsGroupItem[] = Array.from({ length: 4 }, (_, index) => ({
@@ -9,12 +9,12 @@ const items: TabsGroupItem[] = Array.from({ length: 4 }, (_, index) => ({
   content: (
     <article
       style={{
-        height: "20rem",
+        height: "100%",
         display: "flex",
         flexFlow: "column nowrap",
         justifyContent: "center",
         alignItems: "center",
-        background: colors.surface.light,
+        background: tokens.surface.light,
         padding: "1rem",
         borderRadius: "0.375rem",
       }}

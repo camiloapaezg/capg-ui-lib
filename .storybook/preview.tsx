@@ -10,7 +10,8 @@ const preview: Preview = {
         <ThemeLayout
           id="storybook-layout"
           style={{
-            minHeight: "30vh",
+            minHeight: "40vh",
+            height: "30rem",
             width: "100%",
           }}
         >

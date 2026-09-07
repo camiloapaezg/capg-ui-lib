@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { HTMLAttributes, PropsWithChildren } from "react";
 import { Stepper } from ".";
 import type { StepperItem } from "./types";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 const Container = ({
   children,
@@ -17,7 +17,7 @@ const Container = ({
         padding: "1rem",
         fontSize: "0.875rem",
         borderRadius: "0.5rem",
-        background: colors.surface.light,
+        background: tokens.surface.light,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

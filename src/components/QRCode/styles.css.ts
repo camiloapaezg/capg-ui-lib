@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 export const rootClass = style({
   vars: {
@@ -15,7 +15,7 @@ export const rootClass = style({
 export const frameClass = style({
   width: "var(--qr-code-size)",
   height: "var(--qr-code-size)",
-  fill: colors.text.primary,
+  fill: tokens.text.primary,
 });
 
 export const patternClass = style({
@@ -29,7 +29,7 @@ export const overlayClass = style({
   width: "var(--qr-code-overlay-size)",
   height: "var(--qr-code-overlay-size)",
   padding: "0.25rem",
-  background: colors.surface.default,
+  background: tokens.surface.default,
   borderRadius: "0.25rem",
 });
 

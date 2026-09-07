@@ -1,10 +1,10 @@
 import { style } from "@vanilla-extract/css";
-import { colors } from "./theme.css";
+import { tokens } from "./theme.css";
 
 export const outlineOnFocusClass = style({
   selectors: {
     "&:focus,&:focus-visible ": {
-      outline: `2px solid ${colors.primary.default}`,
+      outline: `2px solid ${tokens.primary.default}`,
       outlineOffset: "-2px",
     },
   },
@@ -23,11 +23,11 @@ export const disabledClass = style({
 export const dataInvalidClass = style({
   selectors: {
     "&[data-invalid]": {
-      borderColor: colors.semantic.error,
+      borderColor: tokens.semantic.error,
     },
     "&[data-invalid]:focus": {
-      borderColor: colors.semantic.error,
-      boxShadow: `0 0 0 1px ${colors.semantic.error}`,
+      borderColor: tokens.semantic.error,
+      boxShadow: `0 0 0 1px ${tokens.semantic.error}`,
     },
   },
 });

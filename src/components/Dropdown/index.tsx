@@ -49,6 +49,8 @@ export type DropdownProps = Omit<SelectRootComponentProps, "collection"> & {
   label?: string;
   group?: boolean;
   valueTextProps?: SelectControlProps;
+  positionerProps?: Select.PositionerProps &
+    React.RefAttributes<HTMLDivElement>;
   contentProps?: Omit<SelectContentProps, "collection" | "groupBy">;
 };
 
@@ -141,6 +143,7 @@ export const Dropdown = ({
   group,
   valueTextProps,
   contentProps,
+  positionerProps,
   className,
   ...rest
 }: DropdownProps) => {
@@ -158,7 +161,7 @@ export const Dropdown = ({
       {label && <Select.Label className={labelClass}>{label}</Select.Label>}
       <SelectControl {...valueTextProps} />
       <Portal>
-        <Select.Positioner>
+        <Select.Positioner {...positionerProps}>
           <SelectContent
             {...contentProps}
             collection={collection}

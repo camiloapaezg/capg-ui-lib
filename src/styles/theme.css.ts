@@ -1,14 +1,5 @@
 import { createTheme, createThemeContract } from "@vanilla-extract/css";
 
-const themeShadows = {
-  xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-  sm: "0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08)",
-  md: "0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06)",
-  lg: "0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04)",
-  xl: "0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.04)",
-  xxl: "0 25px 50px -12px rgb(0 0 0 / 0.15)",
-} as const;
-
 const brandColors = {
   primary: {
     lighter: "#E6F2FF",
@@ -29,6 +20,7 @@ const themeLightColors = {
   surface: {
     default: "#F1F5F9",
     light: "#E1E7EF",
+    backdrop: "#00000066",
   },
   text: {
     primary: "#1E293B",
@@ -44,6 +36,14 @@ const themeLightColors = {
     warning: "#8A5A00",
     error: "#B91C1C",
   },
+  shadows: {
+    xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+    sm: "0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08)",
+    md: "0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06)",
+    lg: "0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04)",
+    xl: "0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.04)",
+    xxl: "0 25px 50px -12px rgb(0 0 0 / 0.15)",
+  },
 } as const;
 
 const themeDarkColors = {
@@ -51,6 +51,7 @@ const themeDarkColors = {
   surface: {
     default: "#07111A",
     light: "#273449",
+    backdrop: "#ffffff66",
   },
   text: {
     primary: "#F8FAFC",
@@ -66,9 +67,17 @@ const themeDarkColors = {
     warning: "#FACC15",
     error: "#F87171",
   },
+  shadows: {
+    xs: "0 1px 2px 0 rgb(255 255 255 / 0.04)",
+    sm: "0 1px 3px 0 rgb(255 255 255 / 0.06), 0 1px 2px -1px rgb(255 255 255 / 0.04)",
+    md: "0 4px 6px -1px rgb(255 255 255 / 0.08), 0 2px 4px -2px rgb(255 255 255 / 0.05)",
+    lg: "0 10px 15px -3px rgb(255 255 255 / 0.10), 0 4px 6px -4px rgb(255 255 255 / 0.06)",
+    xl: "0 20px 25px -5px rgb(255 255 255 / 0.12), 0 8px 10px -6px rgb(255 255 255 / 0.08)",
+    xxl: "0 25px 50px -12px rgb(255 255 255 / 0.15)",
+  },
 } as const;
 
-export const colors = createThemeContract({
+export const tokens = createThemeContract({
   primary: {
     lighter: null,
     light: null,
@@ -84,6 +93,7 @@ export const colors = createThemeContract({
   surface: {
     default: null,
     light: null,
+    backdrop: null,
   },
   text: {
     primary: null,
@@ -99,8 +109,15 @@ export const colors = createThemeContract({
     warning: null,
     error: null,
   },
+  shadows: {
+    xs: null,
+    sm: null,
+    md: null,
+    lg: null,
+    xl: null,
+    xxl: null,
+  },
 });
 
-export const themeLightClass = createTheme(colors, themeLightColors);
-export const themeDarkClass = createTheme(colors, themeDarkColors);
-export const [shadowsClass, shadows] = createTheme(themeShadows);
+export const themeLightClass = createTheme(tokens, themeLightColors);
+export const themeDarkClass = createTheme(tokens, themeDarkColors);

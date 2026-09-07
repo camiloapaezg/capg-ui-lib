@@ -18,6 +18,13 @@ const meta = {
       <Story />
     </FormField>
   ),
+  argTypes: {
+    onValueChange: {
+      control: {
+        disable: true,
+      },
+    },
+  },
 } satisfies Meta<typeof TextArea>;
 
 export default meta;

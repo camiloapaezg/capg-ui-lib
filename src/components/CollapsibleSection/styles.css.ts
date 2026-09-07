@@ -1,7 +1,7 @@
 import { keyframes, style } from "@vanilla-extract/css";
 import { fadeIn, fadeOut } from "../../styles/animations.css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 const expandHeight = keyframes({
   from: {
@@ -64,11 +64,11 @@ export const itemClass = style({
   selectors: {
     "&[data-orientation='vertical']": {
       display: "block",
-      borderBottom: `1px solid ${colors.border.default}`,
+      borderBottom: `1px solid ${tokens.border.default}`,
     },
     "&[data-orientation='horizontal'] ": {
       display: "flex",
-      borderInlineEnd: `1px solid ${colors.border.default}`,
+      borderInlineEnd: `1px solid ${tokens.border.default}`,
     },
   },
 });

@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { scaleFadeIn, scaleFadeOut } from "../../styles/animations.css";
 import { disabledClass } from "../../styles/common.css";
-import { colors, shadows } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 export const contentClass = style({
   position: "relative",
@@ -9,11 +9,11 @@ export const contentClass = style({
   flexFlow: "column nowrap",
   padding: "0.25rem",
   minWidth: "max(var(--reference-width), 10rem)",
-  background: colors.surface.default,
+  background: tokens.surface.default,
   borderRadius: "0.375rem",
-  border: `1px solid ${colors.primary.default}`,
+  border: `1px solid ${tokens.primary.default}`,
   zIndex: "calc(50 + var(--layer-index, 0))",
-  boxShadow: shadows.md,
+  boxShadow: tokens.shadows.md,
   transformOrigin: "var(--transform-origin)",
   selectors: {
     "&[data-state='open']": {
@@ -58,7 +58,7 @@ const itemClass = style([
     paddingInline: "0.725rem",
     selectors: {
       "&[data-highlighted]": {
-        backgroundColor: colors.surface.light,
+        backgroundColor: tokens.surface.light,
       },
     },
   },
@@ -71,7 +71,7 @@ export const checkboxItemClass = style([
   {
     selectors: {
       "&[data-state='checked']": {
-        color: colors.primary.default,
+        color: tokens.primary.default,
       },
     },
   },

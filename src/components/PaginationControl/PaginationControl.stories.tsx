@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { PaginationControl } from ".";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 type PaginationItem = {
   id: string;
@@ -49,7 +49,7 @@ export const PaginationControlStory: Story = {
           flexFlow: "column nowrap",
           gap: "0.25rem",
           padding: "0.5rem",
-          border: `1px solid ${colors.primary.default}`,
+          border: `1px solid ${tokens.primary.default}`,
           borderRadius: "0.25rem",
         }}
       >

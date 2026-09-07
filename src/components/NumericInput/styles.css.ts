@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 export const rootClass = style([
   disabledClass,
@@ -33,7 +33,7 @@ export const inputClass = style([
     fontWeight: 500,
     fontVariantNumeric: "tabular-nums",
     backgroundColor: "transparent",
-    border: `1px solid ${colors.border.strong}`,
+    border: `1px solid ${tokens.border.strong}`,
     borderRadius: "0.375rem",
     outline: "none",
     selectors: {
@@ -67,16 +67,16 @@ export const triggerClass = style([
     justifyContent: "center",
     flex: 1,
     zIndex: 0,
-    color: colors.primary.lighter,
-    backgroundColor: colors.primary.default,
+    color: tokens.primary.lighter,
+    backgroundColor: tokens.primary.default,
     border: "none",
     userSelect: "none",
     cursor: "pointer",
     ":hover": {
-      backgroundColor: colors.primary.darker,
+      backgroundColor: tokens.primary.darker,
     },
     ":active": {
-      backgroundColor: colors.primary.dark,
+      backgroundColor: tokens.primary.dark,
     },
   },
 ]);

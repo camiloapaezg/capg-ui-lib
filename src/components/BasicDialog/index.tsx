@@ -19,6 +19,7 @@ export type BasicDialogProps = Dialog.RootProps & {
   trigger?: JSX.Element;
   title?: string;
   portalProps?: PortalProps;
+  backdropProps?: Dialog.BackdropProps & React.RefAttributes<HTMLDivElement>;
   titleProps?: Dialog.TitleProps & React.RefAttributes<HTMLHeadingElement>;
   contentProps?: Dialog.ContentProps & React.RefAttributes<HTMLDivElement>;
 };
@@ -27,6 +28,7 @@ export const BasicDialog = ({
   title,
   trigger,
   portalProps,
+  backdropProps,
   titleProps,
   contentProps,
   children,
@@ -36,7 +38,10 @@ export const BasicDialog = ({
     <Dialog.Root {...rest}>
       {trigger && <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>}
       <Portal {...portalProps}>
-        <Dialog.Backdrop className={backdropClass} />
+        <Dialog.Backdrop
+          {...backdropProps}
+          className={clsx(backdropClass, backdropProps?.className)}
+        />
         <Dialog.Positioner className={positionerClass}>
           <Dialog.Content
             {...contentProps}

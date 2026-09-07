@@ -4,7 +4,7 @@ import {
   iconBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 import { textInputClass } from "../TextInput/styles.css";
 
 export const rootClass = style([
@@ -52,10 +52,10 @@ export const visibilityTriggerClass = style([
     cursor: "pointer",
     transition: "color 0.15s ease",
     ":hover": {
-      color: colors.primary.default,
+      color: tokens.primary.default,
     },
     ":active": {
-      backgroundColor: colors.surface.light,
+      backgroundColor: tokens.surface.light,
     },
   },
 ]);

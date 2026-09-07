@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 export const rootClass = style({
   position: "relative",
@@ -12,7 +12,7 @@ export const rootClass = style({
   display: "inline-flex",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: colors.primary.default,
+  backgroundColor: tokens.primary.default,
 });
 
 export const imageClass = style({
@@ -23,7 +23,7 @@ export const imageClass = style({
 });
 
 export const fallbackClass = style({
-  color: colors.primary.lighter,
+  color: tokens.primary.lighter,
   borderRadius: "inherit",
   lineHeight: 1,
   textTransform: "uppercase",

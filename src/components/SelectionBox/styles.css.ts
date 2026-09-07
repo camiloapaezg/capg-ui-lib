@@ -4,7 +4,7 @@ import {
   iconBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 export const rootClass = style([
   disabledClass,
@@ -27,7 +27,7 @@ export const controlClass = style([
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    border: `1px solid ${colors.border.strong}`,
+    border: `1px solid ${tokens.border.strong}`,
     borderRadius: "0.325rem",
     width: "var(--selection-box-size)",
     height: "var(--selection-box-size)",
@@ -35,8 +35,8 @@ export const controlClass = style([
     flexShrink: 0,
     selectors: {
       "&[data-state='checked'], &[data-state='indeterminate']": {
-        backgroundColor: colors.primary.default,
-        borderColor: colors.primary.default,
+        backgroundColor: tokens.primary.default,
+        borderColor: tokens.primary.default,
       },
     },
   },
@@ -60,6 +60,6 @@ export const labelClass = style({
 export const iconClass = style([
   iconBaseClass,
   {
-    color: colors.primary.lighter,
+    color: tokens.primary.lighter,
   },
 ]);

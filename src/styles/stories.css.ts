@@ -1,5 +1,5 @@
 import { globalStyle } from "@vanilla-extract/css";
-import { colors } from "./theme.css";
+import { tokens } from "./theme.css";
 
 globalStyle("*", {
   margin: 0,
@@ -8,7 +8,7 @@ globalStyle("*", {
   outline: "none",
   fontWeight: 400,
   lineHeight: 1.5,
-  color: colors.text.primary,
+  color: tokens.text.primary,
   background: "transparent",
   fontFamily: "Arial, Helvetica, sans-serif",
   fontSize: "14px",
@@ -16,5 +16,5 @@ globalStyle("*", {
 });
 
 globalStyle(".docs-story", {
-  backgroundColor: colors.surface.default,
+  backgroundColor: tokens.surface.default,
 });

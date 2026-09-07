@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { scaleFadeIn, scaleFadeOut } from "../../styles/animations.css";
 import { disabledClass, labelBaseClass } from "../../styles/common.css";
-import { colors, shadows } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 import { textInputClass } from "../TextInput/styles.css";
 
 export const rootClass = style({
@@ -75,17 +75,17 @@ export const contentClass = style({
   display: "flex",
   flexFlow: "column nowrap",
   gap: "0.5rem",
-  backgroundColor: colors.surface.default,
+  backgroundColor: tokens.surface.default,
   borderRadius: "0.375rem",
-  boxShadow: shadows.md,
+  boxShadow: tokens.shadows.md,
   zIndex: `calc(50 + var(--layer-index, 0))`,
   overflowY: "auto",
   scrollbarWidth: "thin",
-  scrollbarColor: `${colors.primary.default} ${colors.surface.light}`,
+  scrollbarColor: `${tokens.primary.default} ${tokens.surface.light}`,
   selectors: {
     "&::-webkit-scrollbar": {
       width: "0.5rem",
-      background: colors.surface.light,
+      background: tokens.surface.light,
       borderRadius: "0.375rem",
     },
     "&::-webkit-scrollbar-thumb": {
@@ -113,7 +113,7 @@ export const itemGroupClass = style({
 export const itemGroupLabelClass = style({
   padding: "0.25rem 0.5rem",
   fontWeight: 600,
-  color: colors.text.secondary,
+  color: tokens.text.secondary,
   textTransform: "uppercase",
   letterSpacing: "0.025em",
 });
@@ -132,10 +132,10 @@ export const itemClass = style([
     cursor: "pointer",
     selectors: {
       "&[data-highlighted]": {
-        background: colors.surface.light,
+        background: tokens.surface.light,
       },
       "&[data-state='checked']": {
-        color: colors.primary.default,
+        color: tokens.primary.default,
       },
     },
   },

@@ -5,7 +5,7 @@ import {
   labelBaseClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 export const rootClass = style({
   display: "flex",
@@ -22,16 +22,16 @@ export const labelClass = style([disabledClass, labelBaseClass]);
 export const closeIconClass = style({
   fontSize: "1rem",
   ":hover": {
-    color: colors.primary.default,
+    color: tokens.primary.default,
   },
   ":active": {
-    background: colors.surface.light,
+    background: tokens.surface.light,
   },
 });
 
 export const previewIconClass = style({
   fontSize: "1.75rem",
-  color: colors.text.secondary,
+  color: tokens.text.secondary,
 });
 
 export const itemGroupClass = style({
@@ -48,7 +48,7 @@ export const itemCompactClass = style({
   alignItems: "center",
   gap: "0.5rem",
   padding: "0.5rem 0.75rem",
-  background: colors.surface.default,
+  background: tokens.surface.default,
   borderRadius: "0.375rem",
 });
 
@@ -60,12 +60,12 @@ export const itemClass = style({
   columnGap: "0.75rem",
   padding: "0.75rem",
   background: "transparent",
-  border: `1px solid ${colors.border.default}`,
+  border: `1px solid ${tokens.border.default}`,
   borderRadius: "0.375rem",
   selectors: {
     "&[data-rejected]": {
-      borderColor: colors.semantic.error,
-      color: colors.semantic.error,
+      borderColor: tokens.semantic.error,
+      color: tokens.semantic.error,
     },
   },
 });
@@ -113,19 +113,19 @@ export const dropZoneClass = style([
     gap: "0.75rem",
     minHeight: "12rem",
     padding: "1.5rem",
-    border: `2px dashed ${colors.text.secondary}`,
+    border: `2px dashed ${tokens.text.secondary}`,
     borderRadius: "0.375rem",
     cursor: "pointer",
     textAlign: "center",
     transition: "background 150ms, border-color 150ms",
-    color: colors.primary.default,
+    color: tokens.primary.default,
     ":hover": {
-      backgroundColor: colors.surface.light,
+      backgroundColor: tokens.surface.light,
     },
     selectors: {
       "&[data-dragging]": {
-        background: colors.surface.light,
-        borderColor: colors.primary.default,
+        background: tokens.surface.light,
+        borderColor: tokens.primary.default,
         borderStyle: "solid",
       },
     },

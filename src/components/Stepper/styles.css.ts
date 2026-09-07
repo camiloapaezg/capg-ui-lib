@@ -1,10 +1,11 @@
 import { style } from "@vanilla-extract/css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 export const rootClass = style({
   display: "flex",
   width: "100%",
+  height: "100%",
   vars: {
     "--steps-size": "2.5rem",
     "--steps-icon-size": "1rem",
@@ -81,16 +82,16 @@ export const indicatorClass = style({
   borderRadius: "9999px",
   selectors: {
     "&[data-incomplete]": {
-      border: `var(--steps-thickness) solid ${colors.border.strong}`,
+      border: `var(--steps-thickness) solid ${tokens.border.strong}`,
     },
     "&[data-current]": {
-      border: `var(--steps-thickness) solid ${colors.primary.default}`,
-      color: colors.primary.default,
+      border: `var(--steps-thickness) solid ${tokens.primary.default}`,
+      color: tokens.primary.default,
     },
     "&[data-complete]": {
-      border: `var(--steps-thickness) solid ${colors.primary.default}`,
-      background: colors.primary.default,
-      color: colors.primary.lighter,
+      border: `var(--steps-thickness) solid ${tokens.primary.default}`,
+      background: tokens.primary.default,
+      color: tokens.primary.lighter,
     },
   },
 });
@@ -98,12 +99,12 @@ export const indicatorClass = style({
 export const separatorClass = style({
   height: "var(--steps-thickness)",
   width: "100%",
-  background: colors.border.strong,
+  background: tokens.border.strong,
   marginInline: "var(--steps-gutter)",
   flex: 1,
   selectors: {
     "&[data-state='complete']": {
-      background: colors.primary.default,
+      background: tokens.primary.default,
     },
     "&[data-orientation='vertical']": {
       position: "absolute",
@@ -130,6 +131,7 @@ export const contentClass = style([
   {
     minHeight: "10rem",
     height: "fit-content",
+    flexGrow: 1,
     selectors: {
       "&[hidden]": {
         display: "none",

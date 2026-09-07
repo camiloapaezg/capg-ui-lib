@@ -4,7 +4,7 @@ import {
   disabledClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
-import { colors } from "../../styles/theme.css";
+import { tokens } from "../../styles/theme.css";
 
 export const textInputClass = style([
   outlineOnFocusClass,
@@ -16,12 +16,12 @@ export const textInputClass = style([
     minWidth: "0rem",
     width: "100%",
     padding: "0.5rem 0.75rem",
-    border: `1px solid ${colors.border.strong}`,
+    border: `1px solid ${tokens.border.strong}`,
     borderRadius: "0.375rem",
     transition: "border-color 0.15s ease, box-shadow 0.15s ease",
     selectors: {
       "&::placeholder, &[data-placeholder-shown]": {
-        color: colors.text.secondary,
+        color: tokens.text.secondary,
       },
     },
   },
