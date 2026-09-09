@@ -1,5 +1,5 @@
 import { useState, type HTMLAttributes, type PropsWithChildren } from "react";
-import { useTheme } from "../src/components/ThemeProvider/useTheme";
+import { useTheme } from "../src/components/ThemeProvider";
 import { Toggle } from "../src/components/Toggle";
 
 export const ThemeLayout = ({

@@ -1,18 +1,3 @@
-import { useState, type PropsWithChildren } from "react";
-import { themeDarkClass, themeLightClass } from "../../styles/theme.css";
-import ThemeContext from "./context";
-
-export const ThemeProvider = ({ children }: PropsWithChildren) => {
-  const [className, setClassName] = useState<string>(themeLightClass);
-
-  // Handlers
-  function onToggleTheme(dark: boolean) {
-    setClassName(dark === true ? themeDarkClass : themeLightClass);
-  }
-
-  return (
-    <ThemeContext.Provider value={{ className, onToggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
+/* eslint-disable react-refresh/only-export-components */
+export { ThemeProvider } from "./Provider";
+export { useTheme } from "./useTheme";

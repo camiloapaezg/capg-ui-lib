@@ -2,7 +2,7 @@
   "name": "@capg/capg-ui-lib",
   "author": "Camilo Andrés Páez Gallo",
   "license": "ISC",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "type": "module",
   "main": "./dist/main.umd.cjs",
   "module": "./dist/main.js",
