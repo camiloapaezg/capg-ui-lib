@@ -19,6 +19,7 @@ export * from "./TabsGroup";
 export * from "./TextArea";
 export * from "./TextInput";
 export * from "./ThemeProvider";
+export { useTheme } from "./ThemeProvider/useTheme";
 export * from "./Toggle";
 export * from "./UploadFile";
 export * from "./UserImage";
