@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Light and dark theme support through `ThemeProvider` and `useTheme` custom hook.
 - GitHub workflows for CI/CD best practices.
+- README file updated.
 
 ## [0.9.0] - 2026-08-31
 
