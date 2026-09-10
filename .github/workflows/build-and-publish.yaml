@@ -19,27 +19,33 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: "26"
+          node-version: "24"
           registry-url: "https://registry.npmjs.org"
-          package-manager-cache: false
 
-      - name: Generate package-lock.json
-        run: npm install --package-lock-only
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      - name: Cache NPM Packages
+        uses: actions/cache@v6
+        id: cache-npm
         with:
-          node-version: "26"
-          registry-url: "https://registry.npmjs.org"
-          cache: "npm"
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      - name: Check Cache Status
+        run: |
+          if [ "${{ steps.cache-npm.outputs.cache-hit }}" == "true" ]; then
+            echo "Cache FOUND - Cached dependencies will be used"
+          else
+            echo "Cache NOT FOUND - NPM packages will be cached after install"
+          fi
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Build
+      - name: Build Package
         run: npm run build
 
-      - name: Check Build
+      - name: Check Built
         run: npm pack --dry-run
 
       - name: Publish to NPM
