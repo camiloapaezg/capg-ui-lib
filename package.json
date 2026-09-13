@@ -18,8 +18,12 @@
     ".": {
       "import": "./dist/main.js",
       "require": "./dist/main.umd.cjs"
-    }
+    },
+    "./styles.css": "./dist/main.css"
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "build": "tsc -b && vite build",
     "lint": "eslint .",

@@ -1,4 +1,4 @@
-import { createTheme, createThemeContract } from "@vanilla-extract/css";
+import { createGlobalThemeContract, createTheme } from "@vanilla-extract/css";
 
 const brandColors = {
   primary: {
@@ -77,45 +77,45 @@ const themeDarkColors = {
   },
 } as const;
 
-export const tokens = createThemeContract({
+export const tokens = createGlobalThemeContract({
   primary: {
-    lighter: null,
-    light: null,
-    default: null,
-    dark: null,
-    darker: null,
+    lighter: "tokens-primary-lighter",
+    light: "tokens-primary-light",
+    default: "tokens-primary-default",
+    dark: "tokens-primary-dark",
+    darker: "tokens-primary-darker",
   },
   secondary: {
-    default: null,
-    dark: null,
-    darker: null,
+    default: "tokens-secondary-default",
+    dark: "tokens-secondary-dark",
+    darker: "tokens-secondary-darker",
   },
   surface: {
-    default: null,
-    light: null,
-    backdrop: null,
+    default: "tokens-surface-default",
+    light: "tokens-surface-light",
+    backdrop: "tokens-surface-backdrop",
   },
   text: {
-    primary: null,
-    secondary: null,
+    primary: "tokens-text-primary",
+    secondary: "tokens-text-secondary",
   },
   border: {
-    default: null,
-    strong: null,
+    default: "tokens-border-default",
+    strong: "tokens-border-strong",
   },
   semantic: {
-    info: null,
-    success: null,
-    warning: null,
-    error: null,
+    info: "tokens-semantic-info",
+    success: "tokens-semantic-success",
+    warning: "tokens-semantic-warning",
+    error: "tokens-semantic-error",
   },
   shadows: {
-    xs: null,
-    sm: null,
-    md: null,
-    lg: null,
-    xl: null,
-    xxl: null,
+    xs: "tokens-shadows-xs",
+    sm: "tokens-shadows-sm",
+    md: "tokens-shadows-md",
+    lg: "tokens-shadows-lg",
+    xl: "tokens-shadows-xl",
+    xxl: "tokens-shadows-xxl",
   },
 });
 
