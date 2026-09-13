@@ -58,6 +58,7 @@ export const BasicDialog = ({
               )}
               <Dialog.CloseTrigger asChild>
                 <Button
+                  aria-label="Close dialog"
                   className={closeButtonClass}
                   appearance={ButtonAppearance.Ghost}
                   icon={

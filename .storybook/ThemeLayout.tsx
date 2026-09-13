@@ -4,7 +4,6 @@ import { Toggle } from "../src/components/Toggle";
 
 export const ThemeLayout = ({
   children,
-  style,
   ...rest
 }: PropsWithChildren<HTMLAttributes<HTMLDivElement>>) => {
   const { className: newTheme, onToggleTheme } = useTheme();
@@ -37,8 +36,9 @@ export const ThemeLayout = ({
     <div
       {...rest}
       style={{
-        ...style,
         position: "relative",
+        height: "100%",
+        paddingBottom: "1rem",
       }}
     >
       <Toggle

@@ -6,15 +6,15 @@ import { ThemeLayout } from "./ThemeLayout";
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <ThemeProvider>
-        <ThemeLayout
-          id="storybook-layout"
-          style={{
-            minHeight: "40vh",
-            height: "30rem",
-            width: "100%",
-          }}
-        >
+      <ThemeProvider
+        id="theme-provider"
+        style={{
+          minHeight: "40vh",
+          height: "30rem",
+          width: "100%",
+        }}
+      >
+        <ThemeLayout id="storybook-layout">
           <Story />
         </ThemeLayout>
       </ThemeProvider>

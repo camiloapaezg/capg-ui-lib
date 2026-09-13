@@ -1,6 +1,6 @@
-# CAPG UI Library
+# CAPG UI Components Library
 
-A React component library built with **Ark UI**, **vanilla-extract**, and **TypeScript**.
+A React components library built with **Ark UI**, **vanilla-extract**, and **TypeScript**.
 
 `@capg/capg-ui-lib` provides accessible, reusable UI components with a consistent visual language, TypeScript support, and built-in light/dark theme support.
 
@@ -36,6 +36,92 @@ If these dependencies are not already installed:
 
 ```bash
 npm install react react-dom @ark-ui/react @vanilla-extract/css
+```
+
+## Styling & Theming
+
+To apply styles and themes the following steps must be completed:
+
+1. The library styles must be imported in the root component as follows:
+
+```tsx
+import "@capg/capg-ui-lib/styles.css";
+```
+
+2. The [ThemeProvider](#ThemeProvider) wrapper must be added at the top of the hierarchy so that the styles are applied to all children elements.
+
+Components include their own predefined styles while allowing consumers to provide additional `className` values where supported.
+
+Example:
+
+```tsx
+import { ThemeProvider, useTheme } from "@capg/capg-ui-lib";
+
+function App() {
+  const { className, onToggleTheme } = useTheme();
+
+  return (
+    <div className={className}>
+      <button onClick={() => onToggleTheme?.(true)}>Dark</button>
+      <button onClick={() => onToggleTheme?.(false)}>Light</button>
+      <Application />
+    </div>
+  );
+}
+
+export default function Root() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}
+```
+
+The design theme tokens might be accessed via the `tokens` TypeScript object or the corresponding `var(--tokens-...)` element in the CSS file. Please find below all available tokens:
+
+```json
+{
+  "primary": {
+    "lighter": "tokens-primary-lighter",
+    "light": "tokens-primary-light",
+    "default": "tokens-primary-default",
+    "dark": "tokens-primary-dark",
+    "darker": "tokens-primary-darker"
+  },
+  "secondary": {
+    "default": "tokens-secondary-default",
+    "dark": "tokens-secondary-dark",
+    "darker": "tokens-secondary-darker"
+  },
+  "surface": {
+    "default": "tokens-surface-default",
+    "light": "tokens-surface-light",
+    "backdrop": "tokens-surface-backdrop"
+  },
+  "text": {
+    "primary": "tokens-text-primary",
+    "secondary": "tokens-text-secondary"
+  },
+  "border": {
+    "default": "tokens-border-default",
+    "strong": "tokens-border-strong"
+  },
+  "semantic": {
+    "info": "tokens-semantic-info",
+    "success": "tokens-semantic-success",
+    "warning": "tokens-semantic-warning",
+    "error": "tokens-semantic-error"
+  },
+  "shadows": {
+    "xs": "tokens-shadows-xs",
+    "sm": "tokens-shadows-sm",
+    "md": "tokens-shadows-md",
+    "lg": "tokens-shadows-lg",
+    "xl": "tokens-shadows-xl",
+    "xxl": "tokens-shadows-xxl"
+  }
+}
 ```
 
 ## Basic usage
@@ -926,21 +1012,22 @@ onValueChange?: (
 
 # ThemeProvider
 
-Provides access to the library's light/dark theme classes through React context.
+Provides access to the library's light/dark theme classes through React context. It wraps its children into a `<div>` element which class name corresponds to the current applied theme.
 
 ```tsx
 import { ThemeProvider, useTheme } from "@capg/capg-ui-lib";
+import type { ThemeProviderProps } from "@capg/capg-ui-lib";
 
-function App() {
+function App({ ...rest }: ThemeProviderProps) {
   return (
-    <ThemeProvider>
+    <ThemeProvider {...rest}>
       <Application />
     </ThemeProvider>
   );
 }
 ```
 
-The provider starts with the light theme.
+The provider starts with the light theme but it might be toggled to the dark theme through the `useTheme` hook.
 
 ### useTheme
 
@@ -967,7 +1054,7 @@ type ThemeProviderState = {
 
 ### Important
 
-`ThemeProvider` provides the active theme class through context. Consumers can use the returned `className` on the application/container element that should receive the theme.
+`ThemeProvider` provides a `<div>` which receives the library's theme class and exposes it via Context. Consumers can use the returned `className` on the application/container element that should receive the theme.
 
 For example:
 
@@ -1099,44 +1186,6 @@ import { UserImage } from "@capg/capg-ui-lib";
 | `imageProps` | `Avatar.ImageProps` |       No | Image properties         |
 | `className`  | `string`            |       No | Additional class         |
 | `...rest`    | `Avatar.RootProps`  |       No | Ark UI avatar properties |
-
----
-
-# Styling and themes
-
-The library uses vanilla-extract for component styling.
-
-Components include their own predefined styles while allowing consumers to provide additional `className` values where supported.
-
-The library also provides light and dark theme classes through the `ThemeProvider`.
-
-Example:
-
-```tsx
-import { ThemeProvider, useTheme } from "@capg/capg-ui-lib";
-
-function App() {
-  const { className, onToggleTheme } = useTheme();
-
-  return (
-    <div className={className}>
-      <button onClick={() => onToggleTheme?.(true)}>Dark</button>
-
-      <button onClick={() => onToggleTheme?.(false)}>Light</button>
-
-      <Application />
-    </div>
-  );
-}
-
-export default function Root() {
-  return (
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  );
-}
-```
 
 ---
 
