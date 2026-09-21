@@ -1169,6 +1169,7 @@ import { UserImage } from "@capg/capg-ui-lib";
 
 <UserImage
   fallback="CA"
+  shape="circular"
   imageProps={{
     src: "/avatar.jpg",
     alt: "Camilo Páez",
@@ -1180,12 +1181,13 @@ import { UserImage } from "@capg/capg-ui-lib";
 
 `UserImage` extends `Avatar.RootProps`.
 
-| Prop         | Type                | Required | Description              |
-| ------------ | ------------------- | -------: | ------------------------ |
-| `fallback`   | `string`            |      Yes | Fallback content         |
-| `imageProps` | `Avatar.ImageProps` |       No | Image properties         |
-| `className`  | `string`            |       No | Additional class         |
-| `...rest`    | `Avatar.RootProps`  |       No | Ark UI avatar properties |
+| Prop         | Type                | Required | Description                                                                                   |
+| ------------ | ------------------- | -------: | --------------------------------------------------------------------------------------------- |
+| `fallback`   | `string`            |      Yes | Fallback content                                                                              |
+| `shape`      | `AvatarShape`       |       No | Indicates the shape of the user image. The options are "circular" (default) or "rectangular". |
+| `imageProps` | `Avatar.ImageProps` |       No | Image properties                                                                              |
+| `className`  | `string`            |       No | Additional class                                                                              |
+| `...rest`    | `Avatar.RootProps`  |       No | Ark UI avatar properties                                                                      |
 
 ---
 
