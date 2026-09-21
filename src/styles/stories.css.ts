@@ -2,6 +2,8 @@ import { globalStyle } from "@vanilla-extract/css";
 import { tokens } from "./theme.css";
 
 globalStyle("*", {
+  fontFamily: '"Helvetica", "Arial", sans-serif',
+  fontSize: "14px",
   margin: 0,
   padding: 0,
   border: "none",
@@ -10,8 +12,6 @@ globalStyle("*", {
   lineHeight: 1.5,
   color: tokens.text.primary,
   background: "transparent",
-  fontFamily: "Arial, Helvetica, sans-serif",
-  fontSize: "14px",
   boxSizing: "border-box",
 });
 
