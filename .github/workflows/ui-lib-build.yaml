@@ -1,7 +1,7 @@
 name: Build UI Component Library
 
 on:
-  push:
+  pull_request:
     branches: [master]
 
 env:
