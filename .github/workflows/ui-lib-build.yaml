@@ -1,0 +1,21 @@
+name: Build UI Component Library
+
+on:
+  push:
+    branches: [master]
+
+env:
+  NODE_VERSION: "24"
+
+jobs:
+  build:
+    name: Build Library
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub Code
+        uses: actions/checkout@v7
+
+      - name: Build Library
+        uses: ././github/actions/action-build
+        with:
+          node-version: ${{ env.NODE_VERSION }}
