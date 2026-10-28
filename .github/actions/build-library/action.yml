@@ -24,6 +24,7 @@ runs:
           ${{ runner.os }}-npm-
 
     - name: Check Cache Status
+      shell: bash
       run: |
         if [ "${{ steps.cache-npm.outputs.cache-hit }}" == "true" ]; then
           echo "Cache FOUND - Cached dependencies will be used"
@@ -32,4 +33,5 @@ runs:
         fi
 
     - name: Install Dependencies and Build
+      shell: bash
       run: npm install && npm run build
