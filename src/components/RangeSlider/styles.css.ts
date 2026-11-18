@@ -111,7 +111,7 @@ export const thumbClass = style([
     background: tokens.surface.default,
     border: `2px solid ${tokens.border.strong}`,
     borderRadius: "9999px",
-    boxShadow: tokens.shadows.xs,
+    boxShadow: tokens.boxShadows.xs,
     transition: "box-shadow 0.15s ease, transform 0.1s ease",
     cursor: "grab",
     ":active": {

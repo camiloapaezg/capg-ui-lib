@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { TabsGroup } from ".";
+import { TabsGroup } from "./TabsGroup";
 import { tokens } from "../../styles/theme.css";
 import type { TabsGroupItem } from "./types";
 

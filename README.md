@@ -157,32 +157,33 @@ export function Example() {
 
 The library currently exports the following components:
 
-| Component            | Description                                                        |
-| -------------------- | ------------------------------------------------------------------ |
-| `BasicDialog`        | Modal dialog with trigger, title and content                       |
-| `Button`             | Styled button with multiple appearances and optional icon          |
-| `CollapsibleSection` | Accordion-style collapsible sections                               |
-| `ContextMenu`        | Context or standard menu with buttons, checkboxes and custom items |
-| `DateSelector`       | Date, multiple-date and date-range selector                        |
-| `Dropdown`           | Select/dropdown with optional grouping                             |
-| `FormField`          | Field wrapper providing label, helper and error text               |
-| `NumericInput`       | Numeric input with increment/decrement controls                    |
-| `OptionsGroup`       | Radio-button group                                                 |
-| `PaginationControl`  | Pagination control with customizable item rendering                |
-| `ProgressIndicator`  | Linear or circular progress indicator                              |
-| `ProtectedInput`     | Password input with visibility toggle                              |
-| `QRCode`             | QR code with optional image overlay                                |
-| `RangeSlider`        | Slider supporting single values and ranges                         |
-| `ScrollableArea`     | Styled scrollable container                                        |
-| `SelectionBox`       | Checkbox-style selection control                                   |
-| `Stepper`            | Multi-step navigation component                                    |
-| `TabsGroup`          | Tab navigation with associated content                             |
-| `TextArea`           | Styled textarea with value-change callback                         |
-| `TextInput`          | Styled text input with value-change callback                       |
-| `ThemeProvider`      | Light/dark theme context                                           |
-| `Toggle`             | Switch/toggle control                                              |
-| `UploadFile`         | File upload/drop zone with previews                                |
-| `UserImage`          | Avatar/image with fallback                                         |
+| Component            | Description                                                         |
+| -------------------- | ------------------------------------------------------------------- |
+| `BasicDialog`        | Modal dialog with trigger, title and content                        |
+| `Button`             | Styled button with multiple appearances and optional icon           |
+| `CollapsibleSection` | Accordion-style collapsible sections                                |
+| `ContextMenu`        | Context or standard menu with buttons, checkboxes and custom items  |
+| `DateSelector`       | Date, multiple-date and date-range selector                         |
+| `Dropdown`           | Select/dropdown with optional grouping                              |
+| `FormField`          | Field wrapper providing label, helper and error text                |
+| `Notification`       | Message that appears on the screen to provide feedback on an action |
+| `NumericInput`       | Numeric input with increment/decrement controls                     |
+| `OptionsGroup`       | Radio-button group                                                  |
+| `PaginationControl`  | Pagination control with customizable item rendering                 |
+| `ProgressIndicator`  | Linear or circular progress indicator                               |
+| `ProtectedInput`     | Password input with visibility toggle                               |
+| `QRCode`             | QR code with optional image overlay                                 |
+| `RangeSlider`        | Slider supporting single values and ranges                          |
+| `ScrollableArea`     | Styled scrollable container                                         |
+| `SelectionBox`       | Checkbox-style selection control                                    |
+| `Stepper`            | Multi-step navigation component                                     |
+| `TabsGroup`          | Tab navigation with associated content                              |
+| `TextArea`           | Styled textarea with value-change callback                          |
+| `TextInput`          | Styled text input with value-change callback                        |
+| `ThemeProvider`      | Light/dark theme context                                            |
+| `Toggle`             | Switch/toggle control                                               |
+| `UploadFile`         | File upload/drop zone with previews                                 |
+| `UserImage`          | Avatar/image with fallback                                          |
 
 ---
 
@@ -531,6 +532,35 @@ import { FormField, TextInput } from "@capg/capg-ui-lib";
 | `errorText`  | `string`          | Validation error        |
 | `children`   | `React.ReactNode` | Field control           |
 | `...rest`    | `Field.RootProps` | Ark UI field properties |
+
+---
+
+# Notification
+
+Message that appears on the screen to provide feedback on an action.
+
+To use the Toast component, create the toast engine using the `createToaster` function. This function manages the placement and grouping of toasts, and provides a toast object needed to create toast notification. For more information please visit the official [Ark UI Toast](https://ark-ui.com/docs/components/toast) component documentation.
+
+```tsx
+import { Notification } from "@capg/capg-ui-lib";
+
+const toaster = createToaster({
+  placement: 'bottom-end',
+  overlap: true,
+  gap: 24,
+})
+
+<Notification toaster={toaster} />;
+```
+
+### Props
+
+`Notification` extends `ToasterProps`.
+
+| Prop      | Type                       | Description                                                      |
+| --------- | -------------------------- | ---------------------------------------------------------------- |
+| `toaster` | `CreateToasterReturn<any>` | Ark UI toast engine                                              |
+| `icons`   | `ToastSemanticIcons`       | Optional object containing icon components per `Toast.Type` key. |
 
 ---
 

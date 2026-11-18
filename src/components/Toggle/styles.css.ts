@@ -38,7 +38,7 @@ export const thumbClass = style({
   height: "1.25rem",
   background: tokens.surface.default,
   borderRadius: "9999px",
-  boxShadow: tokens.shadows.sm,
+  boxShadow: tokens.boxShadows.sm,
   transition: "transform 0.15s ease",
   selectors: {
     "&[data-state='checked']": {

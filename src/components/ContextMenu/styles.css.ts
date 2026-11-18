@@ -13,7 +13,7 @@ export const contentClass = style({
   borderRadius: "0.375rem",
   border: `1px solid ${tokens.primary.default}`,
   zIndex: "calc(50 + var(--layer-index, 0))",
-  boxShadow: tokens.shadows.md,
+  boxShadow: tokens.boxShadows.md,
   transformOrigin: "var(--transform-origin)",
   selectors: {
     "&[data-state='open']": {

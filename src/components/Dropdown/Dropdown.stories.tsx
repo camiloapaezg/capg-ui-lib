@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Dropdown, type DropdownProps } from ".";
+import { Dropdown, type DropdownProps } from "./Dropdown";
 import { useTheme } from "../ThemeProvider/useTheme";
 import type { DropdownOption } from "./types";
 

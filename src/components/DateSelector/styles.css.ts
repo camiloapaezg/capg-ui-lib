@@ -123,7 +123,7 @@ export const contentClass = style({
   outline: "none",
   border: `1px solid ${tokens.primary.default}`,
   zIndex: "calc(50 + var(--layer-index, 0))",
-  boxShadow: tokens.shadows.md,
+  boxShadow: tokens.boxShadows.md,
   selectors: {
     "&[data-state='open']": {
       animation: `${fadeIn} 0.2s ease-out`,

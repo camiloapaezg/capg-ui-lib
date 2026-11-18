@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { CollapsibleSection } from ".";
+import { CollapsibleSection } from "./CollapsibleSection";
 import { type CollapsibleItem } from "./types";
 
 const items: CollapsibleItem[] = [

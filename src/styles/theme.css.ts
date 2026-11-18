@@ -20,7 +20,6 @@ const themeLightColors = {
   surface: {
     default: "#F1F5F9",
     light: "#E1E7EF",
-    backdrop: "#00000066",
   },
   text: {
     primary: "#1E293B",
@@ -37,6 +36,11 @@ const themeLightColors = {
     error: "#B91C1C",
   },
   shadows: {
+    s1: "rgba(0, 0, 0, 0.1)",
+    s2: "rgba(0, 0, 0, 0.2)",
+    s4: "rgba(0, 0, 0, 0.4)",
+  },
+  boxShadows: {
     xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
     sm: "0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08)",
     md: "0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06)",
@@ -51,7 +55,6 @@ const themeDarkColors = {
   surface: {
     default: "#07111A",
     light: "#273449",
-    backdrop: "#ffffff66",
   },
   text: {
     primary: "#F8FAFC",
@@ -68,6 +71,11 @@ const themeDarkColors = {
     error: "#F87171",
   },
   shadows: {
+    s1: "rgba(255, 255, 255, 0.1)",
+    s2: "rgba(255, 255, 255, 0.2)",
+    s4: "rgba(255, 255, 255, 0.4)",
+  },
+  boxShadows: {
     xs: "0 1px 2px 0 rgb(255 255 255 / 0.04)",
     sm: "0 1px 3px 0 rgb(255 255 255 / 0.06), 0 1px 2px -1px rgb(255 255 255 / 0.04)",
     md: "0 4px 6px -1px rgb(255 255 255 / 0.08), 0 2px 4px -2px rgb(255 255 255 / 0.05)",
@@ -93,7 +101,6 @@ export const tokens = createGlobalThemeContract({
   surface: {
     default: "tokens-surface-default",
     light: "tokens-surface-light",
-    backdrop: "tokens-surface-backdrop",
   },
   text: {
     primary: "tokens-text-primary",
@@ -110,12 +117,17 @@ export const tokens = createGlobalThemeContract({
     error: "tokens-semantic-error",
   },
   shadows: {
-    xs: "tokens-shadows-xs",
-    sm: "tokens-shadows-sm",
-    md: "tokens-shadows-md",
-    lg: "tokens-shadows-lg",
-    xl: "tokens-shadows-xl",
-    xxl: "tokens-shadows-xxl",
+    s1: "tokens-shadows-s1",
+    s2: "tokens-shadows-s2",
+    s4: "tokens-shadows-s4",
+  },
+  boxShadows: {
+    xs: "tokens-box_shadows-xs",
+    sm: "tokens-box_shadows-sm",
+    md: "tokens-box_shadows-md",
+    lg: "tokens-box_shadows-lg",
+    xl: "tokens-box_shadows-xl",
+    xxl: "tokens-box_shadows-xxl",
   },
 });
 

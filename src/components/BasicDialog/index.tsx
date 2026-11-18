@@ -12,7 +12,7 @@ import {
 } from "./styles.css";
 
 import clsx from "clsx";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { ButtonAppearance } from "../Button/types";
 
 export type BasicDialogProps = Dialog.RootProps & {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { UserImage, type UserImageProps } from ".";
+import { UserImage, type UserImageProps } from "./UserImage";
 import { AvatarShape } from "./types";
 
 const Content = ({ ...rest }: UserImageProps) => {
