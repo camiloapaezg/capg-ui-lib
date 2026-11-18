@@ -10,7 +10,7 @@ import { tokens } from "../../styles/theme.css";
 export const backdropClass = style({
   position: "fixed",
   inset: 0,
-  backgroundColor: tokens.surface.backdrop,
+  backgroundColor: tokens.shadows.s4,
   zIndex: "calc(50 + var(--layer-index, 0))",
   selectors: {
     "&[data-state='open']": {
@@ -50,7 +50,7 @@ export const contentClass = style({
   maxWidth: "calc(100vw - 10rem)",
   maxHeight: "calc(100vh - 10rem)",
   backgroundColor: tokens.surface.default,
-  boxShadow: tokens.shadows.xl,
+  boxShadow: tokens.boxShadows.xl,
   zIndex: "calc(50 + var(--layer-index, 0))",
   transition: "transform 0.1s ease-in-out",
   selectors: {

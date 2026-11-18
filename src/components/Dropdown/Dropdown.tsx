@@ -9,7 +9,7 @@ import {
 import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
 import { iconBaseClass } from "../../styles/common.css";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { ButtonAppearance } from "../Button/types";
 import {
   contentClass,

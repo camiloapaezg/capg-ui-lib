@@ -1,6 +1,6 @@
 import { Icon } from "@iconify-icon/react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button } from ".";
+import { Button } from "./Button";
 import { ButtonAppearance } from "./types";
 
 const meta = {

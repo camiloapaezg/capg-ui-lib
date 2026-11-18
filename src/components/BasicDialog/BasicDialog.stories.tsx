@@ -1,7 +1,7 @@
 import { Dialog } from "@ark-ui/react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { BasicDialog, type BasicDialogProps } from ".";
-import { Button } from "../Button";
+import { Button } from "../Button/Button";
 import { ButtonAppearance } from "../Button/types";
 import { useTheme } from "../ThemeProvider/useTheme";
 

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { OptionsGroup } from ".";
+import { OptionsGroup } from "./OptionsGroup";
 import type { OptionsGroupItem } from "./types";
 
 const items: OptionsGroupItem[] = Array.from({ length: 5 }, (_, index) => ({

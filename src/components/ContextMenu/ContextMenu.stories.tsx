@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
-import { ContextMenu, type ContextMenuProps } from ".";
-import { Button } from "../Button";
+import { ContextMenu, type ContextMenuProps } from "./ContextMenu";
+import { Button } from "../Button/Button";
 import type { ContextMenuItem } from "./types";
 
 type ContextMenuStatefulProps = Omit<ContextMenuProps, "items">;

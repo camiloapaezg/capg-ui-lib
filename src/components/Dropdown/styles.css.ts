@@ -77,7 +77,7 @@ export const contentClass = style({
   gap: "0.5rem",
   backgroundColor: tokens.surface.default,
   borderRadius: "0.375rem",
-  boxShadow: tokens.shadows.md,
+  boxShadow: tokens.boxShadows.md,
   zIndex: `calc(50 + var(--layer-index, 0))`,
   overflowY: "auto",
   scrollbarWidth: "thin",

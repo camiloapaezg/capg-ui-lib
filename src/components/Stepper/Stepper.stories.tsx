@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { HTMLAttributes, PropsWithChildren } from "react";
-import { Stepper } from ".";
+import { Stepper } from "./Stepper";
 import type { StepperItem } from "./types";
 import { tokens } from "../../styles/theme.css";
 

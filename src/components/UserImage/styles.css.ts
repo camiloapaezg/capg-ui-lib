@@ -31,7 +31,7 @@ export const rootClass = style({
   display: "inline-flex",
   justifyContent: "center",
   alignItems: "center",
-  boxShadow: tokens.shadows.sm,
+  boxShadow: tokens.boxShadows.sm,
 });
 
 export const circularClass = style({
