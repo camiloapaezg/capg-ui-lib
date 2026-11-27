@@ -4,25 +4,25 @@ import {
   type UseDatePickerContext,
 } from "@ark-ui/react/date-picker";
 import { Portal } from "@ark-ui/react/portal";
-import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
 import type { JSX, PropsWithChildren } from "react";
 import React from "react";
-import { labelBaseClass } from "../../styles/common.css";
+import { CalendarIcon } from "../../icons/Calendar/CalendarIcon";
+import { ChevronDownIcon } from "../../icons/ChevronDown/ChevronDownIcon";
+import { CloseIcon } from "../../icons/Close/CloseIcon";
+import { labelRootClass } from "../../styles/common.css";
 import { textInputClass } from "../TextInput/styles.css";
 import {
-  chevronLeftClass,
-  chevronRightClass,
-  clearTriggerClass,
+  buttonRemoveClass,
   contentClass,
   controlClass,
-  iconClass,
-  multipleInputClass,
+  iconTriggerClass,
+  iconNextClass,
+  iconPrevClass,
+  iconRemoveClass,
+  multipleInputWrapperClass,
   placeholderClass,
-  rangeTextClass,
-  rangeTextTriggerClass,
-  removeButtonClass,
-  removeIconClass,
+  textRangeClass,
   rootClass,
   selectedDateClass,
   tableCellClass,
@@ -31,6 +31,9 @@ import {
   tableHeaderClass,
   tableRowClass,
   triggerClass,
+  triggerNextClass,
+  triggerPrevClass,
+  triggerRangeTextClass,
   viewClass,
   viewControlClass,
 } from "./styles.css";
@@ -53,7 +56,6 @@ type ViewInputProps = {
 export type DateSelectorProps = DatePicker.RootProps &
   React.RefAttributes<HTMLDivElement> & {
     label?: string;
-    clearLabel?: string;
     positionerProps?: DatePicker.PositionerProps &
       React.RefAttributes<HTMLDivElement>;
   };
@@ -70,14 +72,14 @@ const formatWithDay = (date: DateValue) => {
 const ViewControl = ({ ...rest }: ViewControlProps) => {
   return (
     <DatePicker.ViewControl {...rest} className={viewControlClass}>
-      <DatePicker.PrevTrigger className={chevronLeftClass}>
-        <Icon icon="fluent:chevron-left-16-regular" className={iconClass} />
+      <DatePicker.PrevTrigger className={triggerPrevClass}>
+        <ChevronDownIcon className={iconPrevClass} />
       </DatePicker.PrevTrigger>
-      <DatePicker.ViewTrigger className={rangeTextTriggerClass}>
-        <DatePicker.RangeText className={rangeTextClass} />
+      <DatePicker.ViewTrigger className={triggerRangeTextClass}>
+        <DatePicker.RangeText className={textRangeClass} />
       </DatePicker.ViewTrigger>
-      <DatePicker.NextTrigger className={chevronRightClass}>
-        <Icon icon="fluent:chevron-right-16-regular" className={iconClass} />
+      <DatePicker.NextTrigger className={triggerNextClass}>
+        <ChevronDownIcon className={iconNextClass} />
       </DatePicker.NextTrigger>
     </DatePicker.ViewControl>
   );
@@ -211,26 +213,23 @@ const ViewInput = ({ selectionMode }: ViewInputProps) => {
       result = (
         <DatePicker.Context>
           {(context) => (
-            <div className={multipleInputClass}>
+            <div role="presentation" className={multipleInputWrapperClass}>
               {context.value.length === 0 ? (
-                <span className={placeholderClass}>{"Select dates..."}</span>
+                <span className={placeholderClass}>{"-"}</span>
               ) : (
                 context.value.map((date, index) => (
                   <span key={index} className={selectedDateClass}>
                     {formatWithDay(date)}
                     <button
                       aria-label={date.toString()}
-                      className={removeButtonClass}
+                      className={buttonRemoveClass}
                       onClick={() =>
                         context.setValue(
                           context.value.filter((_, i) => i !== index),
                         )
                       }
                     >
-                      <Icon
-                        icon="fluent:dismiss-12-regular"
-                        className={removeIconClass}
-                      />
+                      <CloseIcon className={iconRemoveClass} />
                     </button>
                   </span>
                 ))
@@ -247,7 +246,6 @@ const ViewInput = ({ selectionMode }: ViewInputProps) => {
 
 export const DateSelector = ({
   label,
-  clearLabel,
   selectionMode,
   disabled,
   className,
@@ -262,18 +260,15 @@ export const DateSelector = ({
       className={clsx(rootClass, className)}
     >
       {label && (
-        <DatePicker.Label className={labelBaseClass}>{label}</DatePicker.Label>
+        <DatePicker.Label className={labelRootClass}>{label}</DatePicker.Label>
       )}
       <DatePicker.Control className={controlClass}>
         <ViewInput selectionMode={selectionMode} />
         <DatePicker.Trigger className={triggerClass}>
-          <Icon icon="fluent:calendar-16-regular" className={iconClass} />
+          <CalendarIcon className={iconTriggerClass} />
         </DatePicker.Trigger>
-        <DatePicker.ClearTrigger
-          className={clearTriggerClass}
-          disabled={disabled}
-        >
-          {clearLabel ?? "Clear"}
+        <DatePicker.ClearTrigger className={triggerClass} disabled={disabled}>
+          <CloseIcon className={iconTriggerClass} />
         </DatePicker.ClearTrigger>
       </DatePicker.Control>
       <Portal>

@@ -1,53 +1,18 @@
 import { style } from "@vanilla-extract/css";
 import { fadeIn, fadeOut } from "../../styles/animations.css";
-import {
-  disabledClass,
-  iconBaseClass,
-  outlineOnFocusClass,
-} from "../../styles/common.css";
+import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
 import { tokens } from "../../styles/theme.css";
+import { buttonOutlineClass, buttonPrimaryClass } from "../Button/styles.css";
 
 const borderRadius = "0.375rem";
 
-const viewTriggerClass = style([
-  disabledClass,
+const triggerControlClass = style([
+  buttonPrimaryClass,
   {
-    cursor: "pointer",
-    color: tokens.primary.lighter,
-    fontWeight: 600,
-    ":enabled": {
-      background: "transparent",
-    },
-    ":hover": {
-      backgroundColor: tokens.primary.darker,
-    },
-    ":active": {
-      backgroundColor: tokens.primary.dark,
-    },
-  },
-]);
-
-const chevronClass = style([
-  viewTriggerClass,
-  {
-    width: "2rem",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-]);
-
-const buttonClass = style([
-  disabledClass,
-  {
-    borderRadius,
-    cursor: "pointer",
-    background: "transparent",
-    ":hover": {
-      color: tokens.primary.default,
-    },
-    ":active": {
-      backgroundColor: tokens.surface.light,
+    selectors: {
+      "&:focus,&:focus-visible ": {
+        outline: "none",
+      },
     },
   },
 ]);
@@ -75,42 +40,20 @@ export const controlClass = style({
   width: "100%",
 });
 
-export const multipleInputClass = style({
+export const multipleInputWrapperClass = style({
   alignSelf: "stretch",
   minWidth: "8rem",
-  padding: "0.25rem 0.5rem",
+  paddingInline: "0.75rem",
+  paddingBlock: "0.25rem",
   border: `1px solid ${tokens.border.strong}`,
   borderRadius,
   transition: "border-color 0.15s ease, box-shadow 0.15s ease",
-  display: "flex",
+  display: "inline-flex",
   flexFlow: "row wrap",
   alignItems: "center",
   gap: "0.25rem",
   flexGrow: 1,
 });
-
-export const triggerClass = style([
-  {
-    border: `1px solid ${tokens.border.strong}`,
-    display: "inline-flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "2.5rem",
-    height: "2.5rem",
-    flexShrink: 0,
-    transition: "background 0.15s ease, border-color 0.15s ease",
-  },
-  buttonClass,
-]);
-
-export const clearTriggerClass = style([
-  {
-    border: `1px solid ${tokens.border.strong}`,
-    padding: "0.5rem 1rem",
-    height: "2.5rem",
-  },
-  buttonClass,
-]);
 
 export const contentClass = style({
   display: "flex",
@@ -151,41 +94,59 @@ export const viewControlClass = style({
   flexFlow: "row nowrap",
   justifyContent: "stretch",
   alignItems: "stretch",
-  height: "3rem",
+  height: "2.5rem",
   background: "inherit",
 });
 
-export const chevronLeftClass = style([
-  chevronClass,
+export const triggerClass = style([
+  buttonOutlineClass,
   {
+    width: "2.5rem",
+    height: "2.5rem",
+    flexShrink: 0,
+    transition: "background 0.15s ease, border-color 0.15s ease",
+  },
+]);
+
+export const triggerPrevClass = style([
+  triggerControlClass,
+  {
+    width: "2rem",
     borderRadius: `${borderRadius} 0px 0px 0px`,
   },
 ]);
 
-export const chevronRightClass = style([
-  chevronClass,
+export const triggerNextClass = style([
+  triggerControlClass,
   {
+    width: "2rem",
     borderRadius: `0px ${borderRadius} 0px 0px`,
   },
 ]);
 
-export const rangeTextTriggerClass = style([
-  viewTriggerClass,
+export const triggerRangeTextClass = style([
+  triggerControlClass,
   {
     flexGrow: 1,
   },
 ]);
 
-export const rangeTextClass = style({
+export const textRangeClass = style({
   color: "inherit",
 });
 
-export const iconClass = style([
-  iconBaseClass,
-  {
-    fontSize: "1.25rem",
-  },
-]);
+export const iconTriggerClass = style({
+  height: "1.5rem",
+  width: "1.5rem",
+});
+
+export const iconPrevClass = style({
+  transform: "rotate(90deg)",
+});
+
+export const iconNextClass = style({
+  transform: "rotate(-90deg)",
+});
 
 export const tableClass = style({
   background: tokens.surface.default,
@@ -211,7 +172,6 @@ export const tableCellClass = style({
 });
 
 export const tableCellTriggerClass = style([
-  buttonClass,
   outlineOnFocusClass,
   disabledClass,
   {
@@ -222,13 +182,19 @@ export const tableCellTriggerClass = style([
     flexFlow: "row nowrap",
     justifyContent: "center",
     alignItems: "center",
-    border: "none",
-    outline: "none",
+    borderRadius,
+    cursor: "pointer",
     userSelect: "none",
     ":enabled": {
       borderRadius,
       background: "transparent",
       cursor: "pointer",
+    },
+    ":hover": {
+      color: tokens.primary.default,
+    },
+    ":active": {
+      backgroundColor: tokens.surface.light,
     },
     selectors: {
       "&[data-today]": {
@@ -276,13 +242,13 @@ export const selectedDateClass = style({
   alignItems: "center",
   padding: "0.25rem 0.5rem",
   borderRadius,
-  fontSize: "12px",
+  fontSize: "0.85rem",
   backgroundColor: tokens.primary.default,
   color: tokens.primary.lighter,
   columnGap: "0.5rem",
 });
 
-export const removeButtonClass = style([
+export const buttonRemoveClass = style([
   disabledClass,
   {
     borderRadius,
@@ -304,8 +270,8 @@ export const removeButtonClass = style([
   },
 ]);
 
-export const removeIconClass = style({
+export const iconRemoveClass = style({
   color: tokens.primary.lighter,
-  fontSize: "0.75rem",
-  background: "transparent",
+  height: "1rem",
+  width: "1rem",
 });

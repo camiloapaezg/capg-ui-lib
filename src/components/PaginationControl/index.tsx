@@ -1,15 +1,16 @@
 import { Pagination, type UsePaginationContext } from "@ark-ui/react";
-import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
+import type { JSX } from "react";
+import { ChevronDownIcon } from "../../icons/ChevronDown/ChevronDownIcon";
 import {
   controlsClass,
   ellipsisClass,
+  iconNextClass,
+  iconPrevClass,
   itemClass,
   itemsClass,
   rootClass,
 } from "./styles.css";
-import type { JSX } from "react";
-import { iconBaseClass } from "../../styles/common.css";
 
 export type PaginationControlProps = Pagination.RootProps &
   React.RefAttributes<HTMLElement> & {
@@ -43,10 +44,7 @@ export const PaginationControl = ({
             )}
             <div className={controlsClass}>
               <Pagination.PrevTrigger className={itemClass}>
-                <Icon
-                  icon="fluent:chevron-left-16-regular"
-                  className={iconBaseClass}
-                />
+                <ChevronDownIcon className={iconPrevClass} />
               </Pagination.PrevTrigger>
               {pagination.pages.map((page, index) =>
                 page.type === "page" ? (
@@ -64,10 +62,7 @@ export const PaginationControl = ({
                 ),
               )}
               <Pagination.NextTrigger className={itemClass}>
-                <Icon
-                  icon="fluent:chevron-right-16-regular"
-                  className={iconBaseClass}
-                />
+                <ChevronDownIcon className={iconNextClass} />
               </Pagination.NextTrigger>
             </div>
           </>

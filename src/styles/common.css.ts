@@ -32,15 +32,7 @@ export const dataInvalidClass = style({
   },
 });
 
-export const iconBaseClass = style({
-  fontSize: "1rem",
-  fontWeight: 500,
-  background: "transparent",
-  color: "inherit",
-  flexShrink: 0,
-});
-
-export const labelBaseClass = style({
+export const labelRootClass = style({
   fontSize: "0.875rem",
   lineHeight: "1.25rem",
   fontWeight: 600,

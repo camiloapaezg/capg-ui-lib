@@ -59,7 +59,7 @@ const NotificationComponent = ({
       overlap: true,
       placement,
       gap: 16,
-      duration: Infinity,
+      duration: 3 * 1000,
     }),
   );
 

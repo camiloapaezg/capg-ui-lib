@@ -40,8 +40,7 @@ export const viewportClass = style([
   {
     height: "100%",
     borderRadius: "0.5rem",
-    outline: `1px solid ${tokens.border.default}`,
-    outlineOffset: "1px",
+    boxShadow: tokens.boxShadows.sm,
     overscrollBehavior: "contain",
     scrollbarWidth: "none",
     selectors: {

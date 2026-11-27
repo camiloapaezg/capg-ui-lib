@@ -1,18 +1,22 @@
 import { FileUpload } from "@ark-ui/react/file-upload";
-import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
 import type { JSX } from "react";
 import React from "react";
+import { CloseIcon } from "../../icons/Close/CloseIcon";
+import { DocumentIcon } from "../../icons/Document/DocumentIcon";
+import { DocumentPdfIcon } from "../../icons/DocumentPDF/DocumentPdfIcon";
+import { UploadIcon } from "../../icons/Upload/UploadIcon";
+import { VideoIcon } from "../../icons/Video/VideoIcon";
 import { Button } from "../Button/Button";
 import { ButtonAppearance } from "../Button/types";
 import {
-  closeIconClass,
   dropZoneClass,
   dropZoneContentClass,
   dropZoneDescriptionClass,
-  dropZoneIconClass,
   dropZoneTitleClass,
   filePreviewClass,
+  iconPreviewClass,
+  iconUploadClass,
   imagePreviewClass,
   itemClass,
   itemCompactClass,
@@ -20,7 +24,6 @@ import {
   itemNameClass,
   itemSizeTextClass,
   labelClass,
-  previewIconClass,
   rootClass,
 } from "./styles.css";
 
@@ -53,10 +56,7 @@ const Trigger = ({ trigger, title, description }: TriggerProps) => {
 
   return (
     <FileUpload.Dropzone className={dropZoneClass}>
-      <Icon
-        icon="fluent:arrow-upload-32-filled"
-        className={dropZoneIconClass}
-      />
+      <UploadIcon className={iconUploadClass} />
       <div className={dropZoneContentClass}>
         <span className={dropZoneTitleClass}>
           {title ?? "Drag and drop files here"}
@@ -85,23 +85,17 @@ const FilePreview = ({ file }: FilePreviewProps) => {
         <FileUpload.ItemPreviewImage className={imagePreviewClass} />
       </FileUpload.ItemPreview>
       <FileUpload.ItemPreview type="video/*" className={filePreviewClass}>
-        <Icon icon="fluent:video-16-regular" className={previewIconClass} />
+        <VideoIcon className={iconPreviewClass} />
       </FileUpload.ItemPreview>
       <FileUpload.ItemPreview
         type="application/pdf"
         className={filePreviewClass}
       >
-        <Icon
-          icon="fluent:document-pdf-16-regular"
-          className={previewIconClass}
-        />
+        <DocumentPdfIcon className={iconPreviewClass} />
       </FileUpload.ItemPreview>
       {showGeneric && (
         <FileUpload.ItemPreview type=".*" className={filePreviewClass}>
-          <Icon
-            icon="fluent:document-16-regular"
-            className={previewIconClass}
-          />
+          <DocumentIcon className={iconPreviewClass} />
         </FileUpload.ItemPreview>
       )}
     </React.Fragment>
@@ -119,12 +113,7 @@ const SelectedFiles = ({ file, compact, ...rest }: SelectedFilesProps) => {
         <FileUpload.ItemSizeText className={itemSizeTextClass} />
       )}
       <FileUpload.ItemDeleteTrigger asChild>
-        <Button
-          appearance={ButtonAppearance.Ghost}
-          icon={
-            <Icon icon="fluent:dismiss-16-regular" className={closeIconClass} />
-          }
-        />
+        <Button appearance={ButtonAppearance.Ghost} icon={<CloseIcon />} />
       </FileUpload.ItemDeleteTrigger>
     </FileUpload.Item>
   );

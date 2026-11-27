@@ -1,7 +1,7 @@
 import { Accordion } from "@ark-ui/react";
-import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
 import { useMemo } from "react";
+import { ChevronDownIcon } from "../../icons/ChevronDown/ChevronDownIcon";
 import {
   bodyCenteredClass,
   itemBodyClass,
@@ -48,7 +48,7 @@ export const CollapsibleSection = ({
           <Accordion.ItemTrigger className={itemTriggerClass}>
             {title}
             <Accordion.ItemIndicator className={itemIndicatorClass}>
-              <Icon icon={"fluent:chevron-down-16-regular"} />
+              <ChevronDownIcon />
             </Accordion.ItemIndicator>
           </Accordion.ItemTrigger>
           <Accordion.ItemContent className={itemContentClass}>

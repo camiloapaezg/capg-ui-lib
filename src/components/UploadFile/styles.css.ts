@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import {
   dataInvalidClass,
   disabledClass,
-  labelBaseClass,
+  labelRootClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
 import { tokens } from "../../styles/theme.css";
@@ -15,23 +15,29 @@ export const rootClass = style({
   gap: "1rem",
   width: "100%",
   maxWidth: "24rem",
-});
-
-export const labelClass = style([disabledClass, labelBaseClass]);
-
-export const closeIconClass = style({
-  fontSize: "1rem",
-  ":hover": {
-    color: tokens.primary.default,
-  },
-  ":active": {
-    background: tokens.surface.light,
+  vars: {
+    "--icon-preview-size": "2.5rem",
   },
 });
 
-export const previewIconClass = style({
-  fontSize: "1.75rem",
+export const labelClass = style([disabledClass, labelRootClass]);
+
+export const iconPreviewClass = style({
+  width: "var(--icon-preview-size)",
+  height: "var(--icon-preview-size)",
   color: tokens.text.secondary,
+});
+
+export const iconUploadClass = style({
+  height: "4rem !important",
+  width: "4rem !important",
+});
+
+export const imagePreviewClass = style({
+  width: "var(--icon-preview-size)",
+  height: "var(--icon-preview-size)",
+  objectFit: "cover",
+  borderRadius: "0.375rem",
 });
 
 export const itemGroupClass = style({
@@ -93,13 +99,6 @@ export const filePreviewClass = style({
   flexShrink: 0,
 });
 
-export const imagePreviewClass = style({
-  width: "2.5rem",
-  height: "2.5rem",
-  objectFit: "cover",
-  borderRadius: "0.375rem",
-});
-
 export const dropZoneClass = style([
   disabledClass,
   dataInvalidClass,
@@ -131,10 +130,6 @@ export const dropZoneClass = style([
     },
   },
 ]);
-
-export const dropZoneIconClass = style({
-  fontSize: "3rem",
-});
 
 export const dropZoneContentClass = style({
   display: "flex",

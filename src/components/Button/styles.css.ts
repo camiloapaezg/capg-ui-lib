@@ -2,8 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
 import { tokens } from "../../styles/theme.css";
 
-export const baseClass = style([
-  outlineOnFocusClass,
+export const rootClass = style([
   disabledClass,
   {
     fontWeight: 500,
@@ -20,8 +19,9 @@ export const baseClass = style([
   },
 ]);
 
-export const primaryClass = style([
-  baseClass,
+export const buttonPrimaryClass = style([
+  rootClass,
+  outlineOnFocusClass,
   {
     color: tokens.primary.lighter,
     backgroundColor: tokens.primary.default,
@@ -34,8 +34,9 @@ export const primaryClass = style([
   },
 ]);
 
-export const secondaryClass = style([
-  baseClass,
+export const buttonSecondaryClass = style([
+  rootClass,
+  outlineOnFocusClass,
   {
     color: tokens.primary.lighter,
     backgroundColor: tokens.secondary.default,
@@ -48,8 +49,9 @@ export const secondaryClass = style([
   },
 ]);
 
-export const outlineClass = style([
-  baseClass,
+export const buttonOutlineClass = style([
+  rootClass,
+  outlineOnFocusClass,
   {
     background: "transparent",
     border: `1px solid ${tokens.border.strong}`,
@@ -63,20 +65,17 @@ export const outlineClass = style([
   },
 ]);
 
-export const ghostClass = style([
-  baseClass,
+export const buttonGhostClass = style([
+  rootClass,
   {
     background: "transparent",
-    ":hover": {
-      color: tokens.primary.default,
-    },
     ":active": {
       backgroundColor: tokens.surface.light,
     },
   },
 ]);
 
-export const iconButtonBaseClass = style({
+export const buttonIconClass = style({
   padding: 0,
   width: "2rem",
   height: "2rem",

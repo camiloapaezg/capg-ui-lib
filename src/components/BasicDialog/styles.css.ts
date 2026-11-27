@@ -94,8 +94,3 @@ export const closeButtonClass = style({
   top: "1rem",
   right: "0rem",
 });
-
-export const closeIconClass = style({
-  fontSize: "1rem",
-  fontWeight: 500,
-});

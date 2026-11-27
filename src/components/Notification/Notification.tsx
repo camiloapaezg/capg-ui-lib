@@ -1,10 +1,10 @@
 import { Portal, Toast, Toaster, type ToasterProps } from "@ark-ui/react";
-import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
+import { CloseIcon } from "../../icons/Close/CloseIcon";
 import { Button, ButtonAppearance } from "../Button";
 import {
-  closeButtonClass,
-  closeIconClass,
+  buttonCloseClass,
+  iconCloseClass,
   descriptionClass,
   rootClass,
   titleClass,
@@ -46,14 +46,9 @@ export const Notification = ({
               <Toast.CloseTrigger asChild>
                 <Button
                   aria-label="Close dialog"
-                  className={closeButtonClass}
+                  className={buttonCloseClass}
                   appearance={ButtonAppearance.Ghost}
-                  icon={
-                    <Icon
-                      icon="fluent:dismiss-16-regular"
-                      className={closeIconClass}
-                    />
-                  }
+                  icon={<CloseIcon className={iconCloseClass} />}
                 />
               </Toast.CloseTrigger>
             </Toast.Root>

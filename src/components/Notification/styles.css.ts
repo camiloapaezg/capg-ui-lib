@@ -89,7 +89,7 @@ export const descriptionClass = style({
   opacity: 0.8,
 });
 
-export const closeButtonClass = style({
+export const buttonCloseClass = style({
   position: "absolute",
   top: "0.2rem",
   right: "0.2rem",
@@ -99,8 +99,6 @@ export const closeButtonClass = style({
   },
 });
 
-export const closeIconClass = style({
-  fontSize: "1rem",
-  fontWeight: 500,
+export const iconCloseClass = style({
   color: "var(--toast-accent)",
 });
