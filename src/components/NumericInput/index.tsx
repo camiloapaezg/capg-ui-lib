@@ -1,13 +1,14 @@
 import { NumberInput } from "@ark-ui/react/number-input";
-import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
-import { iconBaseClass, labelBaseClass } from "../../styles/common.css";
+import { ChevronDownIcon } from "../../icons/ChevronDown/ChevronDownIcon";
+import { labelRootClass } from "../../styles/common.css";
 import {
   controlClass,
+  iconChevronUpClass,
   inputClass,
   rootClass,
-  triggerClass,
-  triggerGroupClass,
+  triggerDownClass,
+  triggersWrapperClass,
   triggerUpClass,
 } from "./styles.css";
 
@@ -23,19 +24,16 @@ export const NumericInput = ({
 }: NumericInputProps) => (
   <NumberInput.Root {...rest} className={clsx(rootClass, className)}>
     {label && (
-      <NumberInput.Label className={labelBaseClass}>{label}</NumberInput.Label>
+      <NumberInput.Label className={labelRootClass}>{label}</NumberInput.Label>
     )}
     <NumberInput.Control className={controlClass}>
       <NumberInput.Input className={inputClass} />
-      <div className={triggerGroupClass}>
+      <div role="presentation" className={triggersWrapperClass}>
         <NumberInput.IncrementTrigger className={triggerUpClass}>
-          <Icon icon="fluent:chevron-up-16-regular" className={iconBaseClass} />
+          <ChevronDownIcon className={iconChevronUpClass} />
         </NumberInput.IncrementTrigger>
-        <NumberInput.DecrementTrigger className={triggerClass}>
-          <Icon
-            icon="fluent:chevron-down-16-regular"
-            className={iconBaseClass}
-          />
+        <NumberInput.DecrementTrigger className={triggerDownClass}>
+          <ChevronDownIcon />
         </NumberInput.DecrementTrigger>
       </div>
     </NumberInput.Control>

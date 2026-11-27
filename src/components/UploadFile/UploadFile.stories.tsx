@@ -24,17 +24,5 @@ export const UploadFileStory: Story = {
     compact: false,
     title: "Drag and drop files here",
     description: "or click to browse",
-    // trigger: (
-    //   <Button
-    //     appearance={"Secondary"}
-    //     label="Choose file(s)"
-    //     icon={
-    //       <Icon
-    //         icon="fluent:arrow-upload-16-regular"
-    //         style={{ color: "inherit", fontSize: "18px" }}
-    //       />
-    //     }
-    //   />
-    // ),
   },
 };

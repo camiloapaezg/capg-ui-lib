@@ -3,6 +3,7 @@ import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
 import { tokens } from "../../styles/theme.css";
 
 export const rootClass = style({
+  position: "relative",
   background: "transparent",
   display: "flex",
   flexDirection: "column",
@@ -13,6 +14,13 @@ export const rootClass = style({
 });
 
 export const controlsClass = style({
+  position: "sticky",
+  bottom: "0px",
+  left: "0px",
+  right: "0px",
+  background: tokens.surface.default,
+  width: "100%",
+  paddingTop: "0.5rem",
   display: "flex",
   alignItems: "center",
   gap: "0.25rem",
@@ -69,4 +77,12 @@ export const ellipsisClass = style({
   minWidth: "2.25rem",
   height: "2.25rem",
   userSelect: "none",
+});
+
+export const iconPrevClass = style({
+  transform: "rotate(90deg)",
+});
+
+export const iconNextClass = style({
+  transform: "rotate(-90deg)",
 });

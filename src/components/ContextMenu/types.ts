@@ -12,6 +12,7 @@ type ContextMenuItemBase = Omit<
 
 export type MenuItemProps = {
   category: "button";
+  icon?: JSX.Element;
 } & Omit<Menu.ItemProps, "value">;
 
 export type CheckboxItemProps = {

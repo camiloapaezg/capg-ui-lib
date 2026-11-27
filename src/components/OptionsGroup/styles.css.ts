@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import {
   disabledClass,
-  labelBaseClass,
+  labelRootClass,
   outlineOnFocusClass,
 } from "../../styles/common.css";
 import { tokens } from "../../styles/theme.css";
@@ -18,7 +18,7 @@ export const rootClass = style([
   },
 ]);
 
-export const labelClass = style([labelBaseClass, disabledClass]);
+export const labelClass = style([labelRootClass, disabledClass]);
 
 export const itemClass = style([
   disabledClass,

@@ -1,12 +1,12 @@
 import clsx from "clsx";
 import { useMemo, type ButtonHTMLAttributes, type JSX } from "react";
 import {
-  baseClass,
-  ghostClass,
-  iconButtonBaseClass,
-  outlineClass,
-  primaryClass,
-  secondaryClass,
+  buttonGhostClass,
+  buttonIconClass,
+  buttonOutlineClass,
+  buttonPrimaryClass,
+  buttonSecondaryClass,
+  rootClass,
 } from "./styles.css";
 import { ButtonAppearance } from "./types";
 
@@ -26,25 +26,28 @@ export const Button = ({
   const buttonClass: string = useMemo(() => {
     switch (appearance) {
       case "Primary":
-        return primaryClass;
+        return buttonPrimaryClass;
       case "Secondary":
-        return secondaryClass;
+        return buttonSecondaryClass;
       case "Ghost":
-        return ghostClass;
+        return buttonGhostClass;
       case "Outline":
-        return outlineClass;
+        return buttonOutlineClass;
       default:
-        return baseClass;
+        return rootClass;
     }
   }, [appearance]);
 
-  const iconButtonClass: string | undefined = useMemo(
-    () => (label ? undefined : iconButtonBaseClass),
+  const _buttonIconClass: string | undefined = useMemo(
+    () => (label ? undefined : buttonIconClass),
     [label],
   );
 
   return (
-    <button {...rest} className={clsx(buttonClass, iconButtonClass, className)}>
+    <button
+      {...rest}
+      className={clsx(buttonClass, _buttonIconClass, className)}
+    >
       {icon}
       {label}
     </button>

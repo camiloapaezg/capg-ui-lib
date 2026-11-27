@@ -1,6 +1,6 @@
 import { Progress } from "@ark-ui/react";
 import clsx from "clsx";
-import { labelBaseClass } from "../../styles/common.css";
+import { labelRootClass } from "../../styles/common.css";
 import {
   circleClass,
   circleContainerClass,
@@ -27,7 +27,7 @@ const ProgressCircular = ({ label, className, ...rest }: ProgressProps) => {
   return (
     <Progress.Root {...rest} className={clsx(circleRootClass, className)}>
       {label && (
-        <Progress.Label className={labelBaseClass}>{label}</Progress.Label>
+        <Progress.Label className={labelRootClass}>{label}</Progress.Label>
       )}
       <div className={circleContainerClass}>
         <Progress.Circle className={circleClass}>
@@ -44,7 +44,7 @@ const ProgressLinear = ({ label, className, ...rest }: ProgressProps) => {
   return (
     <Progress.Root {...rest} className={clsx(linearRootClass, className)}>
       {label && (
-        <Progress.Label className={labelBaseClass}>{label}</Progress.Label>
+        <Progress.Label className={labelRootClass}>{label}</Progress.Label>
       )}
       <Progress.ValueText className={linearTextClass} />
       <Progress.Track className={linearTrackClass}>

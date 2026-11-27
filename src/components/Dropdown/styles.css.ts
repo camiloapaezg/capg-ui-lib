@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { scaleFadeIn, scaleFadeOut } from "../../styles/animations.css";
-import { disabledClass, labelBaseClass } from "../../styles/common.css";
+import { disabledClass, labelRootClass } from "../../styles/common.css";
 import { tokens } from "../../styles/theme.css";
 import { textInputClass } from "../TextInput/styles.css";
 
@@ -12,7 +12,7 @@ export const rootClass = style({
   maxWidth: "24rem",
 });
 
-export const labelClass = style([disabledClass, labelBaseClass]);
+export const labelClass = style([disabledClass, labelRootClass]);
 
 export const controlClass = style([
   disabledClass,
@@ -45,7 +45,7 @@ export const valueTextClass = style({
   textOverflow: "ellipsis",
   whiteSpace: "nowrap",
   color: "inherit",
-  paddingRight: "3rem",
+  paddingInlineEnd: "3.5rem",
 });
 
 export const controlIndicatorsClass = style({

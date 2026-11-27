@@ -1,6 +1,9 @@
 import { Checkbox } from "@ark-ui/react/checkbox";
-import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
+import { useMemo } from "react";
+import type { JSX } from "react/jsx-runtime";
+import { CheckmarkIcon } from "../../icons/Checkmark/CheckmarkIcon";
+import { LineHorizontalIcon } from "../../icons/LineHorizontal/LineHorizontalIcon";
 import {
   controlClass,
   iconClass,
@@ -20,6 +23,14 @@ export const SelectionBox = ({
   className,
   ...rest
 }: SelectionBoxProps) => {
+  const Icon: JSX.Element = useMemo(() => {
+    if (checked !== "indeterminate") {
+      return <CheckmarkIcon className={iconClass} />;
+    }
+
+    return <LineHorizontalIcon className={iconClass} />;
+  }, [checked]);
+
   return (
     <Checkbox.Root
       {...rest}
@@ -28,14 +39,7 @@ export const SelectionBox = ({
     >
       <Checkbox.Control className={controlClass}>
         <Checkbox.Indicator className={indicatorClass}>
-          <Icon
-            icon={
-              checked !== "indeterminate"
-                ? "fluent:checkmark-16-filled"
-                : "fluent:line-horizontal-1-16-filled"
-            }
-            className={iconClass}
-          />
+          {Icon}
         </Checkbox.Indicator>
       </Checkbox.Control>
       <Checkbox.Label className={labelClass}>{label}</Checkbox.Label>

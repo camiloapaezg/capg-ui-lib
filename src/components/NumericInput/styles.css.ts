@@ -1,6 +1,21 @@
 import { style } from "@vanilla-extract/css";
 import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
 import { tokens } from "../../styles/theme.css";
+import { buttonPrimaryClass } from "../Button/styles.css";
+
+const triggerClass = style([
+  buttonPrimaryClass,
+  {
+    minHeight: "0rem",
+    minWidth: "0rem",
+    width: "100%",
+    borderRadius: "0rem",
+    userSelect: "none",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+]);
 
 export const rootClass = style([
   disabledClass,
@@ -11,7 +26,7 @@ export const rootClass = style([
     width: "100%",
     maxWidth: "20rem",
     vars: {
-      "--num-input-stepper-width": "2.25rem",
+      "--num-input-stepper-width": "3rem",
     },
   },
 ]);
@@ -44,41 +59,32 @@ export const inputClass = style([
   },
 ]);
 
-export const triggerGroupClass = style({
+export const triggersWrapperClass = style({
   position: "absolute",
   top: "1px",
   bottom: "1px",
   right: "1px",
-  display: "flex",
-  flexDirection: "column",
+  display: "inline-flex",
+  flexFlow: "column nowrap",
   width: "var(--num-input-stepper-width)",
-  gap: "1px",
-  borderRadius: "0 calc(0.375rem - 1px) calc(0.375rem - 1px) 0",
-  overflow: "hidden",
-  zIndex: 1,
+  borderLeft: `1px solid ${tokens.border.strong}`,
 });
 
-export const triggerClass = style([
-  disabledClass,
-  outlineOnFocusClass,
+export const triggerUpClass = style([
+  triggerClass,
   {
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flex: 1,
-    zIndex: 0,
-    color: tokens.primary.lighter,
-    backgroundColor: tokens.primary.default,
-    border: "none",
-    userSelect: "none",
-    cursor: "pointer",
-    ":hover": {
-      backgroundColor: tokens.primary.darker,
-    },
-    ":active": {
-      backgroundColor: tokens.primary.dark,
-    },
+    borderTopRightRadius: "0.275rem",
+    borderBottom: `1px solid ${tokens.border.strong}`,
   },
 ]);
 
-export const triggerUpClass = style([triggerClass, {}]);
+export const triggerDownClass = style([
+  triggerClass,
+  {
+    borderBottomRightRadius: "0.275rem",
+  },
+]);
+
+export const iconChevronUpClass = style({
+  transform: "rotate(180deg)",
+});

@@ -1,6 +1,7 @@
 import { useState, type HTMLAttributes, type PropsWithChildren } from "react";
 import { useTheme } from "../src/components/ThemeProvider/useTheme";
 import { Toggle } from "../src/components/Toggle";
+import React from "react";
 
 export const ThemeLayout = ({
   children,
@@ -33,25 +34,29 @@ export const ThemeLayout = ({
   }
 
   return (
-    <div
-      {...rest}
-      style={{
-        position: "relative",
-        height: "100%",
-        paddingBottom: "1rem",
-      }}
-    >
+    <React.Fragment>
+      <div
+        {...rest}
+        onContextMenu={() => false} // Disables default browser context menu
+        style={{
+          position: "relative",
+          height: "100%",
+          overflowY: "auto",
+          overflowX: "hidden",
+        }}
+      >
+        {children}
+      </div>
       <Toggle
         label="Dark mode"
         checked={darkTheme}
         onCheckedChange={onCheckedChange}
         style={{
           position: "absolute",
-          bottom: "-1.5rem",
+          bottom: "-2.5rem",
           right: "0rem",
         }}
       />
-      {children}
-    </div>
+    </React.Fragment>
   );
 };

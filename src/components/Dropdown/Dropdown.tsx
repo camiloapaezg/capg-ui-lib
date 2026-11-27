@@ -6,9 +6,9 @@ import {
   useSelectContext,
   type SelectRootComponentProps,
 } from "@ark-ui/react/select";
-import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
-import { iconBaseClass } from "../../styles/common.css";
+import { ChevronUpDownIcon } from "../../icons/ChevronUpDown/ChevronUpDownIcon";
+import { CloseIcon } from "../../icons/Close/CloseIcon";
 import { Button } from "../Button/Button";
 import { ButtonAppearance } from "../Button/types";
 import {
@@ -61,28 +61,18 @@ const SelectControl = ({ className, ...rest }: SelectControlProps) => {
       <Select.Trigger className={controlTriggerClass}>
         <Select.ValueText
           {...rest}
+          title={select.valueAsString}
           className={clsx(valueTextClass, className)}
         />
       </Select.Trigger>
       <div className={controlIndicatorsClass}>
         {select.value.length > 0 && (
           <Select.ClearTrigger asChild>
-            <Button
-              appearance={ButtonAppearance.Ghost}
-              icon={
-                <Icon
-                  icon="fluent:dismiss-16-regular"
-                  className={iconBaseClass}
-                />
-              }
-            />
+            <Button appearance={ButtonAppearance.Ghost} icon={<CloseIcon />} />
           </Select.ClearTrigger>
         )}
         <Select.Indicator className={controlIndicatorClass}>
-          <Icon
-            icon="fluent:chevron-up-down-16-regular"
-            className={iconBaseClass}
-          />
+          <ChevronUpDownIcon />
         </Select.Indicator>
       </div>
     </Select.Control>

@@ -1,9 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import {
-  disabledClass,
-  iconBaseClass,
-  outlineOnFocusClass,
-} from "../../styles/common.css";
+import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
 import { tokens } from "../../styles/theme.css";
 import { textInputClass } from "../TextInput/styles.css";
 
@@ -66,10 +62,3 @@ export const indicatorClass = style({
   justifyContent: "center",
   color: "inherit",
 });
-
-export const iconClass = style([
-  iconBaseClass,
-  {
-    fontSize: "1.225rem",
-  },
-]);

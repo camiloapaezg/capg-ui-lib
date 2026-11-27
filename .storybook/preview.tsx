@@ -9,9 +9,10 @@ const preview: Preview = {
       <ThemeProvider
         id="theme-provider"
         style={{
-          minHeight: "40vh",
-          height: "30rem",
+          position: "relative",
+          height: "25rem",
           width: "100%",
+          marginBottom: "1rem",
         }}
       >
         <ThemeLayout id="storybook-layout">

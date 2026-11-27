@@ -1,10 +1,8 @@
 import { Dialog, Portal, type PortalProps } from "@ark-ui/react";
-import { Icon } from "@iconify-icon/react";
 import type { JSX, PropsWithChildren } from "react";
 import {
   backdropClass,
   closeButtonClass,
-  closeIconClass,
   contentClass,
   headerClass,
   positionerClass,
@@ -14,6 +12,7 @@ import {
 import clsx from "clsx";
 import { Button } from "../Button/Button";
 import { ButtonAppearance } from "../Button/types";
+import { CloseIcon } from "../../icons/Close/CloseIcon";
 
 export type BasicDialogProps = Dialog.RootProps & {
   trigger?: JSX.Element;
@@ -58,15 +57,11 @@ export const BasicDialog = ({
               )}
               <Dialog.CloseTrigger asChild>
                 <Button
-                  aria-label="Close dialog"
+                  aria-Label={"Close dialog"}
+                  title="Close dialog"
                   className={closeButtonClass}
                   appearance={ButtonAppearance.Ghost}
-                  icon={
-                    <Icon
-                      icon="fluent:dismiss-16-regular"
-                      className={closeIconClass}
-                    />
-                  }
+                  icon={<CloseIcon />}
                 />
               </Dialog.CloseTrigger>
             </header>

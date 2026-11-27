@@ -4,7 +4,7 @@ import { useMemo, type JSX } from "react";
 import {
   checkboxItemClass,
   contentClass,
-  itemButtonClass,
+  itemClass,
   itemGroupClass,
   itemGroupLabelClass,
   itemIndicatorClass,
@@ -56,11 +56,12 @@ export const MenuItem = ({
     case "button":
       return (
         <Menu.Item
-          {...(rest as MenuItemProps)}
+          {...(rest as Omit<MenuItemProps, "icon">)}
           key={value}
           value={value}
-          className={itemButtonClass}
+          className={itemClass}
         >
+          {(rest as MenuItemProps)?.icon}
           {text}
         </Menu.Item>
       );

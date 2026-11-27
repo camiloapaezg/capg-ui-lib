@@ -1,10 +1,10 @@
 import { PasswordInput } from "@ark-ui/react";
-import { Icon } from "@iconify-icon/react";
 import clsx from "clsx";
-import { labelBaseClass } from "../../styles/common.css";
+import { EyeIcon } from "../../icons/Eye/EyeIcon";
+import { EyeOffIcon } from "../../icons/EyeOff/EyeOffIcon";
+import { labelRootClass } from "../../styles/common.css";
 import {
   controlClass,
-  iconClass,
   indicatorClass,
   inputClass,
   rootClass,
@@ -24,7 +24,7 @@ export const ProtectedInput = ({
   return (
     <PasswordInput.Root {...rest} className={clsx(rootClass, className)}>
       {label && (
-        <PasswordInput.Label className={labelBaseClass}>
+        <PasswordInput.Label className={labelRootClass}>
           {label}
         </PasswordInput.Label>
       )}
@@ -33,11 +33,9 @@ export const ProtectedInput = ({
         <PasswordInput.VisibilityTrigger className={visibilityTriggerClass}>
           <PasswordInput.Indicator
             className={indicatorClass}
-            fallback={
-              <Icon icon="fluent:eye-off-16-regular" className={iconClass} />
-            }
+            fallback={<EyeOffIcon />}
           >
-            <Icon icon="fluent:eye-16-regular" className={iconClass} />
+            <EyeIcon />
           </PasswordInput.Indicator>
         </PasswordInput.VisibilityTrigger>
       </PasswordInput.Control>

@@ -1,9 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import {
-  disabledClass,
-  iconBaseClass,
-  outlineOnFocusClass,
-} from "../../styles/common.css";
+import { disabledClass, outlineOnFocusClass } from "../../styles/common.css";
 import { tokens } from "../../styles/theme.css";
 
 export const rootClass = style([
@@ -57,9 +53,6 @@ export const labelClass = style({
   userSelect: "none",
 });
 
-export const iconClass = style([
-  iconBaseClass,
-  {
-    color: tokens.primary.lighter,
-  },
-]);
+export const iconClass = style({
+  color: tokens.primary.lighter,
+});
