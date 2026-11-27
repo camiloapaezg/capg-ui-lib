@@ -37,6 +37,7 @@ export const ThemeLayout = ({
     <React.Fragment>
       <div
         {...rest}
+        onContextMenu={() => false} // Disables default browser context menu
         style={{
           position: "relative",
           height: "100%",

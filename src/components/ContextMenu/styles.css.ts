@@ -3,6 +3,28 @@ import { scaleFadeIn, scaleFadeOut } from "../../styles/animations.css";
 import { disabledClass } from "../../styles/common.css";
 import { tokens } from "../../styles/theme.css";
 
+export const itemClass = style([
+  disabledClass,
+  {
+    display: "flex",
+    flexFlow: "row nowrap",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    gap: "0.5rem",
+    borderRadius: "0.375rem",
+    userSelect: "none",
+    textDecoration: "none",
+    cursor: "pointer",
+    minHeight: "2rem",
+    paddingInline: "0.725rem",
+    selectors: {
+      "&[data-highlighted]": {
+        backgroundColor: tokens.surface.light,
+      },
+    },
+  },
+]);
+
 export const contentClass = style({
   position: "relative",
   display: "flex",
@@ -41,30 +63,6 @@ export const itemGroupLabelClass = style({
   textTransform: "uppercase",
   letterSpacing: "0.025rem",
 });
-
-const itemClass = style([
-  disabledClass,
-  {
-    display: "flex",
-    flexFlow: "row nowrap",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    gap: "0.5rem",
-    borderRadius: "0.375rem",
-    userSelect: "none",
-    textDecoration: "none",
-    cursor: "pointer",
-    minHeight: "2rem",
-    paddingInline: "0.725rem",
-    selectors: {
-      "&[data-highlighted]": {
-        backgroundColor: tokens.surface.light,
-      },
-    },
-  },
-]);
-
-export const itemButtonClass = style([itemClass, {}]);
 
 export const checkboxItemClass = style([
   itemClass,

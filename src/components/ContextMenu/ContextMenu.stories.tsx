@@ -1,10 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { ContextMenu, type ContextMenuProps } from "./ContextMenu";
 import { Button } from "../Button/Button";
 import type { ContextMenuItem } from "./types";
+import { Icon } from "@iconify-icon/react";
 
 type ContextMenuStatefulProps = Omit<ContextMenuProps, "items">;
+
+const iconStyle: CSSProperties = {
+  fontSize: "1.15rem",
+};
 
 const ContextMenuStateful = ({ ...rest }: ContextMenuStatefulProps) => {
   const [checked, setChecked] = useState<boolean>(false);
@@ -14,6 +19,7 @@ const ContextMenuStateful = ({ ...rest }: ContextMenuStatefulProps) => {
       category: "button",
       value: "cut",
       text: "Cut",
+      icon: <Icon icon={"fluent:cut-16-regular"} style={iconStyle} />,
     },
     {
       group: "Buttons",
@@ -21,12 +27,16 @@ const ContextMenuStateful = ({ ...rest }: ContextMenuStatefulProps) => {
       disabled: true,
       value: "copy",
       text: "Copy",
+      icon: <Icon icon={"fluent:copy-16-regular"} style={iconStyle} />,
     },
     {
       group: "Buttons",
       category: "button",
       value: "paste",
       text: "Paste",
+      icon: (
+        <Icon icon={"fluent:clipboard-paste-16-regular"} style={iconStyle} />
+      ),
     },
     {
       group: "Selection",
